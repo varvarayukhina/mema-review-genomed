@@ -88,6 +88,19 @@ img{max-width:100%;display:block}
 .vbar a.on{color:#fff;border-bottom:2px solid var(--blue);padding-bottom:2px}
 
 
+
+/* стрелочная схема состояний (просил гендир) */
+.states{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.state{padding:24px 26px;border-radius:18px}
+.state.ok{background:var(--ok-soft);border:1px solid #BFE7D3}
+.state.bad{background:var(--stop-soft);border:1px solid #F3C6C1}
+.state-t{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.06rem;margin-bottom:9px}
+.state.ok .state-t{color:var(--ok)}
+.state.bad .state-t{color:var(--stop)}
+.state-t .ar{font-size:1.35rem}
+.state p{font-size:.98rem;color:var(--ink-2)}
+.states-note{margin-top:16px;font-size:.94rem;color:var(--muted);max-width:74ch}
+@media(max-width:700px){.states{grid-template-columns:1fr}}
 .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:70px;
   max-width:1180px;margin:0 auto;padding:60px 24px 0}
 .toc{position:sticky;top:30px;align-self:start;display:grid;gap:3px}
@@ -205,8 +218,8 @@ img{max-width:100%;display:block}
 </div>
 
 <figure class="hr-photo">
-  <img src="img/microbiome.jpg" alt="Микробное сообщество — иллюстрация">
-  <figcaption>В полости матки живёт собственное сообщество бактерий. Раньше её считали стерильной.</figcaption>
+  <img src="img/doctor.jpg" alt="Врач обсуждает результаты исследования с пациенткой">
+  <figcaption>Показания к исследованию и трактовку результата определяет лечащий врач.</figcaption>
 </figure>
 
 <div class="layout" style="padding-top:0">
@@ -222,6 +235,13 @@ img{max-width:100%;display:block}
         <li><b>Бактериальные возбудители ИППП.</b> Бактерии, связанные с инфекциями, передающимися половым путём.</li>
       </ul>
       <p>Заключение готовит врач-генетик лаборатории и присылает на e-mail.</p>
+    <div class="states">
+      <div class="state ok"><div class="state-t"><span class="ar">→</span> Lactobacillus ⩾ 90 %</div>
+        <p>Сообщество, в котором преобладают лактобактерии.</p></div>
+      <div class="state bad"><div class="state-t"><span class="ar">→</span> Lactobacillus &lt; 90 %</div>
+        <p>Доля лактобактерий ниже порога либо выявлены микроорганизмы, связанные с воспалением. Результат обсуждают с врачом.</p></div>
+    </div>
+    <p class="states-note">Порог 90 % — отсечка из исследования Moreno et al. (2016), а не диагностическая норма.</p>
     </section>
 
     <section class="q" id="q3">
@@ -247,8 +267,13 @@ img{max-width:100%;display:block}
 </div>
 
 <figure class="hr-photo">
+  <img src="img/microbiome.jpg" alt="Микробное сообщество — иллюстрация">
+  <figcaption>В полости матки живёт собственное сообщество бактерий. Раньше её считали стерильной.</figcaption>
+</figure>
+
+<figure class="hr-photo" style="margin-top:0">
   <img src="img/lab.jpg" alt="Работа в лаборатории Геномед">
-  <figcaption>Образец анализируют методом секвенирования ДНК в собственной лаборатории Геномед.</figcaption>
+  <figcaption>Образец анализируют в собственной лаборатории Геномед.</figcaption>
 </figure>
 
 <div class="layout" style="padding-top:0">

@@ -88,6 +88,19 @@ img{max-width:100%;display:block}
 .vbar a.on{color:#fff;border-bottom:2px solid var(--blue);padding-bottom:2px}
 
 
+
+/* стрелочная схема состояний (просил гендир) */
+.states{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+.state{padding:24px 26px;border-radius:18px}
+.state.ok{background:var(--ok-soft);border:1px solid #BFE7D3}
+.state.bad{background:var(--stop-soft);border:1px solid #F3C6C1}
+.state-t{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.06rem;margin-bottom:9px}
+.state.ok .state-t{color:var(--ok)}
+.state.bad .state-t{color:var(--stop)}
+.state-t .ar{font-size:1.35rem}
+.state p{font-size:.98rem;color:var(--ink-2)}
+.states-note{margin-top:16px;font-size:.94rem;color:var(--muted);max-width:74ch}
+@media(max-width:700px){.states{grid-template-columns:1fr}}
 section{padding:82px 0}
 .soft{background:var(--soft)}
 .dark{background:linear-gradient(165deg,#0A2540,#123a63);color:#fff}
@@ -256,6 +269,13 @@ h2{font-size:clamp(28px,3.4vw,44px)}
       <div class="row"><h3>Микроорганизмы, связанные с воспалением</h3><p>В том числе бактерии, ассоциированные с хроническим эндометритом.</p></div>
       <div class="row"><h3>Бактериальные возбудители ИППП</h3><p>Бактерии, связанные с инфекциями, передающимися половым путём.</p></div>
     </div>
+    <div class="states">
+      <div class="state ok"><div class="state-t"><span class="ar">→</span> Lactobacillus ⩾ 90 %</div>
+        <p>Сообщество, в котором преобладают лактобактерии.</p></div>
+      <div class="state bad"><div class="state-t"><span class="ar">→</span> Lactobacillus &lt; 90 %</div>
+        <p>Доля лактобактерий ниже порога либо выявлены микроорганизмы, связанные с воспалением. Результат обсуждают с врачом.</p></div>
+    </div>
+    <p class="states-note">Порог 90 % — отсечка из исследования Moreno et al. (2016), а не диагностическая норма.</p>
   </div>
 </section>
 
@@ -315,7 +335,7 @@ h2{font-size:clamp(28px,3.4vw,44px)}
     <div class="report">
       <div class="report-h">Структура заключения</div>
       <div class="report-row"><b>Lactobacillus</b><span>Доля бактерий рода Lactobacillus в образце, в процентах</span></div>
-      <div class="report-row"><b>Другие микроорганизмы</b><span>Перечень выявленных таксонов и их относительная доля</span></div>
+      <div class="report-row"><b>Другие микроорганизмы</b><span>Перечень найденных микроорганизмов и их доля</span></div>
       <div class="report-row"><b>Выявленные патогены</b><span>Микроорганизмы, связанные с воспалением и инфекциями, если они обнаружены</span></div>
       <div class="report-row"><b>Комментарий</b><span>Пояснение врача-генетика к полученному составу микробиоты</span></div>
     </div>
