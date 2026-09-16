@@ -12,6 +12,24 @@
 <style>
 
 
+/* цветной блок заказа (общий для всех версий) */
+.cta-d{background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  border-radius:28px;padding:54px 56px;color:#fff;display:grid;
+  grid-template-columns:1.25fr auto;gap:40px;align-items:center}
+.cta-d h2{color:#fff;font-size:clamp(26px,3vw,38px)}
+.cta-d p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.cta-d .price{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+.cta-d .price b{font-size:2.1rem;font-weight:800}
+.cta-d .price span{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cta-d-act{display:grid;gap:12px;min-width:260px}
+.cta-d-act .btn{justify-content:center;width:100%}
+.cta-d-act .btn-w{background:#fff;color:var(--blue)}
+.cta-d-act .btn-w:hover{background:#EAF1FF}
+.cta-d-act .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-d-act .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-d-note{margin-top:14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+@media(max-width:860px){.cta-d{grid-template-columns:1fr;padding:38px 28px;gap:28px}.cta-d-act{min-width:0}}
+
 /* модалка выбора способа связи */
 #cons-dlg{border:0;padding:0;border-radius:24px;max-width:460px;width:calc(100% - 32px);
   box-shadow:0 40px 80px -20px rgba(10,37,64,.45);background:#fff;color:var(--ink)}
@@ -113,6 +131,10 @@ img{max-width:100%;display:block}
 .vbar a.on{color:#fff;border-bottom:2px solid var(--blue);padding-bottom:2px}
 
 
+
+.gi-ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--blue);
+  display:grid;place-items:center;margin-bottom:14px}
+.gi-ic svg{width:21px;height:21px}
 section{padding:76px 0}
 .soft{background:var(--soft)}
 h2{font-size:clamp(28px,3.4vw,42px)}
@@ -216,7 +238,7 @@ h2{font-size:clamp(28px,3.4vw,42px)}
 </style>
 </head>
 <body>
-<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="index.html" class="">А — редакционный</a><a href="b.html" class="">Б — вопросы пациента</a><a href="c.html" class="on">В — наглядный</a></div></div>
+<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="d.html" class="">Г — сборка ★</a><a href="index.html" class="">А — редакционный</a><a href="b.html" class="">Б — вопросы</a><a href="c.html" class="on">В — наглядный</a></div></div>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="hdr-logo" href="https://genomed.ru/"><img src="img/logo.svg" alt="Геномед"></a>
@@ -243,7 +265,7 @@ h2{font-size:clamp(28px,3.4vw,42px)}
 <section class="hero-c">
   <div class="wrap">
     <h1>MEMA — исследование <em>микробиома эндометрия</em></h1>
-    <p>Показывает, какие бактерии есть в полости матки и какую долю среди них занимают лактобактерии.</p>
+    <p>MEMA изучает бактериальный состав полости матки: какие микроорганизмы там живут и какую долю среди них занимают лактобактерии. Состав микробиоты связывают с хроническим воспалением эндометрия, поэтому исследование обсуждают при повторных неудачах ЭКО, привычном невынашивании и бесплодии без установленной причины. Материал берёт гинеколог амбулаторно, результат приходит через 14 рабочих дней.</p>
     <div class="facts">
       <div><b>14 900 ₽</b><span>стоимость</span></div>
       <div><b>14 дней</b><span>рабочих</span></div>
@@ -255,50 +277,17 @@ h2{font-size:clamp(28px,3.4vw,42px)}
   </div>
 </section>
 
-<section>
-  <div class="wrap rep">
-    <div>
-      <div class="eyebrow">// <span>результат</span></div>
-      <h2>Вот что придёт <em>на почту</em></h2>
-      <p class="lead">Заключение показывает состав микробного сообщества эндометрия: долю лактобактерий, другие выявленные микроорганизмы и комментарий врача-генетика.</p>
-      <p class="lead">Решение о тактике и о сроке переноса принимает ваш лечащий врач.</p>
-    </div>
-    <div class="rep-card">
-      <div class="rep-head"><b>Заключение MEMA</b><span class="rep-tag">Пример оформления</span></div>
-      <div class="rep-body">
-        <div class="rep-line">
-          <div class="rep-l"><span>Lactobacillus</span><b>92 %</b></div>
-          <div class="rep-bar"><i class="g" style="width:92%"></i></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Другие микроорганизмы</span><b>8 %</b></div>
-          <div class="rep-bar"><i class="b" style="width:8%"></i></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Микроорганизмы, связанные с воспалением</span><b>не выявлены</b></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Бактериальные возбудители ИППП</span><b>не выявлены</b></div>
-        </div>
-      </div>
-      <div class="rep-foot">Комментарий врача-генетика к полученному составу микробиоты. Пример приведён для понимания структуры отчёта, это не результат конкретной пациентки.</div>
-    </div>
-  </div>
-</section>
-
 <section class="soft">
   <div class="wrap">
-    <div class="eyebrow">// <span>как читать результат</span></div>
-    <h2>Два возможных состояния</h2>
+    <div class="eyebrow">// <span>что под микроскопом</span></div>
+    <h2>Почему состав бактерий <em>вообще важен</em></h2>
+    <p class="lead">Полость матки долго считали стерильной. Секвенирование показало обратное: в эндометрии живёт собственное микробное сообщество, и у разных женщин оно устроено по-разному.</p>
+    <p class="lead">Лактобактерии — те же бактерии, что поддерживают кислую среду во влагалище. Они вырабатывают молочную кислоту и тем самым сдерживают рост других микроорганизмов. Когда доля лактобактерий падает, их место занимают другие бактерии — в том числе те, которые связывают с хроническим воспалением эндометрия. Именно это соотношение и показывает MEMA.</p>
     <div class="states">
-      <div class="state ok">
-        <div class="state-t"><span class="ar">→</span> Lactobacillus ⩾ 90 %</div>
-        <p>Сообщество, в котором преобладают лактобактерии. В исследовании 2016 года эту группу сравнивали с группой ниже порога.</p>
-      </div>
-      <div class="state bad">
-        <div class="state-t"><span class="ar">→</span> Lactobacillus &lt; 90 %</div>
-        <p>Доля лактобактерий ниже порога или выявлены микроорганизмы, связанные с воспалением. Результат обсуждают с лечащим врачом.</p>
-      </div>
+      <div class="state ok"><div class="state-t"><span class="ar">→</span> Lactobacillus ⩾ 90 %</div>
+        <p>Преобладают лактобактерии. Такое сообщество считают устойчивым: молочная кислота сдерживает рост других микроорганизмов.</p></div>
+      <div class="state bad"><div class="state-t"><span class="ar">→</span> Lactobacillus &lt; 90 %</div>
+        <p>Заметную долю занимают другие бактерии. Среди них могут быть возбудители, которые связывают с хроническим эндометритом — состоянием, которое обсуждают при неудачах имплантации и невынашивании.</p></div>
     </div>
   </div>
 </section>
@@ -327,10 +316,10 @@ h2{font-size:clamp(28px,3.4vw,42px)}
     <h2>В каких случаях врач может назначить исследование</h2>
     <p class="lead">Тест не входит в обязательный объём обследования: его назначают индивидуально, когда предыдущие этапы не дали объяснения.</p>
     <div class="grid2" style="margin-top:14px">
-      <div class="gi"><h3>Неудачи имплантации</h3><p>Повторные неудачные переносы эмбриона, в том числе после ПГТ-А, и отсутствие имплантации при использовании донорских яйцеклеток.</p></div>
-      <div class="gi"><h3>Потери беременности</h3><p>Привычное невынашивание — два и более прерывания до 22 недель.</p></div>
-      <div class="gi"><h3>Хронический эндометрит</h3><p>В том числе воспаление без явных симптомов, когда нужно понять, какая бактерия его вызывает.</p></div>
-      <div class="gi"><h3>Необъяснённое бесплодие</h3><p>Бесплодие, причина которого не установлена другими обследованиями. Другие случаи — по решению врача.</p></div>
+      <div class="gi"><div class="gi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div><h3>Неудачи имплантации</h3><p>Повторные неудачные переносы эмбриона, в том числе после ПГТ-А, и отсутствие имплантации при использовании донорских яйцеклеток.</p></div>
+      <div class="gi"><div class="gi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5 5 0 0 0-8.8-2 5 5 0 0 0-8.8 2c-1 3.3 2 6.6 8.8 12.4 6.8-5.8 9.8-9.1 8.8-12.4z"/></svg></div><h3>Потери беременности</h3><p>Привычное невынашивание — два и более прерывания до 22 недель.</p></div>
+      <div class="gi"><div class="gi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3>Хронический эндометрит</h3><p>В том числе воспаление без явных симптомов, когда нужно понять, какая бактерия его вызывает.</p></div>
+      <div class="gi"><div class="gi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.2a2.8 2.8 0 0 1 5.5.7c0 1.9-2.8 2.8-2.8 2.8"/><path d="M12 17h.01"/></svg></div><h3>Необъяснённое бесплодие</h3><p>Бесплодие, причина которого не установлена другими обследованиями. Другие случаи — по решению врача.</p></div>
     </div>
   </div>
 </section>
@@ -338,12 +327,12 @@ h2{font-size:clamp(28px,3.4vw,42px)}
 <section>
   <div class="wrap">
     <div class="eyebrow">// <span>как проходит</span></div>
-    <h2>Пять шагов</h2>
+    <h2>Как проходит исследование</h2>
     <div class="stepsc">
       <div class="sc"><b>01</b><h3>Консультация</h3><p>Врач определяет, есть ли показания в вашей ситуации.</p></div>
       <div class="sc"><b>02</b><h3>Забор материала</h3><p>Пайпель-биопсия амбулаторно, у своего гинеколога. Подготовки не требуется.</p></div>
       <div class="sc"><b>03</b><h3>Передача</h3><p>Образец в пробирке с буфером передают в лабораторию.</p></div>
-      <div class="sc"><b>04</b><h3>Исследование</h3><p>ДНК микроорганизмов анализируют секвенированием.</p></div>
+      <div class="sc"><b>04</b><h3>Исследование</h3><p>ДНК бактерий читают методом NGS по гену 16S рРНК.</p></div>
       <div class="sc"><b>05</b><h3>Результат</h3><p>Заключение на e-mail за 14 рабочих дней.</p></div>
     </div>
   </div>
@@ -396,11 +385,19 @@ h2{font-size:clamp(28px,3.4vw,42px)}
   </div>
 </section>
 
-<section style="padding-top:0">
+<section style="padding-top:20px">
   <div class="wrap">
-    <div class="orderc">
-      <div><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней. Приём гинеколога и забор материала оплачиваются отдельно.</span></div>
-      <a class="btn btn-primary" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+    <div class="cta-d">
+      <div>
+        <h2>Готовы сделать исследование?</h2>
+        <p>Если направление уже есть — оформите заказ. Если сомневаетесь, нужен ли тест именно вам, сначала поговорите с врачом-генетиком: консультация ни к чему не обязывает.</p>
+        <div class="price"><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней</span></div>
+      </div>
+      <div class="cta-d-act">
+        <a class="btn btn-w" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+        <button class="btn btn-o" type="button" data-cons>Получить консультацию</button>
+        <p class="cta-d-note">В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -410,7 +407,7 @@ h2{font-size:clamp(28px,3.4vw,42px)}
     <div class="eyebrow">// <span>для специалистов</span></div>
     <h2>Как устроен метод</h2>
     <div class="grid2">
-      <div class="gi"><h3>Технология</h3><p>Секвенирование ДНК микроорганизмов (NGS) с качественной и количественной оценкой состава микробиоты эндометрия.</p></div>
+      <div class="gi"><h3>Технология</h3><p>NGS-секвенирование гена 16S рРНК — участка ДНК, общего для всех бактерий, по которому их принято определять. Метод полуколичественный: результат отражает относительную частоту, бактерии определяются до рода.</p></div>
       <div class="gi"><h3>Биоматериал</h3><p>Аспирационная пайпель-биопсия эндометрия в пробирку с консервационным буфером.</p></div>
       <div class="gi"><h3>Хранение образца</h3><p>До 7 суток при комнатной температуре, до нескольких месяцев в замороженном виде.</p></div>
       <div class="gi"><h3>Лаборатория</h3><p>Геномед — медико-генетический центр с собственной лабораторией. 15+ лет на рынке, 100+ городов присутствия.</p></div>

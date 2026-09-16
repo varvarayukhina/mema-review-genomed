@@ -12,6 +12,24 @@
 <style>
 
 
+/* цветной блок заказа (общий для всех версий) */
+.cta-d{background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  border-radius:28px;padding:54px 56px;color:#fff;display:grid;
+  grid-template-columns:1.25fr auto;gap:40px;align-items:center}
+.cta-d h2{color:#fff;font-size:clamp(26px,3vw,38px)}
+.cta-d p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.cta-d .price{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+.cta-d .price b{font-size:2.1rem;font-weight:800}
+.cta-d .price span{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cta-d-act{display:grid;gap:12px;min-width:260px}
+.cta-d-act .btn{justify-content:center;width:100%}
+.cta-d-act .btn-w{background:#fff;color:var(--blue)}
+.cta-d-act .btn-w:hover{background:#EAF1FF}
+.cta-d-act .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-d-act .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-d-note{margin-top:14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+@media(max-width:860px){.cta-d{grid-template-columns:1fr;padding:38px 28px;gap:28px}.cta-d-act{min-width:0}}
+
 /* модалка выбора способа связи */
 #cons-dlg{border:0;padding:0;border-radius:24px;max-width:460px;width:calc(100% - 32px);
   box-shadow:0 40px 80px -20px rgba(10,37,64,.45);background:#fff;color:var(--ink)}
@@ -196,7 +214,7 @@ img{max-width:100%;display:block}
 </style>
 </head>
 <body>
-<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="index.html" class="">А — редакционный</a><a href="b.html" class="on">Б — вопросы пациента</a><a href="c.html" class="">В — наглядный</a></div></div>
+<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="d.html" class="">Г — сборка ★</a><a href="index.html" class="">А — редакционный</a><a href="b.html" class="on">Б — вопросы</a><a href="c.html" class="">В — наглядный</a></div></div>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="hdr-logo" href="https://genomed.ru/"><img src="img/logo.svg" alt="Геномед"></a>
@@ -235,7 +253,7 @@ img{max-width:100%;display:block}
   </nav>
   <main class="qa">
     <h1>MEMA — исследование <em>микробиома эндометрия</em></h1>
-    <p class="qa-lead">Показывает, какие бактерии есть в полости матки и какую долю среди них занимают лактобактерии. Ниже — ответы на вопросы, которые чаще всего задают перед этим исследованием.</p>
+    <p class="qa-lead">MEMA изучает бактериальный состав полости матки: какие микроорганизмы там живут и какую долю среди них занимают лактобактерии. Состав микробиоты связывают с хроническим воспалением эндометрия, поэтому исследование обсуждают при повторных неудачах ЭКО, привычном невынашивании и бесплодии без установленной причины. Материал берёт гинеколог амбулаторно, результат приходит через 14 рабочих дней. Ниже — ответы на вопросы, которые задают чаще всего.</p>
     <div class="qa-facts">
       <div><b>14 900 ₽</b><span>стоимость</span></div>
       <div><b>14 дней</b><span>рабочих, до результата</span></div>
@@ -314,7 +332,7 @@ img{max-width:100%;display:block}
         <div class="bstep"><i>1</i><div><b>Консультация</b><p>Врач определяет, есть ли показания к исследованию в вашей ситуации.</p></div></div>
         <div class="bstep"><i>2</i><div><b>Забор материала</b><p>Гинеколог выполняет аспирационную пайпель-биопсию эндометрия амбулаторно. Специальной подготовки не требуется. Материал может взять ваш гинеколог — приходить в офис лаборатории необязательно.</p></div></div>
         <div class="bstep"><i>3</i><div><b>Передача в лабораторию</b><p>Образец помещают в пробирку с консервационным буфером и передают в медицинский офис или партнёру лаборатории.</p></div></div>
-        <div class="bstep"><i>4</i><div><b>Исследование</b><p>ДНК микроорганизмов анализируют методом секвенирования.</p></div></div>
+        <div class="bstep"><i>4</i><div><b>Исследование</b><p>ДНК бактерий читают методом NGS по гену 16S рРНК.</p></div></div>
         <div class="bstep"><i>5</i><div><b>Результат</b><p>Заключение приходит на e-mail в течение 14 рабочих дней.</p></div></div>
       </div>
     </section>
@@ -357,9 +375,15 @@ img{max-width:100%;display:block}
     <section class="q" id="q8">
       <h2>Сколько стоит?</h2>
       <p>В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p>
-      <div class="order-b">
-        <div><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней</span></div>
-        <a class="btn btn-primary" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+      <div class="cta-d" style="margin:30px 0 70px">
+        <div>
+          <h2 style="font-size:1.6rem">Готовы сделать исследование?</h2>
+          <div class="price"><b>14 900 ₽</b><span>14 рабочих дней</span></div>
+        </div>
+        <div class="cta-d-act">
+          <a class="btn btn-w" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+          <button class="btn btn-o" type="button" data-cons>Получить консультацию</button>
+        </div>
       </div>
     </section>
   </main>

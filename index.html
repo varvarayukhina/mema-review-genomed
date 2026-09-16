@@ -12,6 +12,24 @@
 <style>
 
 
+/* цветной блок заказа (общий для всех версий) */
+.cta-d{background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  border-radius:28px;padding:54px 56px;color:#fff;display:grid;
+  grid-template-columns:1.25fr auto;gap:40px;align-items:center}
+.cta-d h2{color:#fff;font-size:clamp(26px,3vw,38px)}
+.cta-d p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.cta-d .price{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+.cta-d .price b{font-size:2.1rem;font-weight:800}
+.cta-d .price span{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cta-d-act{display:grid;gap:12px;min-width:260px}
+.cta-d-act .btn{justify-content:center;width:100%}
+.cta-d-act .btn-w{background:#fff;color:var(--blue)}
+.cta-d-act .btn-w:hover{background:#EAF1FF}
+.cta-d-act .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-d-act .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-d-note{margin-top:14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+@media(max-width:860px){.cta-d{grid-template-columns:1fr;padding:38px 28px;gap:28px}.cta-d-act{min-width:0}}
+
 /* модалка выбора способа связи */
 #cons-dlg{border:0;padding:0;border-radius:24px;max-width:460px;width:calc(100% - 32px);
   box-shadow:0 40px 80px -20px rgba(10,37,64,.45);background:#fff;color:var(--ink)}
@@ -167,6 +185,8 @@ h2{font-size:clamp(28px,3.4vw,44px)}
 
 .groups{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;margin-top:20px}
 .group{border-top:2px solid var(--blue);padding-top:22px}
+.group .gic{width:38px;height:38px;border-radius:11px;background:var(--soft);color:var(--blue);display:grid;place-items:center;margin-bottom:13px}
+.group .gic svg{width:20px;height:20px}
 .group h3{font-size:1.2rem;margin-bottom:14px}
 .group ul{margin:0;padding-left:20px}
 .group li{font-size:1rem;color:var(--ink-2);margin-bottom:9px}
@@ -239,7 +259,7 @@ h2{font-size:clamp(28px,3.4vw,44px)}
 </style>
 </head>
 <body>
-<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="index.html" class="on">А — редакционный</a><a href="b.html" class="">Б — вопросы пациента</a><a href="c.html" class="">В — наглядный</a></div></div>
+<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="d.html" class="">Г — сборка ★</a><a href="index.html" class="on">А — редакционный</a><a href="b.html" class="">Б — вопросы</a><a href="c.html" class="">В — наглядный</a></div></div>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="hdr-logo" href="https://genomed.ru/"><img src="img/logo.svg" alt="Геномед"></a>
@@ -267,7 +287,7 @@ h2{font-size:clamp(28px,3.4vw,44px)}
   <div class="wrap hero-grid">
     <div>
       <h1>MEMA — исследование <em>микробиома эндометрия</em></h1>
-      <p class="hero-lead">Показывает, какие бактерии есть в полости матки и какую долю среди них занимают лактобактерии. Исследование обсуждают при бесплодии, повторных неудачах ЭКО, привычном невынашивании и хроническом эндометрите. Материал берёт гинеколог амбулаторно.</p>
+      <p class="hero-lead">MEMA изучает бактериальный состав полости матки: какие микроорганизмы там живут и какую долю среди них занимают лактобактерии. Состав микробиоты связывают с хроническим воспалением эндометрия, поэтому исследование обсуждают при повторных неудачах ЭКО, привычном невынашивании и бесплодии без установленной причины. Материал берёт гинеколог амбулаторно, результат приходит через 14 рабочих дней.</p>
       <div class="hero-facts">
         <div><b>14 900 ₽</b><span>стоимость исследования</span></div>
         <div><b>14 дней</b><span>рабочих, до результата</span></div>
@@ -293,11 +313,12 @@ h2{font-size:clamp(28px,3.4vw,44px)}
       <div class="row"><h3>Микроорганизмы, связанные с воспалением</h3><p>В том числе бактерии, ассоциированные с хроническим эндометритом.</p></div>
       <div class="row"><h3>Бактериальные возбудители ИППП</h3><p>Бактерии, связанные с инфекциями, передающимися половым путём.</p></div>
     </div>
+    <p class="lead">Лактобактерии вырабатывают молочную кислоту и сдерживают рост других микроорганизмов. Когда их доля падает, место занимают другие бактерии — в том числе те, которые связывают с хроническим воспалением эндометрия.</p>
     <div class="states">
       <div class="state ok"><div class="state-t"><span class="ar">→</span> Lactobacillus ⩾ 90 %</div>
-        <p>Сообщество, в котором преобладают лактобактерии.</p></div>
+        <p>Преобладают лактобактерии. Такое сообщество считают устойчивым.</p></div>
       <div class="state bad"><div class="state-t"><span class="ar">→</span> Lactobacillus &lt; 90 %</div>
-        <p>Доля лактобактерий ниже порога либо выявлены микроорганизмы, связанные с воспалением. Результат обсуждают с врачом.</p></div>
+        <p>Заметную долю занимают другие бактерии, среди них могут быть возбудители, связанные с хроническим эндометритом.</p></div>
     </div>
   </div>
 </section>
@@ -318,13 +339,13 @@ h2{font-size:clamp(28px,3.4vw,44px)}
     <h2>В каких случаях врач может <em>назначить</em> исследование</h2>
     <p class="lead">Тест не входит в обязательный объём обследования: его назначают индивидуально, когда предыдущие этапы не дали объяснения.</p>
     <div class="groups">
-      <div class="group"><h3>Неудачи имплантации</h3><ul>
+      <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div><h3>Неудачи имплантации</h3><ul>
         <li>Повторные неудачные переносы эмбриона</li>
         <li>В том числе перенос эмбриона с нормальным набором хромосом после ПГТ-А</li>
         <li>Отсутствие имплантации при использовании донорских яйцеклеток</li></ul></div>
-      <div class="group"><h3>Потери беременности</h3><ul>
+      <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5 5 0 0 0-8.8-2 5 5 0 0 0-8.8 2c-1 3.3 2 6.6 8.8 12.4 6.8-5.8 9.8-9.1 8.8-12.4z"/></svg></div><h3>Потери беременности</h3><ul>
         <li>Привычное невынашивание — два и более прерывания до 22 недель</li></ul></div>
-      <div class="group"><h3>Другие ситуации</h3><ul>
+      <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3>Другие ситуации</h3><ul>
         <li>Хронический эндометрит</li>
         <li>Воспаление без явных симптомов, когда нужно понять, какая бактерия его вызывает</li>
         <li>Бесплодие, причина которого не установлена другими обследованиями</li>
@@ -343,7 +364,7 @@ h2{font-size:clamp(28px,3.4vw,44px)}
         <div class="step"><div class="step-n">1</div><div><h3>Консультация</h3><p>Врач определяет, есть ли показания к исследованию именно в вашей ситуации.</p></div></div>
         <div class="step"><div class="step-n">2</div><div><h3>Забор материала</h3><p>Гинеколог выполняет аспирационную пайпель-биопсию эндометрия амбулаторно. Специальной подготовки не требуется. Материал может взять ваш гинеколог.</p></div></div>
         <div class="step"><div class="step-n">3</div><div><h3>Передача в лабораторию</h3><p>Образец помещают в пробирку с консервационным буфером и передают в медицинский офис или партнёру лаборатории.</p></div></div>
-        <div class="step"><div class="step-n">4</div><div><h3>Исследование</h3><p>ДНК микроорганизмов из образца анализируют методом секвенирования.</p></div></div>
+        <div class="step"><div class="step-n">4</div><div><h3>Исследование</h3><p>ДНК бактерий из образца читают методом NGS-секвенирования гена 16S рРНК.</p></div></div>
         <div class="step"><div class="step-n">5</div><div><h3>Результат</h3><p>Заключение приходит на e-mail в течение 14 рабочих дней. Тактику определяет лечащий врач.</p></div></div>
       </div>
     </div>
@@ -357,22 +378,27 @@ h2{font-size:clamp(28px,3.4vw,44px)}
     <p class="lead">Заключение готовит врач-генетик лаборатории. Решение о тактике и о сроке переноса принимает ваш лечащий врач.</p>
     <div class="report">
       <div class="report-h">Структура заключения</div>
-      <div class="report-row"><b>Lactobacillus</b><span>Доля бактерий рода Lactobacillus в образце, в процентах</span></div>
-      <div class="report-row"><b>Другие микроорганизмы</b><span>Перечень найденных микроорганизмов и их доля</span></div>
-      <div class="report-row"><b>Выявленные патогены</b><span>Микроорганизмы, связанные с воспалением и инфекциями, если они обнаружены</span></div>
-      <div class="report-row"><b>Комментарий</b><span>Пояснение врача-генетика к полученному составу микробиоты</span></div>
+      <div class="report-row"><b>Данные пациента и образца</b><span>ФИО, дата рождения, вид биоматериала, номер образца, даты поступления и выдачи, направивший врач</span></div>
+      <div class="report-row"><b>Метод исследования</b><span>NGS-секвенирование гена 16S рРНК — участка ДНК, по которому принято определять бактерии</span></div>
+      <div class="report-row"><b>Соотношение выявленных бактерий</b><span>Таблица: какие бактерии найдены и какую долю в процентах занимает каждая, включая Lactobacillus</span></div>
+      <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный и определяет бактерии до рода, поэтому доли отражают относительную частоту, а не точное число клеток</span></div>
     </div>
   </div>
 </section>
 
-<section>
+<section style="padding-top:20px">
   <div class="wrap">
-    <div class="eyebrow">// <span>стоимость</span></div>
-    <h2>Стоимость и заказ</h2>
-    <p class="lead">В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p>
-    <div class="order">
-      <div class="order-price"><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней</span></div>
-      <a class="btn btn-primary" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+    <div class="cta-d">
+      <div>
+        <h2>Готовы сделать исследование?</h2>
+        <p>Если направление уже есть — оформите заказ. Если сомневаетесь, нужен ли тест именно вам, сначала поговорите с врачом-генетиком: консультация ни к чему не обязывает.</p>
+        <div class="price"><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней</span></div>
+      </div>
+      <div class="cta-d-act">
+        <a class="btn btn-w" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+        <button class="btn btn-o" type="button" data-cons>Получить консультацию</button>
+        <p class="cta-d-note">В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -437,12 +463,49 @@ h2{font-size:clamp(28px,3.4vw,44px)}
   </div>
 </section>
 
+<section>
+  <div class="wrap rep">
+    <div>
+      <div class="eyebrow">// <span>результат</span></div>
+      <h2>Что будет <em>в заключении</em></h2>
+      <p class="lead">Заключение показывает состав микробного сообщества эндометрия: долю лактобактерий, другие выявленные микроорганизмы и комментарий врача-генетика.</p>
+      <p class="lead">Решение о тактике и о сроке переноса принимает ваш лечащий врач.</p>
+    </div>
+    <div class="rep-card">
+      <div class="rep-head"><b>Заключение MEMA</b><span class="rep-tag">Пример оформления</span></div>
+      <div class="rep-body">
+        <div class="rep-line">
+          <div class="rep-l"><span>Lactobacillus</span><b>92,4 %</b></div>
+          <div class="rep-bar"><i class="g" style="width:92%"></i></div>
+        </div>
+        <div class="rep-line">
+          <div class="rep-l"><span>Gardnerella</span><b>3,1 %</b></div>
+          <div class="rep-bar"><i class="b" style="width:12%"></i></div>
+        </div>
+        <div class="rep-line">
+          <div class="rep-l"><span>Prevotella</span><b>1,8 %</b></div>
+          <div class="rep-bar"><i class="b" style="width:7%"></i></div>
+        </div>
+        <div class="rep-line">
+          <div class="rep-l"><span>Streptococcus</span><b>1,2 %</b></div>
+          <div class="rep-bar"><i class="b" style="width:5%"></i></div>
+        </div>
+        <div class="rep-line">
+          <div class="rep-l"><span>Прочие роды</span><b>1,5 %</b></div>
+          <div class="rep-bar"><i class="b" style="width:6%"></i></div>
+        </div>
+      </div>
+      <div class="rep-foot">Метод полуколичественный: доли отражают относительную частоту, а бактерии определяются до рода. Пример приведён для понимания структуры отчёта, это не результат конкретной пациентки.</div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-top:20px">
   <div class="wrap">
     <div class="eyebrow">// <span>для специалистов</span></div>
     <h2>Как устроен метод</h2>
     <div class="rows rows--3">
-      <div class="row"><h3>Технология</h3><p>Секвенирование ДНК микроорганизмов (NGS) с качественной и количественной оценкой состава микробиоты эндометрия.</p></div>
+      <div class="row"><h3>Технология</h3><p>NGS-секвенирование гена 16S рРНК — участка ДНК, общего для всех бактерий, по которому их принято определять. Метод полуколичественный: результат отражает относительную частоту, бактерии определяются до рода.</p></div>
       <div class="row"><h3>Биоматериал</h3><p>Аспирационная пайпель-биопсия эндометрия в пробирку с консервационным буфером.</p></div>
       <div class="row"><h3>Хранение образца</h3><p>До 7 суток при комнатной температуре, до нескольких месяцев в замороженном виде.</p></div>
     </div>
