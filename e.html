@@ -192,7 +192,9 @@ img{max-width:100%;display:block}
   backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
 .subnav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;
   padding:13px 0;flex-wrap:wrap}
-.subnav nav{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.subnav nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.subnav nav a{font-size:.88rem}
+.subnav-act .btn{padding:10px 17px;font-size:.87rem}
 .subnav-lbl{font-size:.85rem;color:var(--muted)}
 .subnav nav a{font-size:.92rem;font-weight:600;color:var(--ink-2);text-decoration:none;
   padding:4px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
@@ -411,7 +413,7 @@ body.editing #ed-hint{display:block}
 
 /* два блока исследования */
 .mods{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
-.mod{border-radius:22px;padding:32px 34px;border:1px solid var(--line)}
+.mod{border-radius:22px;padding:30px 30px;border:1px solid var(--line);display:flex;flex-direction:column}
 .mod--a{background:linear-gradient(160deg,#F2FAF6,#fff);border-color:#CFE8DC}
 .mod--b{background:linear-gradient(160deg,#F1F6FE,#fff);border-color:#D3E2F6}
 .mod-tag{font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
@@ -426,7 +428,8 @@ body.editing #ed-hint{display:block}
 @media(max-width:860px){.mods{grid-template-columns:1fr;gap:18px}.mod{padding:26px 24px}}
 
 
-.mods--3{grid-template-columns:repeat(3,1fr)}
+.mods--3{grid-template-columns:repeat(3,1fr);align-items:stretch}
+.mods--3 .mod h3{min-height:2.6em}
 .mod--c{background:linear-gradient(160deg,#FBF6FE,#fff);border-color:#E2D6F2}
 .mod--c .mod-tag{color:#7A4FBF}
 @media(max-width:980px){.mods--3{grid-template-columns:1fr}}
@@ -442,6 +445,60 @@ body.editing #ed-hint{display:block}
 .cst-r p{font-size:.97rem;color:var(--ink-2)}
 .cst-note{padding:15px 26px;border-top:1px solid var(--line-soft);background:var(--soft);
   font-size:.89rem;color:var(--muted)}
+
+
+/* ─── инфекции и беременность ─── */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.why-s{position:relative;padding:26px 24px 24px;border-radius:18px;background:#fff;
+  border:1px solid var(--line);display:flex;flex-direction:column}
+.why-s b{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.06em;
+  color:var(--muted);margin-bottom:12px}
+.why-s h3{font-size:1.12rem;line-height:1.3;margin-bottom:9px}
+.why-s p{font-size:.97rem;color:var(--ink-2)}
+.why-s::after{content:"";position:absolute;right:-12px;top:50%;width:9px;height:9px;z-index:2;
+  border-top:2px solid var(--line);border-right:2px solid var(--line);
+  transform:translateY(-50%) rotate(45deg)}
+.why-s:last-child::after{display:none}
+.why-s:nth-child(1){background:#FDF4F3;border-color:#F3D4D1}
+.why-s:nth-child(2){background:#FDEFEE;border-color:#EFC7C3}
+.why-s:nth-child(3){background:#FCE9E7;border-color:#E9B8B3}
+.why-s:nth-child(4){background:#FBE0DD;border-color:#E2A7A1}
+.why-s:nth-child(4) h3{color:#7E241F}
+.why-s:nth-child(1) h3,.why-s:nth-child(2) h3,.why-s:nth-child(3) h3{color:#8E2C27}
+.why-out{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;
+  padding:24px 28px;border-radius:18px;background:var(--ok-soft);border:1px solid #BFE6D4}
+.why-out svg{width:30px;height:30px;color:var(--ok)}
+.why-out b{display:block;font-size:1.1rem;margin-bottom:5px;color:#12704E}
+.why-out p{font-size:1rem;color:#1D5C44}
+.claim{margin-top:28px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:clamp(19px,2vw,25px);font-weight:700;letter-spacing:-.02em;line-height:1.4;max-width:52ch}
+.claim em{font-style:normal;color:var(--blue)}
+
+/* ─── список инфекций ─── */
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.pg{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden;
+  display:flex;flex-direction:column}
+.pg-h{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+.pg-h svg{width:22px;height:22px;flex:0 0 22px;margin-top:2px}
+.pg-h b{display:block;font-size:1.06rem;margin-bottom:3px}
+.pg-h span{font-size:.9rem;color:var(--ink-2);display:block;line-height:1.45}
+.pg--stop .pg-h{background:var(--stop-soft)} .pg--stop .pg-h svg{color:var(--stop)}
+.pg--warn .pg-h{background:#FFF6E8} .pg--warn .pg-h svg{color:#B8760B}
+.pg--fun .pg-h{background:#FBF6FE} .pg--fun .pg-h svg{color:#7A4FBF}
+.pg--vir .pg-h{background:#F1F6FE} .pg--vir .pg-h svg{color:var(--blue)}
+.pg ul{margin:0;padding:18px 24px 22px;list-style:none;display:grid;gap:11px}
+.pg li{font-size:.97rem;color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+.pg li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;
+  background:var(--line)}
+.pg li i{font-style:italic;color:var(--ink);font-weight:600}
+.pg-note{margin-top:auto;padding:14px 24px;border-top:1px solid var(--line-soft);
+  font-size:.88rem;color:var(--muted);background:#FCFDFF}
+.nolist{margin-top:22px;padding:22px 26px;border-radius:16px;background:var(--soft);
+  border-left:3px solid var(--muted)}
+.nolist b{display:block;margin-bottom:7px}
+.nolist p{font-size:1rem;color:var(--ink-2)}
+@media(max-width:1020px){.why{grid-template-columns:1fr 1fr}.why-s:nth-child(2)::after{display:none}}
+@media(max-width:760px){.why,.plist{grid-template-columns:1fr}.why-s::after{display:none}}
 
 </style>
 </head>
@@ -472,12 +529,12 @@ body.editing #ed-hint{display:block}
 
 <section class="hero-d">
   <div class="wrap">
-    <h1>Микробиота эндометрия и влагалища <em>в одном исследовании</em></h1>
-    <p>Исследование даёт три части результата: состав нормофлоры, выявленные возбудители инфекций и тип микробного сообщества. Единая пробоподготовка для эндометрия и влагалища — различается только анализ. Вместе это даёт более полную картину, чем каждый показатель по отдельности.</p>
+    <h1>Микробиота эндометрия <em>и влагалища</em></h1>
+    <p>Одно исследование показывает, есть ли в полости матки и во влагалище инфекция, которая мешает эмбриону прикрепиться, — и в каком состоянии собственная микрофлора. Единая пробоподготовка для эндометрия и влагалища — различается только анализ. Вместе это даёт более полную картину, чем каждый показатель по отдельности.</p>
     <div class="facts">
-      <div><b>3 части</b><span>нормофлора, патогены, тип сообщества</span></div>
-      <div><b>14 дней</b><span>рабочих, до результата</span></div>
-      <div><b>Биопсия</b><span>амбулаторно, у гинеколога</span></div>
+      <div><b>3 части</b><span>результата</span></div>
+      <div><b>14 дней</b><span>рабочих</span></div>
+      <div><b>Биопсия</b><span>амбулаторно</span></div>
     </div>
   </div>
 </section>
@@ -485,9 +542,9 @@ body.editing #ed-hint{display:block}
 <div class="subnav">
   <div class="wrap subnav-in">
     <nav><span class="subnav-lbl">На этой странице:</span>
+      <a href="#infekcii">Инфекции</a>
       <a href="#moduli">Что входит</a>
       <a href="#komu">Кому назначают</a>
-      <a href="#rezultat">Что покажет</a>
       <a href="#kak">Как проходит</a>
       <a href="#zaklyuchenie">Заключение</a>
     </nav>
@@ -497,6 +554,94 @@ body.editing #ed-hint{display:block}
     </div>
   </div>
 </div>
+
+<section id="infekcii">
+  <div class="wrap">
+    <h2>Почему инфекция <em>мешает забеременеть</em></h2>
+    <p class="lead">Чтобы наступила беременность, эмбрион должен прикрепиться к эндометрию — внутреннему слою матки. Инфекция этому мешает напрямую.</p>
+    <div class="why">
+      <div class="why-s"><b>01</b><h3>Возбудитель попадает в полость матки</h3><p>Чаще всего — из влагалища, поэтому исследуют оба отдела сразу.</p></div>
+      <div class="why-s"><b>02</b><h3>Эндометрий воспаляется</h3><p>Развивается хронический эндометрит. Он обычно протекает без боли и выделений, поэтому женщина о нём не знает.</p></div>
+      <div class="why-s"><b>03</b><h3>Слизистая перестаёт принимать эмбрион</h3><p>Воспалённый эндометрий хуже готовится к имплантации: эмбрион не закрепляется.</p></div>
+      <div class="why-s"><b>04</b><h3>Беременность не наступает или срывается</h3><p>Перенос за переносом без результата, ранние потери беременности — при том, что с эмбрионом всё в порядке.</p></div>
+    </div>
+    <div class="why-out">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.4"/></svg>
+      <div><b>Инфекцию лечат — и препятствие уходит</b>
+      <p>Это одна из немногих причин неудачной имплантации, на которую можно повлиять: пролечить и попробовать снова. Но сначала нужно знать, что именно нашли и в каком количестве.</p></div>
+    </div>
+    <p class="claim">Пока есть инфекция — <em>беременности может не быть</em>. Исследование показывает, есть ли она.</p>
+  </div>
+</section>
+
+<section class="soft" id="spisok">
+  <div class="wrap">
+    <h2>Что именно <em>ищет исследование</em></h2>
+    <p class="lead">Из одного образца определяют и возбудителей инфекций, и состав микробного сообщества. Ниже — группы микроорганизмов, которые попадают в отчёт.</p>
+    <div class="plist">
+
+      <div class="pg pg--stop">
+        <div class="pg-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.2 8.8l-6.4 6.4M8.8 8.8l6.4 6.4"/></svg>
+          <div><b>Возбудители ИППП</b><span>В норме их быть не должно. Находка — повод лечиться обоим партнёрам.</span></div>
+        </div>
+        <ul>
+          <li><i>Chlamydia trachomatis</i> — хламидийная инфекция</li>
+          <li><i>Neisseria gonorrhoeae</i> — гонококковая инфекция</li>
+          <li><i>Trichomonas vaginalis</i> — трихомониаз</li>
+          <li><i>Mycoplasma genitalium</i> — микоплазменная инфекция</li>
+          <li><i>Treponema pallidum</i> — возбудитель сифилиса</li>
+        </ul>
+        <div class="pg-note">Такие находки не трактуют самостоятельно: нужна очная консультация, лечение назначают обоим партнёрам.</div>
+      </div>
+
+      <div class="pg pg--warn">
+        <div class="pg-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L21 19.5H3z"/><path d="M12 10v4M12 16.8v.2"/></svg>
+          <div><b>Условно-патогенные бактерии</b><span>Живут и у здоровых женщин. Значение имеет количество: когда их становится много, начинается воспаление.</span></div>
+        </div>
+        <ul>
+          <li><i>Gardnerella vaginalis</i>, <i>Fannyhessea (Atopobium) vaginae</i> — ключевые бактерии при бактериальном вагинозе</li>
+          <li><i>Prevotella</i>, <i>Sneathia</i>, <i>Leptotrichia</i>, <i>Megasphaera</i>, <i>Mobiluncus</i>, <i>Peptostreptococcus</i> — анаэробные бактерии, связанные с воспалением эндометрия</li>
+          <li><i>Ureaplasma urealyticum</i> и <i>Ureaplasma parvum</i>, <i>Mycoplasma hominis</i></li>
+          <li><i>Streptococcus agalactiae</i>, <i>Enterococcus faecalis</i>, <i>Escherichia coli</i>, <i>Staphylococcus</i> и другие представители кишечной группы — картина аэробного вагинита</li>
+        </ul>
+        <div class="pg-note">По клинически значимым бактериям указывают не только сам факт находки, но и долю в сообществе.</div>
+      </div>
+
+      <div class="pg pg--fun">
+        <div class="pg-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5a7.5 7.5 0 0 1 15 0z"/><path d="M10.5 12.5v5a1.5 1.5 0 0 0 3 0v-5"/></svg>
+          <div><b>Дрожжеподобные грибы</b><span>Причина молочницы и рецидивирующего воспаления.</span></div>
+        </div>
+        <ul>
+          <li><i>Candida albicans</i> — самый частый возбудитель кандидоза</li>
+          <li><i>Candida glabrata</i>, <i>Candida krusei</i> и другие виды — хуже отвечают на стандартное лечение, поэтому вид важно назвать отдельно</li>
+        </ul>
+        <div class="pg-note">Единичные грибы встречаются и без жалоб — значение имеет их количество вместе с клинической картиной.</div>
+      </div>
+
+      <div class="pg pg--vir">
+        <div class="pg-h">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg>
+          <div><b>ДНК-вирусы</b><span>Их находят по вирусной ДНК в том же образце.</span></div>
+        </div>
+        <ul>
+          <li>Вирусы простого герпеса 1 и 2 типа</li>
+          <li>Цитомегаловирус</li>
+          <li>Вирус Эпштейна — Барр</li>
+          <li>Вирус папилломы человека высокого онкогенного риска</li>
+        </ul>
+        <div class="pg-note">Находка вируса в образце не равна активной инфекции — результат оценивает врач.</div>
+      </div>
+
+    </div>
+    <div class="nolist">
+      <b>Чего исследование не покажет</b>
+      <p>Метод читает ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — в него не попадают: для них сдают отдельные анализы. Исследование также не заменяет гистологию эндометрия и не назначает лечение — схему подбирает лечащий врач по результату.</p>
+    </div>
+  </div>
+</section>
 
 <section id="moduli">
   <div class="wrap">
@@ -511,7 +656,7 @@ body.editing #ed-hint{display:block}
       <div class="mod mod--b">
         <div class="mod-tag">02 · патогены</div>
         <h3>Выявленные возбудители</h3>
-        <p>Микроорганизмы, связанные с воспалением и с инфекциями, передающимися половым путём. По клинически значимым мишеням — количественная оценка.</p>
+        <p>Возбудители ИППП, условно-патогенные бактерии, грибы и ДНК-вирусы — полный перечень в разделе <a href="#spisok" style="color:var(--blue)">«Что именно ищет исследование»</a>. По клинически значимым мишеням — количественная оценка.</p>
       </div>
       <div class="mod mod--c">
         <div class="mod-tag">03 · тип сообщества</div>
@@ -575,7 +720,7 @@ body.editing #ed-hint{display:block}
     </div>
     <div class="limits-d">
       <b>Границы исследования</b>
-      <p>MEMA не устанавливает причину бесплодия, не заменяет гистологию, не оценивает строение эндометрия и его готовность к переносу, не определяет дату переноса эмбриона. Вирусы и грибы метод тоже не выявляет.</p>
+      <p>Исследование не устанавливает причину бесплодия само по себе, не заменяет гистологию, не оценивает строение эндометрия и его готовность к переносу и не определяет дату переноса эмбриона.</p>
     </div>
   </div>
 </section>
