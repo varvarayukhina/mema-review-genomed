@@ -322,6 +322,32 @@ body.editing #ed-bar{display:flex;flex-wrap:wrap;max-width:calc(100vw - 32px)}
 body.editing #ed-hint{display:block}
 @media print{.ed-tools,#ed-bar,#ed-hint,.ed-btn{display:none!important}}
 
+
+/* карточка-фрагмент заключения */
+.repcard{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  box-shadow:0 26px 54px -34px rgba(10,37,64,.4)}
+.repcard-h{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+.repcard-ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--blue);
+  display:grid;place-items:center;flex:0 0 auto}
+.repcard-ic svg{width:20px;height:20px}
+.repcard-h b{display:block;font-size:1.02rem;line-height:1.25}
+.repcard-h small{font-size:.83rem;color:var(--muted)}
+.repcard-tag{margin-left:auto;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);background:var(--soft);padding:5px 11px;border-radius:20px}
+.repcard-b{padding:24px}
+.stackbar{display:flex;height:22px;border-radius:7px;overflow:hidden;gap:2px;background:var(--line-soft)}
+.stackbar i{display:block;min-width:3px}
+.s1{background:#1AA06D}.s2{background:#4E8FD6}.s3{background:#7FA9D9}.s4{background:#A9C2DF}.s5{background:#C9D8E8}
+.leg{display:grid;gap:11px;margin-top:20px}
+.leg div{display:flex;align-items:center;gap:10px;font-size:.97rem;color:var(--ink-2)}
+.leg b{margin-left:auto;color:var(--ink);font-variant-numeric:tabular-nums}
+.dot{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+.repcard-f{padding:16px 24px;border-top:1px solid var(--line-soft);background:var(--soft);
+  display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;align-items:baseline}
+.repcard-f span{font-size:.86rem;color:var(--muted);max-width:44ch}
+.repcard-f a{font-size:.87rem;font-weight:700;color:var(--blue);text-decoration:none;white-space:nowrap}
+.repcard-f a:hover{text-decoration:underline}
+
 </style>
 </head>
 <body>
@@ -365,7 +391,6 @@ body.editing #ed-hint{display:block}
         <div><b>16S рРНК</b> <span>метод исследования</span></div>
       </div>
     </div>
-    <p class="hero-fine">Исследование назначается индивидуально. Результат интерпретирует лечащий врач с учётом других обследований.</p>
   </div>
 </section>
 
@@ -461,7 +486,7 @@ body.editing #ed-hint{display:block}
       <div class="cta-d-act">
         <a class="btn btn-w" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
         <button class="btn btn-o" type="button" data-cons>Задать вопрос</button>
-        <p class="cta-d-note">В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p>
+        <p class="cta-d-note">В стоимость входит исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно. Исследование назначается индивидуально; результат интерпретирует лечащий врач с учётом других обследований.</p>
       </div>
     </div>
   </div>
@@ -531,31 +556,28 @@ body.editing #ed-hint{display:block}
       <p class="lead">Заключение показывает состав микробного сообщества эндометрия: долю лактобактерий, другие выявленные микроорганизмы и комментарий врача-генетика.</p>
       <p class="lead">Решение о тактике и сроке переноса принимает ваш лечащий врач.</p>
     </div>
-    <div class="rep-card">
-      <div class="rep-head"><b>Заключение MEMA</b><span class="rep-tag">Пример оформления</span></div>
-      <div class="rep-body">
-        <div class="rep-line">
-          <div class="rep-l"><span>Lactobacillus</span><b>92,4 %</b></div>
-          <div class="rep-bar"><i class="g" style="width:92.4%"></i></div>
+    <div class="repcard">
+      <div class="repcard-h">
+        <span class="repcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <div><b>Микробиота эндометрия</b><small>фрагмент заключения</small></div>
+        <span class="repcard-tag">пример</span>
+      </div>
+      <div class="repcard-b">
+        <div class="stackbar">
+          <i style="width:92.4%" class="s1"></i><i style="width:3.1%" class="s2"></i><i style="width:1.8%" class="s3"></i><i style="width:1.2%" class="s4"></i><i style="width:1.5%" class="s5"></i>
         </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Gardnerella</span><b>3,1 %</b></div>
-          <div class="rep-bar"><i class="b" style="width:3.1%"></i></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Prevotella</span><b>1,8 %</b></div>
-          <div class="rep-bar"><i class="b" style="width:1.5%"></i></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Streptococcus</span><b>1,2 %</b></div>
-          <div class="rep-bar"><i class="b" style="width:5%"></i></div>
-        </div>
-        <div class="rep-line">
-          <div class="rep-l"><span>Прочие бактерии</span><b>1,5 %</b></div>
-          <div class="rep-bar"><i class="b" style="width:1.2%"></i></div>
+        <div class="leg">
+          <div><span class="dot s1"></span>Lactobacillus<b>92,4 %</b></div>
+          <div><span class="dot s2"></span>Gardnerella<b>3,1 %</b></div>
+          <div><span class="dot s3"></span>Prevotella<b>1,8 %</b></div>
+          <div><span class="dot s4"></span>Streptococcus<b>1,2 %</b></div>
+          <div><span class="dot s5"></span>Прочие бактерии<b>1,5 %</b></div>
         </div>
       </div>
-      <div class="rep-foot">Метод полуколичественный: доли отражают относительную частоту, а бактерии определяются до рода — группы близких видов. Пример приведён для понимания структуры отчёта, это не результат конкретной пациентки. <a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Настоящий бланк (PDF) ↗</a></div>
+      <div class="repcard-f">
+        <span>Условные цифры — не результат пациентки. Метод полуколичественный и определяет бактерии до рода.</span>
+        <a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener">Настоящий бланк (PDF)&nbsp;↗</a>
+      </div>
     </div>
   </div>
 </section>
