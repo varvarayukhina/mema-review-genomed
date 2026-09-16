@@ -360,6 +360,28 @@ body.editing #ed-bar{display:flex;flex-wrap:wrap;max-width:calc(100vw - 32px)}
 body.editing #ed-hint{display:block}
 @media print{.ed-tools,#ed-bar,#ed-hint,.ed-btn{display:none!important}}
 
+
+/* пункты с иконками */
+.mini--ic div{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.mini--ic .mi{width:38px;height:38px;border-radius:11px;background:#fff;border:1px solid var(--line);
+  color:var(--blue);display:grid;place-items:center;flex:0 0 auto}
+.mini--ic .mi svg{width:19px;height:19px}
+.mini--ic > div > div{padding-top:7px}
+/* градиентная шкала состояний */
+.gbar{margin-top:34px}
+.gbar-track{position:relative;height:14px;border-radius:8px;
+  background:linear-gradient(90deg,#D2453E 0%,#E0A93B 50%,#1AA06D 100%);
+  display:flex;justify-content:space-between;align-items:center}
+.gbar-lo,.gbar-hi{position:absolute;top:22px;font-size:.82rem;color:var(--muted)}
+.gbar-lo{left:0}.gbar-hi{right:0}
+.gbar-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.gb{padding-top:16px;border-top:3px solid}
+.gb.bad{border-color:#D2453E}.gb.mid{border-color:#E0A93B}.gb.ok{border-color:#1AA06D}
+.gb b{display:block;font-size:1.04rem;margin-bottom:7px}
+.gb.bad b{color:#D2453E}.gb.mid b{color:#B8821F}.gb.ok b{color:#1AA06D}
+.gb p{font-size:.96rem;color:var(--ink-2)}
+@media(max-width:800px){.gbar-cols{grid-template-columns:1fr;gap:18px}}
+
 </style>
 </head>
 <body>
@@ -443,20 +465,19 @@ body.editing #ed-hint{display:block}
   <div class="wrap">
     <h2>Что покажет <em>результат</em></h2>
     <p class="lead">Полость матки долго считали стерильной — оказалось, что в эндометрии живёт собственное сообщество бактерий. По образцу лаборатория определяет его состав: какие микроорганизмы есть и в каком соотношении.</p>
-    <div class="mini">
-      <div><b>Доля лактобактерий.</b> Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</div>
-      <div><b>Состав микробиоты.</b> Соотношение выявленных микроорганизмов в образце.</div>
-      <div><b>Микроорганизмы, связанные с воспалением.</b> В том числе бактерии, ассоциированные с хроническим эндометритом.</div>
-      <div><b>Бактериальные возбудители ИППП.</b> Бактерии, связанные с инфекциями, передающимися половым путём.</div>
+    <div class="mini mini--ic">
+      <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="5" height="11" rx="2.5"/><path d="M8.5 14c0 3-3 3-3 5.5 0 0 .5 1.5 3 1.5s3-1.5 3-1.5c0-2.5-3-2.5-3-5.5z"/><circle cx="17.5" cy="9" r="2"/></svg></span><div><b>Доля лактобактерий.</b> Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</div></div>
+      <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3.5"/><path d="M12 12l6.4 4.2"/></svg></span><div><b>Состав микробиоты.</b> Соотношение выявленных микроорганизмов в образце.</div></div>
+      <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><div><b>Микроорганизмы, связанные с воспалением.</b> В том числе бактерии, ассоциированные с хроническим эндометритом.</div></div>
+      <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M9.5 12.4l1.8 1.8 3.3-3.7"/></svg></span><div><b>Бактериальные возбудители ИППП.</b> Бактерии, связанные с инфекциями, передающимися половым путём.</div></div>
     </div>
-    <div class="scale">
-      <div class="scale-bar"><i></i><i></i><i></i></div>
-      <div class="scale-cols">
-        <div class="scale-c ok"><b>Сбалансированная среда</b><p>Лактобактерии занимают основную долю сообщества.</p></div>
-        <div class="scale-c mid"><b>Пограничные изменения</b><p>Доля лактобактерий снижена, но другие бактерии не доминируют.</p></div>
-        <div class="scale-c bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, среди них могут быть связанные с хроническим эндометритом.</p></div>
+    <div class="gbar">
+      <div class="gbar-track"><span class="gbar-lo">меньше лактобактерий</span><span class="gbar-hi">больше лактобактерий</span></div>
+      <div class="gbar-cols">
+        <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, среди них могут быть связанные с хроническим эндометритом.</p></div>
+        <div class="gb mid"><b>Пограничные изменения</b><p>Доля лактобактерий снижена, но другие бактерии не доминируют.</p></div>
+        <div class="gb ok"><b>Сбалансированная среда</b><p>Лактобактерии занимают основную долю сообщества.</p></div>
       </div>
-      <div class="scale-note">Условная схема состояний. Заключение оценивает врач; шкала не определяет вероятность беременности.</div>
     </div>
     <div class="limits-d">
       <b>Границы исследования</b>
