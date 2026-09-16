@@ -295,10 +295,70 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 .repgrid .lead + .lead{margin-top:16px}
 @media(max-width:900px){.repgrid{grid-template-columns:1fr;gap:28px}}
 
+
+/* фото внутри блока, а не отдельным экраном */
+.withpic{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.withpic img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media(max-width:880px){.withpic{grid-template-columns:1fr;gap:26px}}
+/* практическая справка */
+.facts-q{margin-top:34px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.facts-q .fq{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:22px;
+  padding:16px 24px;border-top:1px solid var(--line-soft)}
+.facts-q .fq:first-child{border-top:0}
+.facts-q .fq b{font-size:.98rem}
+.facts-q .fq span{font-size:.97rem;color:var(--ink-2)}
+@media(max-width:640px){.facts-q .fq{grid-template-columns:1fr;gap:5px}}
+
+/* подсказка о версии */
+#vhint{position:fixed;left:16px;bottom:16px;z-index:300;max-width:420px;
+  background:#101A22;color:#fff;border-radius:16px;padding:18px 20px;
+  box-shadow:0 24px 50px -18px rgba(0,0,0,.55);
+  display:flex;gap:14px;align-items:flex-start;
+  opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s}
+#vhint.show{opacity:1;transform:none}
+#vhint b{display:block;font-size:.95rem;margin-bottom:6px}
+#vhint p{font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.5;margin:0}
+#vhint button{margin-left:auto;background:rgba(255,255,255,.12);border:0;color:#fff;
+  width:26px;height:26px;border-radius:50%;cursor:pointer;flex:0 0 auto;font-size:.9rem;line-height:1}
+#vhint button:hover{background:rgba(255,255,255,.22)}
+@media(max-width:560px){#vhint{left:12px;right:12px;max-width:none;bottom:12px}}
+
+
+/* ─── режим редактирования ─── */
+.ed-btn{font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;color:rgba(255,255,255,.62);
+  background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:4px 12px;margin-left:auto}
+.ed-btn:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.ed-btn.on{background:#00C2FF;border-color:#00C2FF;color:#06212E}
+body.editing [data-ed]{position:relative;outline:1.5px dashed rgba(0,87,255,.45);outline-offset:4px}
+body.editing [data-ed]:hover{outline-color:rgba(0,87,255,.9)}
+body.editing [data-ed].drag-over{outline:2px solid #00C2FF;outline-offset:6px}
+body.editing [data-ed].dragging{opacity:.4}
+.ed-tools{position:absolute;top:6px;right:6px;z-index:50;display:none;gap:5px;
+  background:#fff;border:1px solid var(--line);border-radius:10px;padding:4px;
+  box-shadow:0 8px 20px -8px rgba(10,37,64,.35)}
+body.editing [data-ed] > .ed-tools{display:flex}
+.ed-tools button{border:0;background:var(--soft);color:var(--ink);width:28px;height:28px;
+  border-radius:7px;cursor:pointer;font-size:.85rem;line-height:1;font-family:inherit}
+.ed-tools button:hover{background:var(--line)}
+.ed-tools .ed-drag{cursor:grab}
+body.editing [contenteditable="true"]:focus{outline:2px solid #0057FF;outline-offset:3px;border-radius:4px}
+#ed-bar{position:fixed;right:16px;bottom:16px;z-index:310;display:none;gap:8px;
+  background:#101A22;padding:9px;border-radius:14px;box-shadow:0 20px 40px -14px rgba(0,0,0,.5)}
+body.editing #ed-bar{display:flex;flex-wrap:wrap;max-width:calc(100vw - 32px)}
+#ed-bar button{font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;border:0;
+  padding:9px 14px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff}
+#ed-bar button:hover{background:rgba(255,255,255,.22)}
+#ed-bar .prim{background:#00C2FF;color:#06212E}
+#ed-hint{position:fixed;left:16px;bottom:16px;z-index:310;display:none;max-width:330px;
+  background:#101A22;color:rgba(255,255,255,.8);font-size:.83rem;line-height:1.5;
+  padding:14px 16px;border-radius:14px}
+body.editing #ed-hint{display:block}
+@media print{.ed-tools,#ed-bar,#ed-hint,.ed-btn{display:none!important}}
+
 </style>
 </head>
 <body>
-<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="d.html" class="on">Г — сборка ★</a><a href="index.html" class="">А — редакционный</a><a href="b.html" class="">Б — вопросы</a><a href="c.html" class="">В — наглядный</a></div></div>
+<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="index.html" class="">А — редакционный</a><a href="b.html" class="">Б — вопросы</a><a href="c.html" class="">В — наглядный</a><a href="d.html" class="on">Г — сборка ★</a><button class="ed-btn" id="ed-toggle" type="button">✎ Редактировать</button></div></div>
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="hdr-logo" href="https://genomed.ru/"><img src="img/logo.svg" alt="Геномед"></a>
@@ -325,7 +385,7 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 <section class="hero-d">
   <div class="wrap">
     <h1>MEMA — исследование <em>микробиома эндометрия</em></h1>
-    <p>Когда переносы эмбрионов не приводят к результату, а обследования не дают ответа, врач может предложить оценить состав микробиоты эндометрия — внутренней оболочки матки, к которой прикрепляется эмбрион. MEMA показывает, какие бактерии есть в образце и в каком соотношении: эти данные дополняют картину и помогают понять, смещён ли баланс микробного сообщества.</p>
+    <p>Когда переносы эмбрионов не приводят к результату, беременность не удаётся сохранить или причину бесплодия найти не получается, врач может предложить оценить состав микробиоты эндометрия — внутренней оболочки матки, к которой прикрепляется эмбрион. MEMA показывает, какие бактерии есть в образце и в каком соотношении: эти данные дополняют картину и помогают понять, смещён ли баланс микробного сообщества.</p>
     <div class="facts">
       <div><b>14 900 ₽</b><span>стоимость</span></div>
       <div><b>14 дней</b><span>рабочих, до результата</span></div>
@@ -369,15 +429,15 @@ h2{font-size:clamp(27px,3.2vw,40px)}
   </div>
 </section>
 
-<div class="band">
-  <img src="img/microbiome.jpg" alt="Микробное сообщество">
-  <div class="band-in"><p>У эндометрия есть собственное микробное сообщество</p></div>
-</div>
-
 <section class="soft" id="rezultat">
   <div class="wrap">
-    <h2>Что покажет <em>результат</em></h2>
-    <p class="lead">Полость матки долго считали стерильной — оказалось, что в эндометрии живёт собственное сообщество бактерий. По образцу лаборатория определяет его состав: какие микроорганизмы есть и в каком соотношении.</p>
+    <div class="withpic">
+      <div>
+        <h2>Что покажет <em>результат</em></h2>
+        <p class="lead">Полость матки долго считали стерильной — оказалось, что в эндометрии живёт собственное сообщество бактерий. По образцу лаборатория определяет его состав: какие микроорганизмы есть и в каком соотношении.</p>
+      </div>
+      <img src="img/microbiome.jpg" alt="Микробное сообщество эндометрия">
+    </div>
     <div class="mini">
       <div><b>Доля лактобактерий.</b> Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</div>
       <div><b>Состав микробиоты.</b> Соотношение выявленных микроорганизмов в образце.</div>
@@ -408,20 +468,26 @@ h2{font-size:clamp(27px,3.2vw,40px)}
       <div class="sc"><b>02</b><h3>Получить набор</h3><p>Набор для взятия материала заказывают в Геномед и получают удобным способом — порядок подскажет клиентский сервис.</p></div>
       <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Пайпель-биопсию выполняет ваш гинеколог амбулаторно — приходить в офис лаборатории не нужно, специальную подготовку обычно не проводят — уточните у врача.</p></div>
       <div class="sc"><b>04</b><h3>Передать образец</h3><p>Материал в пробирке со стабилизирующим буфером доставляют в медицинский офис или партнёру лаборатории.</p></div>
-      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>В лаборатории читают ДНК бактерий методом NGS по гену 16S рРНК. Результат приходит на e-mail в течение 14 рабочих дней.</p></div>
+      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Результат приходит на электронную почту. Его обсуждают с лечащим врачом — он сопоставит состав микробиоты с остальным обследованием.</p></div>
+    </div>
+    <div class="facts-q">
+      <div class="fq"><b>Что входит в стоимость</b><span>Исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</span></div>
+      <div class="fq"><b>Как получить набор</b><span>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и получают в удобное место.</span></div>
+      <div class="fq"><b>Кто передаёт образец</b><span>Материал в пробирке со стабилизирующим буфером передают в медицинский офис Геномед или партнёру лаборатории.</span></div>
+      <div class="fq"><b>Срок исследования</b><span>14 рабочих дней с момента поступления образца в лабораторию. Дата поступления и дата выдачи указаны в самом заключении.</span></div>
     </div>
   </div>
 </section>
 
-<div class="band">
-  <img src="img/lab.jpg" alt="Лаборатория Геномед">
-  <div class="band-in"><p>Исследование выполняют в собственной лаборатории Геномед</p></div>
-</div>
-
 <section class="soft" id="zaklyuchenie">
   <div class="wrap">
-    <h2>Что будет в заключении</h2>
-    <p class="lead">Заключение готовит врач-генетик лаборатории и присылает на электронную почту. Решение о тактике и сроке переноса принимает ваш лечащий врач.</p>
+    <div class="withpic">
+      <div>
+        <h2>Что будет в заключении</h2>
+        <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и присылает на электронную почту; решение о тактике и сроке переноса принимает ваш лечащий врач.</p>
+      </div>
+      <img src="img/lab.jpg" alt="Лаборатория Геномед">
+    </div>
     <div class="repgrid">
       <div>
         <div class="report">
@@ -543,5 +609,159 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 })();
 </script>
 
+
+<div id="vhint" role="status">
+  <div><b>Г — сборка</b><p>Собрана из лучших блоков А, Б и В: оглавление с кнопками наверху, показания, что покажет результат, пять шагов, заключение и цветной блок заказа. Без доказательной части.</p></div>
+  <button type="button" aria-label="Закрыть подсказку">✕</button>
+</div>
+<script>
+(function(){
+  var h=document.getElementById('vhint');
+  if(!h) return;
+  var t1=setTimeout(function(){h.classList.add('show')},400);
+  var t2=setTimeout(function(){h.classList.remove('show')},10400);
+  h.querySelector('button').addEventListener('click',function(){
+    clearTimeout(t1);clearTimeout(t2);h.classList.remove('show');
+  });
+})();
+</script>
+
+<div id="ed-hint">Перетащите блок за <b>⠿</b>, чтобы поменять порядок. Кликните в текст, чтобы его исправить. Изменения сохраняются в этом браузере.</div>
+<div id="ed-bar">
+  <button type="button" id="ed-save" class="prim">Сохранить</button>
+  <button type="button" id="ed-export">Скачать HTML</button>
+  <button type="button" id="ed-reset">Сбросить</button>
+</div>
+<script>
+(function(){
+  var KEY='mema-edit-'+location.pathname.split('/').pop();
+  var body=document.body;
+
+  function blocks(){
+    return [].slice.call(document.querySelectorAll('body > section, body > div.band, body > header, body > footer, body > div.layout, body > figure, body > div.subnav'));
+  }
+  function mark(){
+    blocks().forEach(function(el,i){
+      el.setAttribute('data-ed', el.getAttribute('data-ed') || 'b'+i);
+      if(!el.querySelector(':scope > .ed-tools')){
+        var t=document.createElement('div');
+        t.className='ed-tools';
+        t.innerHTML='<button type="button" class="ed-drag" title="Перетащить">⠿</button>'+
+                    '<button type="button" class="ed-up" title="Выше">↑</button>'+
+                    '<button type="button" class="ed-down" title="Ниже">↓</button>'+
+                    '<button type="button" class="ed-del" title="Скрыть блок">✕</button>';
+        el.appendChild(t);
+      }
+    });
+  }
+  function editable(on){
+    document.querySelectorAll('h1,h2,h3,h4,p,li,span,b,td,th,summary').forEach(function(el){
+      if(el.closest('.ed-tools')||el.closest('#ed-bar')||el.closest('#ed-hint')||el.closest('.vbar')||el.closest('#vhint')) return;
+      if(on) el.setAttribute('contenteditable','true'); else el.removeAttribute('contenteditable');
+    });
+  }
+
+  // перетаскивание
+  var dragged=null;
+  document.addEventListener('mousedown',function(e){
+    var h=e.target.closest('.ed-drag');
+    if(h){ var b=h.closest('[data-ed]'); b.setAttribute('draggable','true'); }
+  });
+  document.addEventListener('dragstart',function(e){
+    var b=e.target.closest('[data-ed]');
+    if(!b||!body.classList.contains('editing')) return;
+    dragged=b; b.classList.add('dragging');
+    e.dataTransfer.effectAllowed='move';
+    try{e.dataTransfer.setData('text/plain','x')}catch(x){}
+  });
+  document.addEventListener('dragover',function(e){
+    if(!dragged) return;
+    e.preventDefault();
+    var over=e.target.closest('[data-ed]');
+    document.querySelectorAll('.drag-over').forEach(function(x){x.classList.remove('drag-over')});
+    if(over&&over!==dragged) over.classList.add('drag-over');
+  });
+  document.addEventListener('drop',function(e){
+    if(!dragged) return;
+    e.preventDefault();
+    var over=e.target.closest('[data-ed]');
+    if(over&&over!==dragged){
+      var all=blocks(), a=all.indexOf(dragged), b=all.indexOf(over);
+      if(a<b) over.after(dragged); else over.before(dragged);
+    }
+    cleanup();
+  });
+  document.addEventListener('dragend',cleanup);
+  function cleanup(){
+    if(dragged){dragged.classList.remove('dragging');dragged.removeAttribute('draggable');}
+    document.querySelectorAll('.drag-over').forEach(function(x){x.classList.remove('drag-over')});
+    dragged=null;
+  }
+
+  // кнопки на блоке
+  document.addEventListener('click',function(e){
+    if(!body.classList.contains('editing')) return;
+    var b=e.target.closest('[data-ed]');
+    if(!b) return;
+    if(e.target.closest('.ed-up')){ var pv=b.previousElementSibling; if(pv&&pv.hasAttribute('data-ed')) pv.before(b); }
+    if(e.target.closest('.ed-down')){ var nx=b.nextElementSibling; if(nx&&nx.hasAttribute('data-ed')) nx.after(b); }
+    if(e.target.closest('.ed-del')){ if(confirm('Скрыть этот блок?')) b.style.display='none'; }
+  });
+
+  function snapshot(){
+    var tools=document.querySelectorAll('.ed-tools');
+    tools.forEach(function(t){t.setAttribute('data-tmp','1')});
+    var clone=document.body.cloneNode(true);
+    clone.querySelectorAll('.ed-tools,#ed-bar,#ed-hint,.vbar,#vhint').forEach(function(x){x.remove()});
+    clone.querySelectorAll('[contenteditable]').forEach(function(x){x.removeAttribute('contenteditable')});
+    clone.querySelectorAll('[data-ed]').forEach(function(x){x.removeAttribute('data-ed');x.removeAttribute('draggable')});
+    clone.querySelectorAll('script').forEach(function(x){x.remove()});
+    return clone.innerHTML;
+  }
+
+  document.getElementById('ed-save').addEventListener('click',function(){
+    try{ localStorage.setItem(KEY, snapshot()); alert('Сохранено в этом браузере.'); }
+    catch(x){ alert('Не удалось сохранить: '+x.message); }
+  });
+  document.getElementById('ed-reset').addEventListener('click',function(){
+    if(!confirm('Вернуть исходную версию страницы?')) return;
+    try{localStorage.removeItem(KEY)}catch(x){}
+    location.reload();
+  });
+  document.getElementById('ed-export').addEventListener('click',function(){
+    var head=document.head.innerHTML;
+    var LT='<', GT='>';
+    var html='<!doctype html'+GT+'\n'+LT+'html lang="ru"'+GT+'\n'+LT+'head'+GT+head+LT+'/head'+GT+
+             '\n'+LT+'body'+GT+'\n'+snapshot()+'\n'+LT+'/body'+GT+'\n'+LT+'/html'+GT;
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download=location.pathname.split('/').pop().replace('.html','')+'-правки.html';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  // восстановить сохранённое
+  try{
+    var saved=localStorage.getItem(KEY);
+    if(saved){
+      var keep=document.querySelector('.vbar'), hint=document.getElementById('vhint');
+      var tmp=document.createElement('div'); tmp.innerHTML=saved;
+      var marker=document.createElement('div');
+      document.body.insertBefore(marker, keep?keep.nextSibling:document.body.firstChild);
+      blocks().forEach(function(x){x.remove()});
+      while(tmp.firstChild) marker.parentNode.insertBefore(tmp.firstChild, marker);
+      marker.remove();
+    }
+  }catch(x){}
+
+  // тумблер
+  var btn=document.getElementById('ed-toggle');
+  btn.addEventListener('click',function(){
+    var on=body.classList.toggle('editing');
+    btn.classList.toggle('on',on);
+    btn.textContent= on ? '✓ Редактирование' : '✎ Редактировать';
+    if(on){ mark(); editable(true); } else { editable(false); }
+  });
+})();
+</script>
 </body>
 </html>
