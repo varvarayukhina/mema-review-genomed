@@ -500,6 +500,49 @@ body.editing #ed-hint{display:block}
 @media(max-width:1020px){.why{grid-template-columns:1fr 1fr}.why-s:nth-child(2)::after{display:none}}
 @media(max-width:760px){.why,.plist{grid-template-columns:1fr}.why-s::after{display:none}}
 
+
+/* ─── тёмный блок: резистентность + цифры панели ─── */
+.amr{background:#0A2540;color:#fff;padding:clamp(52px,6vw,78px) 0;margin-top:0}
+.amr-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,68px);align-items:center}
+.amr-tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+.amr h2{color:#fff;margin-bottom:16px}
+.amr h2 em{font-style:normal;color:var(--cyan)}
+.amr p{color:rgba(255,255,255,.76);font-size:1.06rem;line-height:1.6;max-width:52ch}
+.amr-r{display:grid;gap:0}
+.amr-n{display:grid;grid-template-columns:auto 1fr;gap:0 20px;align-items:baseline;
+  padding:20px 0;border-top:1px solid rgba(255,255,255,.16)}
+.amr-n:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.amr-n b{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:clamp(26px,3vw,36px);
+  color:var(--cyan);letter-spacing:-.02em;white-space:nowrap}
+.amr-n span{color:rgba(255,255,255,.7);font-size:.97rem;line-height:1.5}
+
+/* ─── три части: линии вместо карточек ─── */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;
+  border-top:2px solid var(--ink)}
+.tri-i{padding:26px 30px 8px 0;border-right:1px solid var(--line)}
+.tri-i:last-child{border-right:0;padding-right:0}
+.tri-i:not(:first-child){padding-left:30px}
+.tri-i b{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem;
+  letter-spacing:.1em;color:var(--blue);margin-bottom:14px}
+.tri-i h3{font-size:1.28rem;line-height:1.25;margin-bottom:11px}
+.tri-i p{font-size:1rem;color:var(--ink-2)}
+.tri-i a{color:var(--blue)}
+
+/* ─── типы сообщества: сплит без обводки ─── */
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px);margin-top:46px;
+  padding-top:34px;border-top:1px solid var(--line)}
+.sp{display:grid;grid-template-columns:auto 1fr;gap:0 18px}
+.sp-bar{width:6px;border-radius:3px;grid-row:span 2}
+.sp-bar.ok{background:var(--ok)} .sp-bar.bad{background:var(--stop)}
+.sp b{font-size:1.14rem;margin-bottom:8px;display:block}
+.sp p{font-size:1rem;color:var(--ink-2)}
+.split2-note{grid-column:1/-1;font-size:.93rem;color:var(--muted);padding-top:6px}
+.sp-h{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);grid-column:1/-1;margin-bottom:-14px}
+@media(max-width:900px){.amr-in,.tri,.split2{grid-template-columns:1fr}
+  .tri{border-top:0}.tri-i{border-right:0;border-top:2px solid var(--ink);padding:22px 0 14px!important}}
+
 </style>
 </head>
 <body>
@@ -638,39 +681,59 @@ body.editing #ed-hint{display:block}
     </div>
     <div class="nolist">
       <b>Чего исследование не покажет</b>
-      <p>Метод читает ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — в него не попадают: для них сдают отдельные анализы. Исследование также не заменяет гистологию эндометрия и не назначает лечение — схему подбирает лечащий врач по результату.</p>
+      <p>Анализ идёт по ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — в него не попадают: для них сдают отдельные анализы. Исследование также не заменяет гистологию эндометрия и не назначает лечение — схему подбирает лечащий врач по результату.</p>
     </div>
   </div>
 </section>
 
+<section class="amr">
+  <div class="wrap amr-in">
+    <div>
+      <div class="amr-tag">и ещё одна находка</div>
+      <h2>К каким антибиотикам бактерии <em>устойчивы</em></h2>
+      <p>Вместе с самими возбудителями исследование читает гены устойчивости к антибиотикам. Врач видит не только что лечить, но и чем: можно сразу отложить препарат, который в этом случае не сработает, и не терять на нём недели.</p>
+    </div>
+    <div class="amr-r">
+      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов заложено в панель обогащения</span></div>
+      <div class="amr-n"><b>450+</b><span>родов бактерий, грибов, вирусов и паразитов</span></div>
+      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов читаются в том же образце</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <img src="img/lab.jpg" alt="Лаборатория Геномед">
+  <div class="band-in"><p>Секвенирование и интерпретацию выполняет собственная лаборатория Геномед</p></div>
+</div>
+
 <section id="moduli">
   <div class="wrap">
     <h2>Три части <em>результата</em></h2>
-    <p class="lead">Состав сообщества и конкретных возбудителей определяют разными методами: профилирование показывает картину целиком, прицельная ПЦР надёжнее находит отдельные мишени. Поэтому части анализа выполняются параллельно из одного образца.</p>
-    <div class="mods mods--3">
-      <div class="mod mod--a">
-        <div class="mod-tag">01 · нормофлора</div>
+    <p class="lead">Возбудителей и состав сообщества определяют по-разному: прицельные мишени панели надёжнее находят конкретную бактерию, маркерные участки показывают картину целиком. Обе линии анализа идут параллельно из одного образца.</p>
+    <div class="tri">
+      <div class="tri-i">
+        <b>01 · НОРМОФЛОРА</b>
         <h3>Состав сообщества</h3>
-        <p>Какие бактерии присутствуют в образце и какую долю занимает каждая. Отдельной строкой — лактобактерии, которые поддерживают кислую среду и сдерживают рост других микроорганизмов.</p>
+        <p>Какие бактерии присутствуют и какую долю занимает каждая. Отдельной строкой — лактобактерии, которые поддерживают кислую среду и сдерживают рост остальных.</p>
       </div>
-      <div class="mod mod--b">
-        <div class="mod-tag">02 · патогены</div>
+      <div class="tri-i">
+        <b>02 · ПАТОГЕНЫ</b>
         <h3>Выявленные возбудители</h3>
-        <p>Возбудители ИППП, условно-патогенные бактерии, грибы и ДНК-вирусы — полный перечень в разделе <a href="#spisok" style="color:var(--blue)">«Что именно ищет исследование»</a>. По клинически значимым мишеням — количественная оценка.</p>
+        <p>Возбудители ИППП, условно-патогенные бактерии, грибы и ДНК-вирусы — перечень выше, в разделе <a href="#spisok">«Что именно ищет исследование»</a>. По клинически значимым мишеням — количественная оценка.</p>
       </div>
-      <div class="mod mod--c">
-        <div class="mod-tag">03 · тип сообщества</div>
+      <div class="tri-i">
+        <b>03 · ТИП СООБЩЕСТВА</b>
         <h3>К какому типу относится микробиота</h3>
-        <p>Микробиота влагалища делится на устойчивые типы сообществ. Одни определяются разными видами лактобактерий, другой — смешанный, с преобладанием анаэробных бактерий. Тип помогает врачу понять картину целиком, а не только отдельные находки.</p>
+        <p>Микробиота влагалища делится на устойчивые типы. Тип помогает врачу увидеть картину целиком, а не только отдельные находки.</p>
       </div>
     </div>
-    <div class="cst">
-      <div class="cst-h">Типы сообщества в двух словах</div>
-      <div class="cst-rows">
-        <div class="cst-r"><span class="cst-d ok"></span><b>Сообщество с преобладанием лактобактерий</b><p>Несколько типов, каждый определяется своим видом Lactobacillus. Среда кислая, рост других бактерий сдерживается.</p></div>
-        <div class="cst-r"><span class="cst-d bad"></span><b>Смешанное сообщество</b><p>Лактобактерий мало, заметную долю занимают анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом и хроническим воспалением.</p></div>
-      </div>
-      <div class="cst-note">Тип сообщества оценивает врач вместе с клинической картиной и остальным обследованием.</div>
+    <div class="split2">
+      <div class="sp-h">Типы сообщества в двух словах</div>
+      <div class="sp"><span class="sp-bar ok"></span><div><b>Сообщество с преобладанием лактобактерий</b>
+        <p>Несколько типов, каждый определяется своим видом Lactobacillus. Среда кислая, рост других бактерий сдерживается.</p></div></div>
+      <div class="sp"><span class="sp-bar bad"></span><div><b>Смешанное сообщество</b>
+        <p>Лактобактерий мало, заметную долю занимают анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом и хроническим воспалением.</p></div></div>
+      <div class="split2-note">Тип сообщества оценивает врач вместе с клинической картиной и остальным обследованием.</div>
     </div>
   </div>
 </section>
@@ -899,7 +962,7 @@ body.editing #ed-hint{display:block}
 
 
 <div id="vhint" role="status">
-  <div><b>Д — микробиота и инфекции</b><p>Комбинированное исследование: секвенирование 16S показывает состав микробиоты, ПЦР прицельно ищет возбудителей урогенитальных инфекций. Два блока результатов из одного образца.</p></div>
+  <div><b>Д — микробиота и инфекции</b><p>Комбинированное исследование: из одного образца определяют и возбудителей урогенитальных инфекций, и состав микробиоты. Добавлен поимённый список мишеней и гены устойчивости к антибиотикам.</p></div>
   <button type="button" aria-label="Закрыть подсказку">✕</button>
 </div>
 <script>
