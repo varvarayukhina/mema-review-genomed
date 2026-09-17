@@ -249,10 +249,10 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 @media(max-width:560px){.stepsc{grid-template-columns:1fr}}
 
 /* заключение — как в А */
-.report{margin-top:26px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
-.report-h{padding:18px 26px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
-.report-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;
-  padding:18px 26px;border-top:1px solid var(--line-soft);align-items:baseline}
+.report{margin-top:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.report-h{padding:18px 24px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
+.report-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;
+  padding:18px 24px;border-top:1px solid var(--line-soft);align-items:baseline}
 .report-row:first-of-type{border-top:0}
 .report-row span{font-size:.98rem;color:var(--ink-2)}
 @media(max-width:640px){.report-row{grid-template-columns:1fr;gap:6px}}
@@ -290,7 +290,7 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 .cols2 p:first-child{font-size:1.12rem;color:var(--ink)}
 @media(max-width:820px){.cols2{grid-template-columns:1fr;gap:16px}}
 /* заключение: текст слева, карточка справа */
-.repgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start;margin-top:22px}
+.repgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;margin-top:34px}
 .repgrid .lead{margin-top:0}
 .repgrid .lead + .lead{margin-top:16px}
 @media(max-width:900px){.repgrid{grid-template-columns:1fr;gap:28px}}
@@ -384,9 +384,9 @@ body.editing #ed-hint{display:block}
 
 
 /* карточка-фрагмент заключения */
-.repcard{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+.repcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;
   box-shadow:0 26px 54px -34px rgba(10,37,64,.4)}
-.repcard-h{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+.repcard-h{display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--line-soft)}
 .repcard-ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--blue);
   display:grid;place-items:center;flex:0 0 auto}
 .repcard-ic svg{width:20px;height:20px}
@@ -394,7 +394,7 @@ body.editing #ed-hint{display:block}
 .repcard-h small{font-size:.83rem;color:var(--muted)}
 .repcard-tag{margin-left:auto;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
   color:var(--muted);background:var(--soft);padding:5px 11px;border-radius:20px}
-.repcard-b{padding:24px}
+.repcard-b{padding:22px 24px}
 .stackbar{display:flex;height:22px;border-radius:7px;overflow:hidden;gap:2px;background:var(--line-soft)}
 .stackbar i{display:block;min-width:3px}
 .s1{background:#1AA06D}.s2{background:#4E8FD6}.s3{background:#7FA9D9}.s4{background:#A9C2DF}.s5{background:#C9D8E8}
@@ -438,7 +438,7 @@ body.editing #ed-hint{display:block}
 <section class="hero-d">
   <div class="wrap">
     <h1>MEMA — исследование <em>микробиома эндометрия</em></h1>
-    <p>Когда переносы эмбрионов не приводят к результату, беременность не удаётся сохранить или причину бесплодия найти не получается, врач может предложить оценить состав микробиоты эндометрия — внутренней оболочки матки, к которой прикрепляется эмбрион. MEMA показывает, какие бактерии есть в образце и в каком соотношении: эти данные дополняют картину и помогают понять, смещён ли баланс микробного сообщества.</p>
+    <p>MEMA определяет бактериальный состав эндометрия — слизистой оболочки полости матки. Исследование показывает, какие микроорганизмы присутствуют в образце и какую долю среди них занимают лактобактерии. Его обсуждают при повторных неудачах имплантации, привычном невынашивании и бесплодии неясного генеза.</p>
     <div class="facts">
       <div><b>14 900 ₽</b><span>стоимость</span></div>
       <div><b>14 дней</b><span>рабочих, до результата</span></div>
@@ -490,7 +490,7 @@ body.editing #ed-hint{display:block}
 <section class="soft" id="rezultat">
   <div class="wrap">
     <h2>Что покажет <em>результат</em></h2>
-    <p class="lead">Полость матки долго считали стерильной — оказалось, что в эндометрии живёт собственное сообщество бактерий. По образцу лаборатория определяет его состав: какие микроорганизмы есть и в каком соотношении.</p>
+    <p class="lead">Полость матки долгое время считали стерильной. Секвенирование показало, что эндометрий имеет собственное микробное сообщество. Исследование определяет его состав по образцу: какие микроорганизмы присутствуют и в каком соотношении.</p>
     <div class="mini mini--ic">
       <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="5" height="11" rx="2.5"/><path d="M8.5 14c0 3-3 3-3 5.5 0 0 .5 1.5 3 1.5s3-1.5 3-1.5c0-2.5-3-2.5-3-5.5z"/><circle cx="17.5" cy="9" r="2"/></svg></span><div><b>Доля лактобактерий.</b> Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</div></div>
       <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3.5"/><path d="M12 12l6.4 4.2"/></svg></span><div><b>Состав микробиоты.</b> Соотношение выявленных микроорганизмов в образце.</div></div>
@@ -500,7 +500,7 @@ body.editing #ed-hint{display:block}
     <div class="gbar">
       <div class="gbar-track"><span class="gbar-lo">меньше лактобактерий</span><span class="gbar-hi">больше лактобактерий</span></div>
       <div class="gbar-cols">
-        <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, среди них могут быть связанные с хроническим эндометритом.</p></div>
+        <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, в том числе бактерии, которые связывают с хроническим эндометритом.</p></div>
         <div class="gb mid"><b>Пограничные изменения</b><p>Доля лактобактерий снижена, но другие бактерии не доминируют.</p></div>
         <div class="gb ok"><b>Сбалансированная среда</b><p>Лактобактерии занимают основную долю сообщества.</p></div>
       </div>
@@ -516,11 +516,11 @@ body.editing #ed-hint{display:block}
   <div class="wrap">
     <h2>От консультации <em>до результата</em></h2>
     <div class="stepsc">
-      <div class="sc"><b>01</b><h3>Обсудить с врачом</h3><p>Гинеколог или репродуктолог решает, дополнит ли исследование картину именно в вашем случае.</p></div>
-      <div class="sc"><b>02</b><h3>Получить набор</h3><p>Набор для взятия материала заказывают в Геномед и получают удобным способом — порядок подскажет клиентский сервис.</p></div>
-      <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Пайпель-биопсию выполняет ваш гинеколог амбулаторно — приходить в офис лаборатории не нужно, специальную подготовку обычно не проводят — уточните у врача.</p></div>
+      <div class="sc"><b>01</b><h3>Обсудить с врачом</h3><p>Гинеколог или репродуктолог определяет, показано ли исследование в конкретной клинической ситуации.</p></div>
+      <div class="sc"><b>02</b><h3>Получить набор</h3><p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис.</p></div>
+      <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Аспирационную пайпель-биопсию эндометрия выполняет гинеколог амбулаторно. Специальной подготовки, как правило, не требуется; условия уточняет лечащий врач.</p></div>
       <div class="sc"><b>04</b><h3>Передать образец</h3><p>Материал в пробирке со стабилизирующим буфером доставляют в медицинский офис или партнёру лаборатории.</p></div>
-      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Результат приходит на электронную почту. Его обсуждают с лечащим врачом — он сопоставит состав микробиоты с остальным обследованием.</p></div>
+      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Заключение направляют на электронную почту. Результат интерпретирует лечащий врач с учётом остальных обследований.</p></div>
     </div>
     <div class="practic">
       <div class="practic-h">Практические вопросы</div>
@@ -530,7 +530,7 @@ body.editing #ed-hint{display:block}
           <p>Исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p></div>
         <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
           <b>Как получить набор</b>
-          <p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и получают в удобное место.</p></div>
+          <p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и доставляют по указанному адресу.</p></div>
         <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2.5L10.5 13.5"/><path d="M21.5 2.5l-7 19-4-8.5-8.5-4 19.5-6.5z"/></svg></span>
           <b>Кто передаёт образец</b>
           <p>Материал в пробирке со стабилизирующим буфером передают в медицинский офис Геномед или партнёру лаборатории.</p></div>
@@ -547,7 +547,7 @@ body.editing #ed-hint{display:block}
     <div class="withpic">
       <div>
         <h2>Что будет в заключении</h2>
-        <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и присылает на электронную почту; решение о тактике и сроке переноса принимает ваш лечащий врач.</p>
+        <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и направляет на электронную почту; решение о тактике и сроке переноса принимает лечащий врач.</p>
       </div>
       <img src="img/lab.jpg" alt="Лаборатория Геномед">
     </div>
@@ -560,7 +560,6 @@ body.editing #ed-hint{display:block}
           <div class="report-row"><b>Соотношение выявленных бактерий</b><span>Таблица выявленных бактерий с долей каждой в процентах, включая лактобактерии</span></div>
           <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный и определяет бактерии до рода (группы близких видов), поэтому доли отражают относительную частоту, а не точное число клеток</span></div>
         </div>
-        <p class="lead"><a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;border-bottom:1px solid currentColor;text-decoration:none">Посмотреть настоящий бланк заключения (PDF)&nbsp;↗</a></p>
       </div>
       <div class="repcard">
       <div class="repcard-h">
@@ -594,7 +593,7 @@ body.editing #ed-hint{display:block}
     <div class="cta-d">
       <div>
         <h2>Готовы сделать исследование?</h2>
-        <p>Если направление уже есть — оформите заказ. Если сомневаетесь, нужно ли исследование именно вам, напишите нам — клиентский сервис запишет вас на консультацию к врачу-генетику.</p>
+        <p>Исследование можно заказать при наличии направления. Если показания не определены, клиентский сервис запишет на консультацию врача-генетика.</p>
         <div class="price"><b>14 900 ₽</b><span>срок выполнения — 14 рабочих дней</span></div>
       </div>
       <div class="cta-d-act">

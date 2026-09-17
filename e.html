@@ -259,10 +259,10 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 @media(max-width:560px){.stepsc{grid-template-columns:1fr}}
 
 /* заключение — как в А */
-.report{margin-top:26px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
-.report-h{padding:18px 26px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
-.report-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;
-  padding:18px 26px;border-top:1px solid var(--line-soft);align-items:baseline}
+.report{margin-top:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.report-h{padding:18px 24px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
+.report-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;
+  padding:18px 24px;border-top:1px solid var(--line-soft);align-items:baseline}
 .report-row:first-of-type{border-top:0}
 .report-row span{font-size:.98rem;color:var(--ink-2)}
 @media(max-width:640px){.report-row{grid-template-columns:1fr;gap:6px}}
@@ -300,7 +300,7 @@ h2{font-size:clamp(27px,3.2vw,40px)}
 .cols2 p:first-child{font-size:1.12rem;color:var(--ink)}
 @media(max-width:820px){.cols2{grid-template-columns:1fr;gap:16px}}
 /* заключение: текст слева, карточка справа */
-.repgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start;margin-top:22px}
+.repgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;margin-top:34px}
 .repgrid .lead{margin-top:0}
 .repgrid .lead + .lead{margin-top:16px}
 @media(max-width:900px){.repgrid{grid-template-columns:1fr;gap:28px}}
@@ -394,9 +394,9 @@ body.editing #ed-hint{display:block}
 
 
 /* карточка-фрагмент заключения */
-.repcard{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+.repcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;
   box-shadow:0 26px 54px -34px rgba(10,37,64,.4)}
-.repcard-h{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+.repcard-h{display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--line-soft)}
 .repcard-ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--blue);
   display:grid;place-items:center;flex:0 0 auto}
 .repcard-ic svg{width:20px;height:20px}
@@ -404,7 +404,7 @@ body.editing #ed-hint{display:block}
 .repcard-h small{font-size:.83rem;color:var(--muted)}
 .repcard-tag{margin-left:auto;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
   color:var(--muted);background:var(--soft);padding:5px 11px;border-radius:20px}
-.repcard-b{padding:24px}
+.repcard-b{padding:22px 24px}
 .stackbar{display:flex;height:22px;border-radius:7px;overflow:hidden;gap:2px;background:var(--line-soft)}
 .stackbar i{display:block;min-width:3px}
 .s1{background:#1AA06D}.s2{background:#4E8FD6}.s3{background:#7FA9D9}.s4{background:#A9C2DF}.s5{background:#C9D8E8}
@@ -478,9 +478,6 @@ body.editing #ed-hint{display:block}
 .why-out svg{width:30px;height:30px;color:var(--ok)}
 .why-out b{display:block;font-size:1.1rem;margin-bottom:5px;color:#12704E}
 .why-out p{font-size:1rem;color:#1D5C44}
-.claim{margin-top:28px;padding-top:26px;border-top:1px solid var(--line);
-  font-size:clamp(19px,2vw,25px);font-weight:700;letter-spacing:-.02em;line-height:1.4;max-width:52ch}
-.claim em{font-style:normal;color:var(--blue)}
 
 /* ─── список инфекций ─── */
 .plist{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
@@ -581,7 +578,7 @@ body.editing #ed-hint{display:block}
 <section class="hero-d" role="img" aria-label="Условная иллюстрация: слева сбалансированная микрофлора, справа дисбиоз">
   <div class="hero-d-in">
     <h1>Микробиота эндометрия <em>и влагалища</em></h1>
-    <p>Одно исследование показывает, есть ли в полости матки и во влагалище инфекция, которая мешает эмбриону прикрепиться, — и в каком состоянии собственная микрофлора.</p>
+    <p>Исследование определяет состав микробиоты эндометрия и влагалища и выявляет возбудителей урогенитальных инфекций. Оба отдела исследуют из одного забора материала.</p>
     <div class="facts">
       <div><b>3 части</b><span>результата</span></div>
       <div><b>14 дней</b><span>рабочих</span></div>
@@ -609,33 +606,32 @@ body.editing #ed-hint{display:block}
 
 <section id="infekcii">
   <div class="wrap">
-    <h2>Почему инфекция <em>мешает забеременеть</em></h2>
-    <p class="lead">Чтобы наступила беременность, эмбрион должен прикрепиться к эндометрию — внутреннему слою матки. Инфекция этому мешает напрямую.</p>
+    <h2>Микробиота, хронический эндометрит <em>и имплантация</em></h2>
+    <p class="lead">Имплантация эмбриона происходит в эндометрий — слизистую оболочку полости матки. С состоянием эндометрия связывают состав его микробного сообщества и наличие в нём возбудителей инфекций.</p>
     <div class="why">
-      <div class="why-s"><b>01</b><h3>Возбудитель попадает в полость матки</h3><p>Чаще всего — из влагалища, поэтому исследуют оба отдела сразу.</p></div>
-      <div class="why-s"><b>02</b><h3>Эндометрий воспаляется</h3><p>Развивается хронический эндометрит. Он обычно протекает без боли и выделений, поэтому женщина о нём не знает.</p></div>
-      <div class="why-s"><b>03</b><h3>Слизистая перестаёт принимать эмбрион</h3><p>Воспалённый эндометрий хуже готовится к имплантации: эмбрион не закрепляется.</p></div>
-      <div class="why-s"><b>04</b><h3>Беременность не наступает или срывается</h3><p>Перенос за переносом без результата, ранние потери беременности — при том, что с эмбрионом всё в порядке.</p></div>
+      <div class="why-s"><b>01</b><h3>Восходящий путь</h3><p>Микроорганизмы попадают в полость матки преимущественно из влагалища. Поэтому оценивают оба отдела.</p></div>
+      <div class="why-s"><b>02</b><h3>Хронический эндометрит</h3><p>Ряд бактерий связывают с хроническим воспалением эндометрия. Оно часто протекает без выраженных симптомов и выявляется только при обследовании.</p></div>
+      <div class="why-s"><b>03</b><h3>Изменение рецептивности</h3><p>При хроническом эндометрите описаны изменения слизистой, в том числе её способности принять эмбрион.</p></div>
+      <div class="why-s"><b>04</b><h3>Клинический контекст</h3><p>Хронический эндометрит чаще выявляют у пациенток с повторными неудачами имплантации и привычным невынашиванием.</p></div>
     </div>
     <div class="why-out">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16 9.4"/></svg>
-      <div><b>Инфекцию лечат — и препятствие уходит</b>
-      <p>Это одна из немногих причин неудачной имплантации, на которую можно повлиять: пролечить и попробовать снова. Но сначала нужно знать, что именно нашли и в каком количестве.</p></div>
+      <div><b>Состояние, поддающееся коррекции</b>
+      <p>В отличие от ряда других факторов, состав микробиоты и выявленные возбудители поддаются коррекции. Терапию назначает лечащий врач по результату исследования, с последующим контролем.</p></div>
     </div>
-    <p class="claim">Пока есть инфекция — <em>беременности может не быть</em>. Исследование показывает, есть ли она.</p>
   </div>
 </section>
 
 <section class="soft" id="spisok">
   <div class="wrap">
-    <h2>Что именно <em>ищет исследование</em></h2>
-    <p class="lead">Из одного образца определяют и возбудителей инфекций, и состав микробного сообщества. Ниже — группы микроорганизмов, которые попадают в отчёт.</p>
+    <h2>Какие микроорганизмы <em>выявляет исследование</em></h2>
+    <p class="lead">Из одного образца определяют возбудителей инфекций и состав микробного сообщества. Ниже — группы микроорганизмов, которые входят в заключение.</p>
     <div class="plist">
 
       <div class="pg pg--stop">
         <div class="pg-h">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.2 8.8l-6.4 6.4M8.8 8.8l6.4 6.4"/></svg>
-          <div><b>Возбудители ИППП</b><span>В норме их быть не должно. Находка — повод лечиться обоим партнёрам.</span></div>
+          <div><b>Возбудители ИППП</b><span>Возбудители, которые в норме в исследуемом материале не обнаруживаются.</span></div>
         </div>
         <ul>
           <li><i>Chlamydia trachomatis</i> — хламидийная инфекция</li>
@@ -644,39 +640,39 @@ body.editing #ed-hint{display:block}
           <li><i>Mycoplasma genitalium</i> — микоплазменная инфекция</li>
           <li><i>Treponema pallidum</i> — возбудитель сифилиса</li>
         </ul>
-        <div class="pg-note">Такие находки не трактуют самостоятельно: нужна очная консультация, лечение назначают обоим партнёрам.</div>
+        <div class="pg-note">Результат оценивает врач; при подтверждении терапию назначают обоим партнёрам.</div>
       </div>
 
       <div class="pg pg--warn">
         <div class="pg-h">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L21 19.5H3z"/><path d="M12 10v4M12 16.8v.2"/></svg>
-          <div><b>Условно-патогенные бактерии</b><span>Живут и у здоровых женщин. Значение имеет количество: когда их становится много, начинается воспаление.</span></div>
+          <div><b>Условно-патогенные бактерии</b><span>Присутствуют и в норме. Клиническое значение имеет их доля в сообществе.</span></div>
         </div>
         <ul>
           <li><i>Gardnerella vaginalis</i>, <i>Fannyhessea (Atopobium) vaginae</i> — ключевые бактерии при бактериальном вагинозе</li>
-          <li><i>Prevotella</i>, <i>Sneathia</i>, <i>Leptotrichia</i>, <i>Megasphaera</i>, <i>Mobiluncus</i>, <i>Peptostreptococcus</i> — анаэробные бактерии, связанные с воспалением эндометрия</li>
+          <li><i>Prevotella</i>, <i>Sneathia</i>, <i>Leptotrichia</i>, <i>Megasphaera</i>, <i>Mobiluncus</i>, <i>Peptostreptococcus</i> — анаэробные бактерии, которые связывают с воспалением эндометрия</li>
           <li><i>Ureaplasma urealyticum</i> и <i>Ureaplasma parvum</i>, <i>Mycoplasma hominis</i></li>
-          <li><i>Streptococcus agalactiae</i>, <i>Enterococcus faecalis</i>, <i>Escherichia coli</i>, <i>Staphylococcus</i> и другие представители кишечной группы — картина аэробного вагинита</li>
+          <li><i>Streptococcus agalactiae</i>, <i>Enterococcus faecalis</i>, <i>Escherichia coli</i>, <i>Staphylococcus</i> и другие представители кишечной группы — ассоциированы с аэробным вагинитом</li>
         </ul>
-        <div class="pg-note">По клинически значимым бактериям указывают не только сам факт находки, но и долю в сообществе.</div>
+        <div class="pg-note">Для клинически значимых бактерий указывают не только факт выявления, но и долю в сообществе.</div>
       </div>
 
       <div class="pg pg--fun">
         <div class="pg-h">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5a7.5 7.5 0 0 1 15 0z"/><path d="M10.5 12.5v5a1.5 1.5 0 0 0 3 0v-5"/></svg>
-          <div><b>Дрожжеподобные грибы</b><span>Причина молочницы и рецидивирующего воспаления.</span></div>
+          <div><b>Дрожжеподобные грибы</b><span>Возбудители кандидоза, в том числе рецидивирующего.</span></div>
         </div>
         <ul>
           <li><i>Candida albicans</i> — самый частый возбудитель кандидоза</li>
-          <li><i>Candida glabrata</i>, <i>Candida krusei</i> и другие виды — хуже отвечают на стандартное лечение, поэтому вид важно назвать отдельно</li>
+          <li><i>Candida glabrata</i>, <i>Candida krusei</i> и другие виды — хуже отвечают на стандартную терапию, поэтому вид указывают отдельно</li>
         </ul>
-        <div class="pg-note">Единичные грибы встречаются и без жалоб — значение имеет их количество вместе с клинической картиной.</div>
+        <div class="pg-note">Выявление грибов вне клинической картины не равнозначно кандидозу; результат оценивают вместе с симптомами.</div>
       </div>
 
       <div class="pg pg--vir">
         <div class="pg-h">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg>
-          <div><b>ДНК-вирусы</b><span>Их находят по вирусной ДНК в том же образце.</span></div>
+          <div><b>ДНК-вирусы</b><span>Выявляются по вирусной ДНК в том же образце.</span></div>
         </div>
         <ul>
           <li>Вирусы простого герпеса 1 и 2 типа</li>
@@ -684,13 +680,13 @@ body.editing #ed-hint{display:block}
           <li>Вирус Эпштейна — Барр</li>
           <li>Вирус папилломы человека высокого онкогенного риска</li>
         </ul>
-        <div class="pg-note">Находка вируса в образце не равна активной инфекции — результат оценивает врач.</div>
+        <div class="pg-note">Выявление вирусной ДНК не равнозначно активной инфекции; результат интерпретирует врач.</div>
       </div>
 
     </div>
     <div class="nolist">
-      <b>Чего исследование не покажет</b>
-      <p>Анализ идёт по ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — в него не попадают: для них сдают отдельные анализы. Исследование также не заменяет гистологию эндометрия и не назначает лечение — схему подбирает лечащий врач по результату.</p>
+      <b>Ограничения метода</b>
+      <p>Анализ выполняется по ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — не выявляются; для них проводят отдельные исследования. Результат не заменяет гистологическое исследование эндометрия и не является самостоятельным диагнозом.</p>
     </div>
   </div>
 </section>
@@ -698,14 +694,14 @@ body.editing #ed-hint{display:block}
 <section class="amr">
   <div class="wrap amr-in">
     <div>
-      <div class="amr-tag">и ещё одна находка</div>
-      <h2>К каким антибиотикам бактерии <em>устойчивы</em></h2>
-      <p>Вместе с самими возбудителями исследование читает гены устойчивости к антибиотикам. Врач видит не только что лечить, но и чем: можно сразу отложить препарат, который в этом случае не сработает, и не терять на нём недели.</p>
+      <div class="amr-tag">дополнительно</div>
+      <h2>Гены устойчивости <em>к антибиотикам</em></h2>
+      <p>Панель обогащения включает гены антибиотикорезистентности. Их выявление учитывают при подборе антибактериальной терапии — наряду с клинической картиной и, при необходимости, культуральным исследованием.</p>
     </div>
     <div class="amr-r">
-      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов заложено в панель обогащения</span></div>
+      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов в панели обогащения</span></div>
       <div class="amr-n"><b>450+</b><span>родов бактерий, грибов, вирусов и паразитов</span></div>
-      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов читаются в том же образце</span></div>
+      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов в том же образце</span></div>
     </div>
   </div>
 </section>
@@ -718,12 +714,12 @@ body.editing #ed-hint{display:block}
 <section id="moduli">
   <div class="wrap">
     <h2>Три части <em>результата</em></h2>
-    <p class="lead">Возбудителей и состав сообщества определяют по-разному: прицельные мишени панели надёжнее находят конкретную бактерию, маркерные участки показывают картину целиком. Обе линии анализа идут параллельно из одного образца: пробоподготовка для эндометрия и влагалища единая, различается только анализ.</p>
+    <p class="lead">Возбудителей и состав сообщества определяют разными группами мишеней: прицельные последовательности панели выявляют конкретные микроорганизмы, маркерные участки 16S и ITS дают состав сообщества. Обе линии анализа выполняются из одного образца; пробоподготовка для эндометрия и влагалища единая.</p>
     <div class="tri">
       <div class="tri-i">
         <b>01 · НОРМОФЛОРА</b>
         <h3>Состав сообщества</h3>
-        <p>Какие бактерии присутствуют и какую долю занимает каждая. Отдельной строкой — лактобактерии, которые поддерживают кислую среду и сдерживают рост остальных.</p>
+        <p>Какие бактерии присутствуют в образце и какую долю занимает каждая. Отдельно — лактобактерии: они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</p>
       </div>
       <div class="tri-i">
         <b>02 · ПАТОГЕНЫ</b>
@@ -733,15 +729,15 @@ body.editing #ed-hint{display:block}
       <div class="tri-i">
         <b>03 · ТИП СООБЩЕСТВА</b>
         <h3>К какому типу относится микробиота</h3>
-        <p>Микробиота влагалища делится на устойчивые типы. Тип помогает врачу увидеть картину целиком, а не только отдельные находки.</p>
+        <p>Микробиоту влагалища принято относить к устойчивым типам сообществ. Тип оценивают вместе с отдельными находками.</p>
       </div>
     </div>
     <div class="split2">
       <div class="sp-h">Типы сообщества в двух словах</div>
       <div class="sp"><span class="sp-bar ok"></span><div><b>Сообщество с преобладанием лактобактерий</b>
-        <p>Несколько типов, каждый определяется своим видом Lactobacillus. Среда кислая, рост других бактерий сдерживается.</p></div></div>
+        <p>Несколько типов, каждый определяется преобладающим видом Lactobacillus. Среда кислая, рост других микроорганизмов сдержан.</p></div></div>
       <div class="sp"><span class="sp-bar bad"></span><div><b>Смешанное сообщество</b>
-        <p>Лактобактерий мало, заметную долю занимают анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом и хроническим воспалением.</p></div></div>
+        <p>Доля лактобактерий снижена, заметную часть составляют анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом и хроническим воспалением.</p></div></div>
       <div class="split2-note">Тип сообщества оценивает врач вместе с клинической картиной и остальным обследованием.</div>
     </div>
   </div>
@@ -775,7 +771,7 @@ body.editing #ed-hint{display:block}
 <section class="soft" id="rezultat">
   <div class="wrap">
     <h2>Что покажет <em>результат</em></h2>
-    <p class="lead">Полость матки долго считали стерильной — оказалось, что в эндометрии живёт собственное сообщество бактерий. По образцу лаборатория определяет его состав: какие микроорганизмы есть и в каком соотношении.</p>
+    <p class="lead">Полость матки долгое время считали стерильной. Секвенирование показало, что эндометрий имеет собственное микробное сообщество. Исследование определяет его состав по образцу: какие микроорганизмы присутствуют и в каком соотношении.</p>
     <div class="mini mini--ic">
       <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="5" height="11" rx="2.5"/><path d="M8.5 14c0 3-3 3-3 5.5 0 0 .5 1.5 3 1.5s3-1.5 3-1.5c0-2.5-3-2.5-3-5.5z"/><circle cx="17.5" cy="9" r="2"/></svg></span><div><b>Доля лактобактерий.</b> Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</div></div>
       <div><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3.5"/><path d="M12 12l6.4 4.2"/></svg></span><div><b>Состав микробиоты.</b> Соотношение выявленных микроорганизмов в образце.</div></div>
@@ -785,7 +781,7 @@ body.editing #ed-hint{display:block}
     <div class="gbar">
       <div class="gbar-track"><span class="gbar-lo">меньше лактобактерий</span><span class="gbar-hi">больше лактобактерий</span></div>
       <div class="gbar-cols">
-        <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, среди них могут быть связанные с хроническим эндометритом.</p></div>
+        <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, в том числе бактерии, которые связывают с хроническим эндометритом.</p></div>
         <div class="gb mid"><b>Пограничные изменения</b><p>Доля лактобактерий снижена, но другие бактерии не доминируют.</p></div>
         <div class="gb ok"><b>Сбалансированная среда</b><p>Лактобактерии занимают основную долю сообщества.</p></div>
       </div>
@@ -801,11 +797,11 @@ body.editing #ed-hint{display:block}
   <div class="wrap">
     <h2>От консультации <em>до результата</em></h2>
     <div class="stepsc">
-      <div class="sc"><b>01</b><h3>Обсудить с врачом</h3><p>Гинеколог или репродуктолог решает, дополнит ли исследование картину именно в вашем случае.</p></div>
-      <div class="sc"><b>02</b><h3>Получить набор</h3><p>Набор для взятия материала заказывают в Геномед и получают удобным способом — порядок подскажет клиентский сервис.</p></div>
-      <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Пайпель-биопсию выполняет ваш гинеколог амбулаторно — приходить в офис лаборатории не нужно, специальную подготовку обычно не проводят — уточните у врача.</p></div>
+      <div class="sc"><b>01</b><h3>Обсудить с врачом</h3><p>Гинеколог или репродуктолог определяет, показано ли исследование в конкретной клинической ситуации.</p></div>
+      <div class="sc"><b>02</b><h3>Получить набор</h3><p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис.</p></div>
+      <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Аспирационную пайпель-биопсию эндометрия выполняет гинеколог амбулаторно. Специальной подготовки, как правило, не требуется; условия уточняет лечащий врач.</p></div>
       <div class="sc"><b>04</b><h3>Передать образец</h3><p>Материал в пробирке со стабилизирующим буфером доставляют в медицинский офис или партнёру лаборатории.</p></div>
-      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Результат приходит на электронную почту. Его обсуждают с лечащим врачом — он сопоставит состав микробиоты с остальным обследованием.</p></div>
+      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Заключение направляют на электронную почту. Результат интерпретирует лечащий врач с учётом остальных обследований.</p></div>
     </div>
     <div class="practic">
       <div class="practic-h">Практические вопросы</div>
@@ -815,7 +811,7 @@ body.editing #ed-hint{display:block}
           <p>Исследование и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p></div>
         <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
           <b>Как получить набор</b>
-          <p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и получают в удобное место.</p></div>
+          <p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и доставляют по указанному адресу.</p></div>
         <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2.5L10.5 13.5"/><path d="M21.5 2.5l-7 19-4-8.5-8.5-4 19.5-6.5z"/></svg></span>
           <b>Кто передаёт образец</b>
           <p>Материал в пробирке со стабилизирующим буфером передают в медицинский офис Геномед или партнёру лаборатории.</p></div>
@@ -832,7 +828,7 @@ body.editing #ed-hint{display:block}
     <div class="withpic">
       <div>
         <h2>Что будет в заключении</h2>
-        <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и присылает на электронную почту; решение о тактике и сроке переноса принимает ваш лечащий врач.</p>
+        <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и направляет на электронную почту; решение о тактике и сроке переноса принимает лечащий врач.</p>
       </div>
       <img src="img/lab.jpg" alt="Лаборатория Геномед">
     </div>
@@ -845,7 +841,6 @@ body.editing #ed-hint{display:block}
           <div class="report-row"><b>Соотношение выявленных бактерий</b><span>Таблица выявленных бактерий с долей каждой в процентах, включая лактобактерии</span></div>
           <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный и определяет бактерии до рода (группы близких видов), поэтому доли отражают относительную частоту, а не точное число клеток</span></div>
         </div>
-        <p class="lead"><a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;border-bottom:1px solid currentColor;text-decoration:none">Посмотреть настоящий бланк заключения (PDF)&nbsp;↗</a></p>
       </div>
       <div class="repcard">
       <div class="repcard-h">
@@ -879,7 +874,7 @@ body.editing #ed-hint{display:block}
     <div class="cta-d">
       <div>
         <h2>Готовы сделать исследование?</h2>
-        <p>Если направление уже есть — оформите заказ. Если сомневаетесь, нужно ли исследование именно вам, напишите нам — клиентский сервис запишет вас на консультацию к врачу-генетику.</p>
+        <p>Исследование можно заказать при наличии направления. Если показания не определены, клиентский сервис запишет на консультацию врача-генетика.</p>
         <div class="price"><b>цена уточняется</b><span>срок выполнения — 14 рабочих дней</span></div>
       </div>
       <div class="cta-d-act">
