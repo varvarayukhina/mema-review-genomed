@@ -800,6 +800,65 @@ body.editing #ed-hint{display:block}
 .amr.cons .amr-n b{display:block;color:var(--blue);margin-bottom:10px}
 .amr.cons .amr-n span{color:var(--ink-2)}
 @media(max-width:560px){.amr.cons .amr-r{grid-template-columns:1fr}}
+
+/* ── «Что такое микробиом»: вводная строка, три карточки, полоса «Что оценивает» ── */
+.mb-lead{font-size:clamp(1.12rem,1.5vw,1.3rem);font-weight:600;color:var(--ink);max-width:62ch;margin:22px 0 0}
+.mb3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.mb{background:var(--soft);border-radius:18px;padding:22px 22px 20px}
+.mb p{font-size:1rem;color:var(--ink-2);margin:12px 0 0}
+.mb-chip{display:inline-block;font-size:.8rem;font-weight:700;padding:4px 11px;border-radius:100px}
+.mb-chip.ok{background:var(--ok-soft);color:#12704E}
+.mb-chip.warn{background:#FFF2E0;color:#9A5B12}
+.mb-chip.blue{background:var(--acc-soft);color:var(--blue)}
+.mb-what{display:grid;grid-template-columns:auto 1fr;gap:6px 28px;align-items:baseline;margin-top:16px;
+  padding:18px 24px;border-radius:18px;border:1px solid var(--line);border-left:3px solid var(--blue);background:#fff}
+.mb-what b{font-size:1rem;white-space:nowrap}
+.mb-what p{margin:0;color:var(--ink-2)}
+/* показания: три колонки по исследованиям */
+.ind3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.ind{display:flex;flex-direction:column;gap:6px;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.ind-h{display:flex;flex-direction:column;gap:4px;margin-bottom:4px}
+.ind-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ic)}
+.ind-h b{font-size:1.1rem;color:var(--ic)}
+.ind h4{margin:10px 0 0;font-size:.96rem}
+.ind ul{margin:4px 0 0;padding-left:18px;display:grid;gap:6px}
+.ind li{font-size:.95rem;color:var(--ink-2)}
+.ind-note{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft);font-size:.88rem;color:var(--muted)}
+.ind--endo{--ic:#0057FF}.ind--vag{--ic:#0E8C7F}.ind--inf{--ic:#7A4FBF}
+/* раздел «Для врачей» */
+#vrachi{background:#fff}
+#vrachi .vr-first{margin-top:0}
+#vrachi .vr-h3{font-size:clamp(22px,2.4vw,28px)}
+#vrachi .vr-h3:not(.vr-first){margin-top:64px}
+/* заключение: структура сеткой 2×3 рядом с карточкой примера — высоты выравниваются */
+#vrachi .repgrid{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:stretch;margin-top:22px}
+#vrachi .report{display:grid;grid-template-columns:1fr 1fr;height:100%}
+#vrachi .report-h{grid-column:1/-1}
+#vrachi .report-row{display:block;padding:16px 20px;border-top:1px solid var(--line-soft)}
+#vrachi .report-row:nth-child(odd){border-left:1px solid var(--line-soft)}
+#vrachi .report-row b{display:block;margin-bottom:5px}
+#vrachi .report-row span{display:block;font-size:.93rem;color:var(--ink-2)}
+#vrachi .repcard{height:100%;display:flex;flex-direction:column}
+#vrachi .repcard-f{margin-top:auto}
+@media(max-width:980px){#vrachi .repgrid{grid-template-columns:1fr}}
+@media(max-width:640px){#vrachi .report{grid-template-columns:1fr}#vrachi .report-row:nth-child(odd){border-left:0}}
+#paneli{background:var(--soft)}
+[id]{scroll-margin-top:84px}
+/* навигация по странице: крупнее и плотнее */
+.subnav-in{padding:10px 0;gap:14px;flex-wrap:nowrap}
+.subnav nav{flex:1 1 auto;min-width:0;flex-wrap:nowrap;gap:2px;overflow-x:auto;scrollbar-width:none}
+.subnav nav::-webkit-scrollbar{display:none}
+.subnav-act{flex:none}
+@media(max-width:1100px){.subnav-in{flex-wrap:wrap}.subnav nav{flex-basis:100%}}
+.hero-d .facts{max-width:660px}
+.subnav nav{gap:4px;align-items:center}
+.subnav nav a{white-space:nowrap;font-size:.96rem;font-weight:600;color:var(--ink-2);padding:8px 12px;border-radius:100px;border-bottom:0;text-decoration:none}
+.subnav nav a:hover{background:var(--soft);color:var(--ink)}
+.subnav nav a.act{background:var(--acc-soft);color:var(--blue);border-bottom:0}
+.subnav-act .btn{padding:10px 18px;font-size:.94rem}
+@media(max-width:900px){.subnav nav a{font-size:.92rem;padding:8px 12px}}
+@media(max-width:980px){.ind3{grid-template-columns:1fr}}
+@media(max-width:860px){.mb3{grid-template-columns:1fr}.mb-what{grid-template-columns:1fr}.mb-what b{white-space:normal}}
 </style>
 </head>
 <body>
@@ -842,13 +901,7 @@ body.editing #ed-hint{display:block}
 
 <div class="subnav">
   <div class="wrap subnav-in">
-    <nav><span class="subnav-lbl">На этой странице:</span>
-      <a href="#chto-takoe">Что такое микробиом</a>
-      <a href="#chasti">Три исследования</a>
-      <a href="#metod">Метод</a>
-      <a href="#kak">Как проходит</a>
-      <a href="#paneli">Панели и цены</a>
-    </nav>
+    <nav aria-label="Разделы страницы"><a href="#chto-takoe">Микробиом</a><a href="#pokazaniya">Показания</a><a href="#chasti">Исследования</a><a href="#kak">Как проходит</a><a href="#paneli">Панели и цены</a><a href="#metod">Для врачей</a></nav>
     <div class="subnav-act">
       <button class="btn btn-line" type="button" data-cons>Задать вопрос</button>
       <a class="btn btn-primary" href="#paneli">Выбрать панель</a>
@@ -859,38 +912,57 @@ body.editing #ed-hint{display:block}
 <section id="chto-takoe">
   <div class="wrap">
     <h2>Что такое <em>микробиом</em></h2>
-    <div class="intro2">
-      <div>
-        <p>Микробиом — сообщество микроорганизмов, которое в норме населяет слизистые оболочки. У большинства здоровых женщин репродуктивного возраста во влагалище преобладают лактобактерии.</p>
-        <p>Лактобактерии поддерживают кислую среду и препятствуют росту условно-патогенных бактерий. При снижении их доли преобладать начинают другие бактерии, прежде всего анаэробные, — это состояние называют дисбиозом. Оно может протекать как с симптомами, так и бессимптомно.</p>
-        <p>По данным секвенирования, бактерии присутствуют и в полости матки, хотя их значительно меньше. Считается, что они поступают преимущественно восходящим путём из влагалища, поэтому в ряде клинических ситуаций оба отдела исследуют вместе.</p>
-      </div>
-      <div class="quotebox">
-        <b>Что оценивает исследование</b>
-        <p>Состав микробиоты, долю лактобактерий и соотношение видов, а также наличие возбудителей урогенитальных инфекций.</p>
-      </div>
+    <p class="mb-lead">Микробиом — сообщество микроорганизмов, которое в норме населяет слизистые оболочки.</p>
+    <div class="mb3">
+      <div class="mb"><span class="mb-chip ok">Норма</span><p>У большинства здоровых женщин репродуктивного возраста во влагалище преобладают лактобактерии. Они поддерживают кислую среду и препятствуют росту условно-патогенных бактерий.</p></div>
+      <div class="mb"><span class="mb-chip warn">Дисбиоз</span><p>При снижении доли лактобактерий преобладать начинают другие бактерии, прежде всего анаэробные. Дисбиоз может протекать как с симптомами, так и бессимптомно.</p></div>
+      <div class="mb"><span class="mb-chip blue">Полость матки</span><p>По данным секвенирования, бактерии есть и в полости матки, хотя их значительно меньше. Считается, что они поступают преимущественно восходящим путём из влагалища.</p></div>
+    </div>
+    <div class="mb-what"><b>Что оценивает исследование</b><p>Состав микробиоты, долю лактобактерий и соотношение видов, а также наличие возбудителей урогенитальных инфекций.</p></div>
+
+    <h3 class="tp-sub" id="pokazaniya">В каких случаях врач может назначить исследование</h3>
+    <p class="lead">Исследования не входят в обязательный объём обследования: их назначает врач индивидуально.</p>
+    <div class="ind3">
+      <div class="ind ind--endo"><div class="ind-h"><span class="ind-n">исследование 1</span><b>Микробиота эндометрия</b></div>
+          <h4>Неудачи имплантации и потери беременности</h4><ul><li>Повторные неудачные переносы эмбрионов</li>
+            <li>В том числе после ПГТ-А и с донорскими яйцеклетками</li>
+            <li>Привычное невынашивание — две и более потери беременности до 22 недель</li></ul>
+          <h4>Воспаление и бесплодие неясного генеза</h4><ul><li>Подозрение на хронический эндометрит</li>
+            <li>Бессимптомное воспаление — для уточнения преобладающих бактерий</li>
+            <li>Бесплодие неясного генеза</li>
+            <li>Другие случаи — по решению лечащего врача</li></ul>
+          <p class="ind-note">Назначают, когда предыдущие этапы обследования не дали объяснения.</p></div>
+      <div class="ind ind--vag"><div class="ind-h"><span class="ind-n">исследование 2</span><b>Микробиота влагалища</b></div>
+          <h4>Рецидивирующие состояния</h4><ul><li>Выделения, зуд, дискомфорт, возобновляющиеся после лечения</li>
+            <li>Рецидивирующий кандидоз — для определения вида возбудителя</li>
+            <li>Отсутствие или кратковременность эффекта ранее назначенной терапии</li>
+            <li>Оценка состава после курса антибиотиков — в срок, который определяет врач</li></ul>
+          <h4>Подготовка к вмешательству или беременности</h4><ul><li>Подготовка к программе ЭКО и к переносу эмбриона</li>
+            <li>Перед гистероскопией и введением внутриматочной спирали</li>
+            <li>Планирование беременности при бактериальном вагинозе в анамнезе</li>
+            <li>Другие случаи — по решению лечащего врача</li></ul>
+          <p class="ind-note">Не заменяет осмотр и микроскопию мазка.</p></div>
+      <div class="ind ind--inf"><div class="ind-h"><span class="ind-n">исследование 3</span><b>Урогенитальные инфекции</b></div>
+          <h4>Клинические показания</h4><ul><li>Жалобы: выделения, зуд, дискомфорт, боли внизу живота</li>
+            <li>Инфекция выявлена у партнёра</li>
+            <li>Воспалительные заболевания органов малого таза в анамнезе</li>
+            <li>Контроль после лечения — в срок, который определяет врач</li></ul>
+          <h4>Подготовка к вмешательству или беременности</h4><ul><li>Подготовка к программе ЭКО и к переносу эмбриона</li>
+            <li>Перед внутриматочными вмешательствами</li>
+            <li>Планирование беременности</li>
+            <li>Потери беременности в анамнезе — по решению лечащего врача</li></ul>
+          <p class="ind-note">Выявление условно-патогенных бактерий само по себе не равнозначно инфекции, требующей лечения.</p></div>
     </div>
 
-    <h3 class="tp-sub">Сравнение с другими методами</h3>
-    <p class="lead">Микроскопия мазка, посев и ПЦР отвечают на разные клинические вопросы, но не дают полной картины сообщества. Секвенирование ДНК определяет его состав и соотношение микроорганизмов.</p>
-    <div class="cmp">
-      <div class="cmp-h"><span>Метод</span><span>На какой вопрос отвечает</span><span>Ограничения</span></div>
-      <div class="cmp-r"><b>Микроскопия мазка</b><span>Есть ли признаки воспаления и косвенные признаки дисбиоза — по внешнему виду клеток и флоры.</span><i>Не определяет видовой состав и доли бактерий; результат зависит от квалификации специалиста.</i></div>
-      <div class="cmp-r"><b>Бактериологический посев</b><span>Бактерии, выросшие на питательной среде, и их чувствительность к антибиотикам.</span><i>Не выявляет анаэробные бактерии, которые практически не культивируются на стандартных средах, — а именно они преобладают при дисбиозе.</i></div>
-      <div class="cmp-r"><b>ПЦР на отдельных возбудителей</b><span>Есть ли в образце конкретный микроорганизм из заранее заданного списка.</span><i>Не выявляет микроорганизмы вне заданного списка и не оценивает их соотношение.</i></div>
-      <div class="cmp-r hi"><b>Секвенирование ДНК</b><span>Состав сообщества и доля каждого микроорганизма, включая некультивируемые бактерии.</span><i>Не отличает живые микроорганизмы от их ДНК; метод полуколичественный, часть бактерий определяется только до рода.</i></div>
-    </div>
-    <p class="plan-note">В многоцентровом исследовании (1740 пациенток) чувствительность диагностики бактериального вагиноза по критериям Амселя составила 75,6 %, молекулярного теста — 92,7 % (Schwebke J.&nbsp;R. и соавт., J Clin Microbiol, 2018 — <a href="https://pubmed.ncbi.nlm.nih.gov/29643195/" target="_blank" rel="noopener">PubMed</a>).</p>
 
     <h3 class="tp-sub">Микробиота влагалища и полости матки различается</h3>
     <p class="lead">Хотя микроорганизмы могут поступать в полость матки из влагалища, состав микробиоты двух отделов совпадает не всегда. В проспективном исследовании 438 пациенток результаты посева из влагалища и из полости матки совпали только в 32,6 % случаев. Поэтому по вагинальному материалу нельзя достоверно судить о микробиоте эндометрия, и наоборот. Выбор исследования определяется клинической задачей.</p>
-    <p class="plan-note">Cicinelli E. и соавт., Fertil Steril, 2008 — <a href="https://pubmed.ncbi.nlm.nih.gov/17531993/" target="_blank" rel="noopener">PubMed</a></p>
   </div>
 </section>
 
 <section class="soft" id="chasti">
   <div class="wrap">
-    <h2>Три <em>исследования</em></h2>
+    <h2>Три исследования — <em>единая картина</em></h2>
     <p class="lead">Исследования различаются видом материала, клиническим вопросом и показаниями. Выберите исследование — ниже откроется его описание. Заказать можно любое из них или любое сочетание.</p>
 
     <div class="tabs">
@@ -949,30 +1021,7 @@ body.editing #ed-hint{display:block}
           </div>
         </div>
 
-        <h3 class="tp-sub">В каких случаях врач может назначить это исследование</h3>
-        <p class="lead">Исследование не входит в обязательный объём обследования: его назначают индивидуально, когда предыдущие этапы не дали объяснения.</p>
-        <div class="groups groups--2">
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div>
-            <h3>Неудачи имплантации и потери беременности</h3><ul>
-            <li>Повторные неудачные переносы эмбрионов</li>
-            <li>В том числе переносы эмбрионов с нормальным набором хромосом по данным ПГТ-А и переносы с донорскими яйцеклетками</li>
-            <li>Привычное невынашивание — две и более потери беременности до 22 недель</li></ul></div>
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-            <h3>Воспаление и бесплодие неясного генеза</h3><ul>
-            <li>Подозрение на хронический эндометрит: исследование уточняет состав микробного сообщества при соответствующей клинической картине</li>
-            <li>Бессимптомное воспаление — для уточнения преобладающих бактерий</li>
-            <li>Бесплодие неясного генеза: стандартное обследование не позволило установить причину</li>
-            <li>Другие случаи — по решению лечащего врача</li></ul></div>
-        </div>
-
         <div class="tp-foot"><b>Ограничения исследования.</b> Исследование не устанавливает причину бесплодия само по себе, не заменяет гистологическое исследование эндометрия, не оценивает его строение и готовность к переносу и не определяет дату переноса эмбриона.</div>
-        <h3 class="tp-sub">Как заказать это исследование</h3>
-        <p class="lead">Микробиота эндометрия входит в три панели. Выберите подходящую — состав и стоимость раскроются в блоке заказа.</p>
-        <div class="mplans">
-          <a class="mplan" href="#paneli" data-pick="Микробиота эндометрия"><b>Микробиота эндометрия</b><span>Только состав сообщества полости матки</span><strong>14 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Микробиота эндометрия + инфекции"><b>Микробиота эндометрия + инфекции</b><span>Плюс возбудители — из того же образца</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
-        </div>
       </div>
 
       <!-- ─────────── ВЛАГАЛИЩЕ ─────────── -->
@@ -1016,33 +1065,9 @@ body.editing #ed-hint{display:block}
           <div class="cstl-r bad"><i></i><b>Смешанное сообщество</b><span>смещённое</span>
             <p>Доля лактобактерий низкая, основную долю составляют анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом; оно часто протекает бессимптомно: в популяционном исследовании в США о жалобах сообщали только 15,7 % женщин с лабораторными признаками вагиноза.</p></div>
         </div>
-        <p class="plan-note">Тип сообщества — характеристика состава, а не диагноз: сообщество без преобладания лактобактерий встречается примерно у четверти здоровых женщин репродуктивного возраста. Результат оценивает врач вместе с клинической картиной и остальным обследованием.<br>Ravel J. и соавт., PNAS, 2011 — <a href="https://pubmed.ncbi.nlm.nih.gov/20534435/" target="_blank" rel="noopener">PubMed</a> · Koumans E.&nbsp;H. и соавт., Sex Transm Dis, 2007 — <a href="https://pubmed.ncbi.nlm.nih.gov/17621244/" target="_blank" rel="noopener">PubMed</a></p>
-
-        <h3 class="tp-sub">В каких случаях врач может назначить это исследование</h3>
-        <p class="lead">Исследование назначают индивидуально: оно не входит в обязательный объём обследования и не заменяет осмотр и микроскопию мазка.</p>
-        <div class="groups groups--2">
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/></svg></div>
-            <h3>Рецидивирующие состояния</h3><ul>
-            <li>Выделения, зуд, дискомфорт, возобновляющиеся после лечения</li>
-            <li>Рецидивирующий кандидоз — для определения вида возбудителя</li>
-            <li>Отсутствие или кратковременность эффекта ранее назначенной терапии</li>
-            <li>Оценка состава после курса антибиотиков — в срок, который определяет врач</li></ul></div>
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg></div>
-            <h3>Подготовка к вмешательству или беременности</h3><ul>
-            <li>Подготовка к программе ЭКО и к переносу эмбриона</li>
-            <li>Перед внутриматочными вмешательствами: гистероскопией, введением внутриматочной спирали</li>
-            <li>Планирование беременности, если раньше были эпизоды бактериального вагиноза</li>
-            <li>Другие случаи — по решению лечащего врача</li></ul></div>
-        </div>
+        <p class="plan-note">Тип сообщества — характеристика состава, а не диагноз: сообщество без преобладания лактобактерий встречается примерно у четверти здоровых женщин репродуктивного возраста. Результат оценивает врач вместе с клинической картиной и остальным обследованием.</p>
 
         <div class="tp-foot"><b>Ограничения исследования.</b> Состав вагинальной микробиоты — не диагноз: одни и те же находки у женщины с жалобами и без жалоб оценивают по-разному. Исследование не заменяет осмотр и микроскопию мазка и не определяет лечение — терапию назначает лечащий врач.</div>
-        <h3 class="tp-sub">Как заказать это исследование</h3>
-        <p class="lead">Микробиота влагалища входит в три панели. Выберите подходящую — состав и стоимость раскроются в блоке заказа.</p>
-        <div class="mplans">
-          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища"><b>Микробиота влагалища</b><span>Только состав и тип сообщества</span><strong>14 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища + инфекции"><b>Микробиота влагалища + инфекции</b><span>Плюс возбудители — без внутриматочного вмешательства</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
-        </div>
       </div>
 
       <!-- ─────────── ИНФЕКЦИИ ─────────── -->
@@ -1121,51 +1146,11 @@ body.editing #ed-hint{display:block}
           </div>
         </div>
 
-        <h3 class="tp-sub">В каких случаях врач может назначить это исследование</h3>
-        <p class="lead">Набор мишеней и момент исследования определяет врач. Выявление условно-патогенных бактерий само по себе не равнозначно инфекции, требующей лечения.</p>
-        <div class="groups groups--2">
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M9.5 12.4l1.8 1.8 3.3-3.7"/></svg></div>
-            <h3>Клинические показания</h3><ul>
-            <li>Жалобы: выделения, зуд, дискомфорт, боли внизу живота</li>
-            <li>Инфекция выявлена у партнёра</li>
-            <li>Воспалительные заболевания органов малого таза в анамнезе</li>
-            <li>Контроль после лечения — в срок, который определяет врач</li></ul></div>
-          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="3"/><path d="M8 3v3M16 3v3M3.5 10h17"/></svg></div>
-            <h3>Подготовка к вмешательству или беременности</h3><ul>
-            <li>Подготовка к программе ЭКО и к переносу эмбриона</li>
-            <li>Перед внутриматочными вмешательствами</li>
-            <li>Планирование беременности</li>
-            <li>Потери беременности в анамнезе — по решению лечащего врача</li></ul></div>
-        </div>
-
         <div class="nolist">
           <b>Ограничения исследования</b>
           <p>Анализ выполняется по ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — не определяются: для них проводят отдельные исследования. Выявление ДНК возбудителя говорит о его присутствии в образце, но не о стадии и активности процесса — это оценивает врач вместе с клинической картиной.</p>
         </div>
-        <h3 class="tp-sub">Как заказать это исследование</h3>
-        <p class="lead">Возбудителей определяют отдельно или вместе с любой из микробиот — в том же образце.</p>
-        <div class="mplans">
-          <a class="mplan" href="#paneli" data-pick="Урогенитальные инфекции"><b>Урогенитальные инфекции</b><span>Только возбудители и гены устойчивости</span><strong>6 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища + инфекции"><b>Микробиота влагалища + инфекции</b><span>Плюс состав вагинального сообщества</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
-          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="amr" id="metod">
-  <div class="wrap amr-in">
-    <div>
-      <div class="amr-tag">метод</div>
-      <h2>Один образец, <em>две линии анализа</em></h2>
-      <p>Состав сообщества и конкретные возбудители определяют разными группами мишеней. Маркерные участки 16S (у бактерий) и ITS (у грибов) — фрагменты ДНК с консервативными и вариабельными областями: по ним определяют состав сообщества и доли микроорганизмов. Зонды панели обогащения выявляют конкретных возбудителей, в том числе присутствующих в низкой концентрации. Обе линии выполняются из одного образца.</p>
-    </div>
-    <div class="amr-r">
-      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов в панели обогащения</span></div>
-      <div class="amr-n"><b>450+</b><span>родов бактерий, грибов, вирусов и паразитов</span></div>
-      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов в том же образце</span></div>
-      <div class="amr-n"><b>AMR</b><span>гены устойчивости к антибиотикам — их учитывают при подборе терапии</span></div>
     </div>
   </div>
 </section>
@@ -1187,7 +1172,7 @@ body.editing #ed-hint{display:block}
     </div>
     <h3 class="tp-sub kit-h">Какой материал понадобится</h3>
     <div class="kit-mat">
-      <div class="gen-kit"><figure class="gen-slot" style="--ar:3/2"><img src="img/gen-07-nabor.jpg" alt="Условная иллюстрация: стерильный зонд и пробирка с транспортной средой"></figure><p class="gen-cap">Условная иллюстрация: набор для взятия материала</p></div>
+      <div class="gen-kit"><figure class="gen-slot" style="--ar:3/2"><img src="img/gen-07-nabor.jpg" alt="Условная иллюстрация: стерильный зонд и пробирка с транспортной средой"></figure></div>
 
     <div class="mat">
       <div class="mat-i"><b>Если выбрана микробиота эндометрия</b><p>Нужна аспирационная пайпель-биопсия — её выполняет гинеколог. Процедура занимает несколько минут и может сопровождаться кратковременной тянущей болью. День цикла определяет лечащий врач.</p></div>
@@ -1211,49 +1196,6 @@ body.editing #ed-hint{display:block}
         <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2z"/><path d="M8 8h7M8 12h5"/></svg></span>
           <b>Срок исследования</b>
           <p>14 рабочих дней с момента поступления образца в лабораторию. Дата поступления и дата выдачи указаны в заключении.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="soft" id="zaklyuchenie">
-  <div class="wrap">
-    <h2>Что будет <em>в заключении</em></h2>
-    <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и направляет на электронную почту. Объём заключения зависит от выбранной панели: в него входят только заказанные исследования.</p>
-    <div class="repgrid">
-      <div>
-        <div class="report">
-          <div class="report-h">Структура заключения</div>
-          <div class="report-row"><b>Данные пациента и образца</b><span>ФИО, дата рождения, вид биоматериала, номер образца, даты поступления и выдачи, врач, направивший на исследование</span></div>
-          <div class="report-row"><b>Метод исследования</b><span>Секвенирование ДНК: маркерные участки 16S и ITS для состава сообщества и панель обогащения для конкретных возбудителей</span></div>
-          <div class="report-row"><b>Соотношение выявленных микроорганизмов</b><span>Таблица с долей каждого в процентах — отдельно по каждому исследованному материалу, если заказаны обе микробиоты</span></div>
-          <div class="report-row"><b>Выявленные возбудители</b><span>Микроорганизмы, в норме отсутствующие, и клинически значимые условно-патогенные бактерии — с количественной оценкой</span></div>
-          <div class="report-row"><b>Комментарий врача-генетика</b><span>Пояснение к полученному составу и к находкам, значимым для дальнейшего обследования</span></div>
-          <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный, часть бактерий определяется только до рода; доли отражают относительное содержание, а не абсолютное число клеток</span></div>
-        </div>
-      </div>
-      <div class="repcard">
-        <div class="repcard-h">
-          <span class="repcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
-          <div><b>Состав сообщества</b><small>фрагмент заключения</small></div>
-          <span class="repcard-tag">пример</span>
-        </div>
-        <div class="repcard-b">
-          <div class="stackbar">
-            <i style="width:92.4%" class="s1"></i><i style="width:3.1%" class="s2"></i><i style="width:1.8%" class="s3"></i><i style="width:1.2%" class="s4"></i><i style="width:1.5%" class="s5"></i>
-          </div>
-          <div class="leg">
-            <div><span class="dot s1"></span>Lactobacillus<b>92,4 %</b></div>
-            <div><span class="dot s2"></span>Gardnerella<b>3,1 %</b></div>
-            <div><span class="dot s3"></span>Prevotella<b>1,8 %</b></div>
-            <div><span class="dot s4"></span>Streptococcus<b>1,2 %</b></div>
-            <div><span class="dot s5"></span>Прочие бактерии<b>1,5 %</b></div>
-          </div>
-        </div>
-        <div class="repcard-f">
-          <span>Цифры приведены для примера. Метод полуколичественный, часть бактерий определяется только до рода.</span>
-          <a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener">Настоящий бланк (PDF)&nbsp;↗</a>
-        </div>
       </div>
     </div>
   </div>
@@ -1379,6 +1321,77 @@ body.editing #ed-hint{display:block}
       </div>
     </div>
     <p class="sum-note">Исследование назначается индивидуально; результат интерпретирует лечащий врач с учётом других обследований. Стоимость указана справочно и не является публичной офертой — актуальные цены в каталоге <a href="https://price.genomed.ru/">price.genomed.ru</a>.</p>
+  </div>
+</section>
+
+<section class="amr" id="metod">
+  <div class="wrap amr-in">
+    <div>
+      <div class="amr-tag">для врачей · метод</div>
+      <h2>Один образец, <em>две линии анализа</em></h2>
+      <p>Состав сообщества и конкретные возбудители определяют разными группами мишеней. Маркерные участки 16S (у бактерий) и ITS (у грибов) — фрагменты ДНК с консервативными и вариабельными областями: по ним определяют состав сообщества и доли микроорганизмов. Зонды панели обогащения выявляют конкретных возбудителей, в том числе присутствующих в низкой концентрации. Обе линии выполняются из одного образца.</p>
+    </div>
+    <div class="amr-r">
+      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов в панели обогащения</span></div>
+      <div class="amr-n"><b>450+</b><span>родов бактерий, грибов, вирусов и паразитов</span></div>
+      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов в том же образце</span></div>
+      <div class="amr-n"><b>AMR</b><span>гены устойчивости к антибиотикам — их учитывают при подборе терапии</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="vrachi">
+  <div class="wrap">
+
+    <h3 class="tp-sub vr-h3 vr-first">Сравнение с другими методами</h3>
+    <p class="lead">Микроскопия мазка, посев и ПЦР отвечают на разные клинические вопросы, но не дают полной картины сообщества. Секвенирование ДНК определяет его состав и соотношение микроорганизмов.</p>
+    <div class="cmp">
+      <div class="cmp-h"><span>Метод</span><span>На какой вопрос отвечает</span><span>Ограничения</span></div>
+      <div class="cmp-r"><b>Микроскопия мазка</b><span>Есть ли признаки воспаления и косвенные признаки дисбиоза — по внешнему виду клеток и флоры.</span><i>Не определяет видовой состав и доли бактерий; результат зависит от квалификации специалиста.</i></div>
+      <div class="cmp-r"><b>Бактериологический посев</b><span>Бактерии, выросшие на питательной среде, и их чувствительность к антибиотикам.</span><i>Не выявляет анаэробные бактерии, которые практически не культивируются на стандартных средах, — а именно они преобладают при дисбиозе.</i></div>
+      <div class="cmp-r"><b>ПЦР на отдельных возбудителей</b><span>Есть ли в образце конкретный микроорганизм из заранее заданного списка.</span><i>Не выявляет микроорганизмы вне заданного списка и не оценивает их соотношение.</i></div>
+      <div class="cmp-r hi"><b>Секвенирование ДНК</b><span>Состав сообщества и доля каждого микроорганизма, включая некультивируемые бактерии.</span><i>Не отличает живые микроорганизмы от их ДНК; метод полуколичественный, часть бактерий определяется только до рода.</i></div>
+    </div>
+    <p class="plan-note">В многоцентровом исследовании (1740 пациенток) чувствительность диагностики бактериального вагиноза по критериям Амселя составила 75,6 %, молекулярного теста — 92,7 %.</p>
+
+    <h3 class="tp-sub vr-h3">Что будет в заключении</h3>
+    <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и направляет на электронную почту. Объём заключения зависит от выбранной панели: в него входят только заказанные исследования.</p>
+    <div class="repgrid">
+      <div>
+        <div class="report">
+          <div class="report-h">Структура заключения</div>
+          <div class="report-row"><b>Данные пациента и образца</b><span>ФИО, дата рождения, вид биоматериала, номер образца, даты поступления и выдачи, врач, направивший на исследование</span></div>
+          <div class="report-row"><b>Метод исследования</b><span>Секвенирование ДНК: маркерные участки 16S и ITS для состава сообщества и панель обогащения для конкретных возбудителей</span></div>
+          <div class="report-row"><b>Соотношение выявленных микроорганизмов</b><span>Таблица с долей каждого в процентах — отдельно по каждому исследованному материалу, если заказаны обе микробиоты</span></div>
+          <div class="report-row"><b>Выявленные возбудители</b><span>Микроорганизмы, в норме отсутствующие, и клинически значимые условно-патогенные бактерии — с количественной оценкой</span></div>
+          <div class="report-row"><b>Комментарий врача-генетика</b><span>Пояснение к полученному составу и к находкам, значимым для дальнейшего обследования</span></div>
+          <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный, часть бактерий определяется только до рода; доли отражают относительное содержание, а не абсолютное число клеток</span></div>
+        </div>
+      </div>
+      <div class="repcard">
+        <div class="repcard-h">
+          <span class="repcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <div><b>Состав сообщества</b><small>фрагмент заключения</small></div>
+          <span class="repcard-tag">пример</span>
+        </div>
+        <div class="repcard-b">
+          <div class="stackbar">
+            <i style="width:92.4%" class="s1"></i><i style="width:3.1%" class="s2"></i><i style="width:1.8%" class="s3"></i><i style="width:1.2%" class="s4"></i><i style="width:1.5%" class="s5"></i>
+          </div>
+          <div class="leg">
+            <div><span class="dot s1"></span>Lactobacillus<b>92,4 %</b></div>
+            <div><span class="dot s2"></span>Gardnerella<b>3,1 %</b></div>
+            <div><span class="dot s3"></span>Prevotella<b>1,8 %</b></div>
+            <div><span class="dot s4"></span>Streptococcus<b>1,2 %</b></div>
+            <div><span class="dot s5"></span>Прочие бактерии<b>1,5 %</b></div>
+          </div>
+        </div>
+        <div class="repcard-f">
+          
+          <a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener">Настоящий бланк (PDF)&nbsp;↗</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
