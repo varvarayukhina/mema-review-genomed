@@ -1,0 +1,1644 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>ГЕНОБИОМ — микробиота эндометрия, влагалища и урогенитальные инфекции | Геномед</title>
+<meta name="description" content="ГЕНОБИОМ — исследование микробиоты эндометрия и влагалища и возбудителей урогенитальных инфекций. Три части, которые заказывают по отдельности или вместе. Секвенирование ДНК, результат за 14 рабочих дней.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+
+
+/* цветной блок заказа (общий для всех версий) */
+.cta-d{background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  border-radius:28px;padding:54px 56px;color:#fff;display:grid;
+  grid-template-columns:1.25fr auto;gap:40px;align-items:center}
+.cta-d h2{color:#fff;font-size:clamp(26px,3vw,38px)}
+.cta-d p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.cta-d .price{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+.cta-d .price b{font-size:2.1rem;font-weight:800}
+.cta-d .price span{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cta-d-act{display:grid;gap:12px;min-width:260px}
+.cta-d-act .btn{justify-content:center;width:100%}
+.cta-d-act .btn-w{background:#fff;color:var(--blue)}
+.cta-d-act .btn-w:hover{background:#EAF1FF}
+.cta-d-act .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-d-act .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-d-note{margin-top:14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+@media(max-width:860px){.cta-d{grid-template-columns:1fr;padding:38px 28px;gap:28px}.cta-d-act{min-width:0}}
+
+/* модалка выбора способа связи */
+#cons-dlg{border:0;padding:0;border-radius:24px;max-width:460px;width:calc(100% - 32px);
+  box-shadow:0 40px 80px -20px rgba(10,37,64,.45);background:#fff;color:var(--ink)}
+#cons-dlg::backdrop{background:rgba(10,37,64,.55);backdrop-filter:blur(2px)}
+.cd-h{padding:26px 28px 18px;border-bottom:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.cd-h b{font-family:'Montserrat';font-weight:800;font-size:1.22rem;letter-spacing:-.02em;line-height:1.2}
+.cd-h span{display:block;font-weight:500;font-size:.93rem;color:var(--muted);margin-top:7px}
+.cd-x{border:0;background:var(--soft);width:32px;height:32px;border-radius:50%;cursor:pointer;
+  color:var(--ink-2);font-size:1.05rem;line-height:1;flex:0 0 auto}
+.cd-x:hover{background:var(--line-soft)}
+.cd-b{padding:16px 20px 22px;display:grid;gap:8px}
+.cd-b a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;
+  text-decoration:none;color:var(--ink);font-weight:700;font-size:1rem;
+  border:1px solid var(--line);transition:border-color .15s,background .15s}
+.cd-b a:hover{border-color:var(--blue);background:var(--soft)}
+.cd-b a i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;color:#fff}
+.cd-b a i svg{width:19px;height:19px}
+.cd-wa i{background:#25D366}
+.cd-tg i{background:#27A7E8}
+.cd-mx i{background:#6E4BF6;font-style:normal;font-weight:800;font-size:.9rem}
+.cd-b a small{display:block;font-weight:500;font-size:.85rem;color:var(--muted);margin-top:2px}
+.cd-f{padding:0 20px 22px;font-size:.9rem;color:var(--muted)}
+.cd-f a{color:var(--blue);font-weight:700;text-decoration:none}
+:root{
+  --bg:#fff; --soft:#F4F8FE; --ink:#0A2540; --ink-2:#2E4A6B; --muted:#6E839C;
+  --line:#D8E4F2; --line-soft:#ECF2FB;
+  --blue:#0057FF; --blue-2:#0046CC; --cyan:#00C2FF;
+  --ok:#1AA06D; --ok-soft:#E4F7EF; --stop:#D2453E; --stop-soft:#FDEBEA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-weight:500;font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.03em;
+  line-height:1.1;margin:0;text-wrap:balance}
+h2 em,h1 em{font-style:normal;color:var(--blue)}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.eyebrow span{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:100px;
+  font-weight:700;font-size:1rem;text-decoration:none;border:1.5px solid transparent;
+  transition:background .18s,border-color .18s,color .18s;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-2)}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-line:hover{border-color:var(--blue);color:var(--blue)}
+.btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* шапка */
+.hdr{border-bottom:1px solid var(--line-soft);padding:16px 0;background:#fff}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.hdr-logo img{width:190px;height:auto}
+.hdr-c{display:flex;flex-direction:column;align-items:center;gap:11px;flex:1;min-width:280px}
+.hdr-tag{color:#1385a5;font-size:.92rem;font-weight:600;margin:0;text-align:center}
+.hdr-nav{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.hdr-nav a{text-transform:uppercase;font-weight:700;font-size:.85rem;color:var(--ink);text-decoration:none}
+.hdr-nav a:hover{color:var(--blue)}
+.hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right}
+.hdr-soc{display:flex;gap:9px;margin-bottom:2px}
+.hdr-soc a{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;
+  background:var(--soft);color:var(--blue)}
+.hdr-soc svg{width:14px;height:14px}
+.hdr-serv{font-size:.86rem;font-weight:700;text-decoration:none}
+.hdr-phone{font-size:1rem;font-weight:800;color:var(--blue);text-decoration:none}
+@media(max-width:980px){.hdr-nav{display:none}}
+
+/* подвал */
+.ftr{background:#0A2540;color:rgba(255,255,255,.72);
+  padding:56px 0 calc(34px + env(safe-area-inset-bottom,0px));margin-top:0}
+.ftr-top{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:36px;
+  padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.14)}
+.ftr-brand img{width:170px;filter:brightness(0) invert(1);opacity:.92}
+.ftr-brand p{margin-top:16px;font-size:.88rem;max-width:30ch}
+.ftr-col{display:grid;gap:10px;align-content:start;font-size:.88rem}
+.ftr-col b{color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.ftr-col a{color:rgba(255,255,255,.72);text-decoration:none}
+.ftr-col a:hover{color:#fff}
+.ftr-warn{margin-top:28px;display:inline-block;padding:13px 18px;border-radius:12px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+  font-weight:700;font-size:.9rem;color:#fff}
+.ftr-bottom{margin-top:20px;font-size:.82rem;color:rgba(255,255,255,.5);max-width:100ch}
+.ftr-bottom a{color:rgba(255,255,255,.75)}
+@media(max-width:900px){.ftr-top{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:560px){.ftr-top{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+[hidden]{display:none!important}
+
+/* переключатель версий (только для показа) */
+.vbar{background:#101A22;color:#fff;font-size:.82rem;padding:9px 0}
+.vbar-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.vbar b{font-weight:700;opacity:.65;font-weight:500}
+.vbar a{color:rgba(255,255,255,.62);text-decoration:none;font-weight:600}
+.vbar a:hover{color:#fff}
+.vbar a.on{color:#fff;border-bottom:2px solid var(--blue);padding-bottom:2px}
+
+
+
+/* шкала из трёх состояний */
+.scale{margin-top:34px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.scale-bar{display:grid;grid-template-columns:repeat(3,1fr);height:8px}
+.scale-bar i{display:block}
+.scale-bar i:nth-child(1){background:var(--ok)}
+.scale-bar i:nth-child(2){background:#E0A93B}
+.scale-bar i:nth-child(3){background:var(--stop)}
+.scale-cols{display:grid;grid-template-columns:repeat(3,1fr)}
+.scale-c{padding:24px 26px;border-left:1px solid var(--line-soft)}
+.scale-c:first-child{border-left:0}
+.scale-c b{display:block;font-size:1.05rem;margin-bottom:7px}
+.scale-c.ok b{color:var(--ok)}
+.scale-c.mid b{color:#B8821F}
+.scale-c.bad b{color:var(--stop)}
+.scale-c p{font-size:.96rem;color:var(--ink-2)}
+.scale-note{padding:16px 26px;border-top:1px solid var(--line-soft);background:var(--soft);
+  font-size:.9rem;color:var(--muted)}
+@media(max-width:800px){.scale-cols{grid-template-columns:1fr}.scale-c{border-left:0;border-top:1px solid var(--line-soft)}
+  .scale-c:first-child{border-top:0}.scale-bar{grid-template-columns:1fr;height:6px}.scale-bar i:nth-child(n+2){display:none}}
+
+/* пример заключения */
+.repd{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;
+  box-shadow:0 24px 50px -34px rgba(10,37,64,.3)}
+.repd-h{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;align-items:center}
+.repd-h b{font-size:1rem}
+.repd-tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--muted);background:var(--soft);padding:5px 10px;border-radius:20px}
+.repd-b{padding:22px 24px;display:grid;gap:16px}
+.repd-l{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:6px}
+.repd-l span{color:var(--ink-2)}
+.repd-l b{font-variant-numeric:tabular-nums}
+.repd-bar{height:11px;border-radius:6px;background:var(--line-soft);overflow:hidden}
+.repd-bar i{display:block;height:100%;border-radius:6px}
+.repd-bar i.g{background:var(--ok)}
+.repd-bar i.o{background:#9DB6CE}
+.repd-f{padding:16px 24px;border-top:1px solid var(--line);background:var(--soft);font-size:.88rem;color:var(--muted)}
+.limits-d{margin-top:26px;padding:24px 28px;border-radius:16px;background:var(--soft);border-left:3px solid var(--stop)}
+.limits-d b{display:block;margin-bottom:8px;color:var(--stop)}
+.limits-d p{font-size:1rem;color:var(--ink-2)}
+.secnum{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted);margin-bottom:16px}
+.secnum span{color:var(--blue)}
+/* ─── герой с фото ─── */
+.hero-d{position:relative;display:grid;place-items:center;text-align:center;
+  min-height:clamp(460px,38vw,580px);padding:56px 24px;
+  background:url('img/hero-norma-disbioz.jpg') center top/cover no-repeat}
+.hero-d::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 78% at 50% 52%,rgba(255,255,255,.82) 0%,rgba(255,255,255,.62) 46%,rgba(255,255,255,0) 78%)}
+.hero-d-in{position:relative;z-index:1;max-width:640px;width:100%}
+.hero-d-pic{display:none}
+.hero-d h1{font-size:clamp(32px,4.4vw,54px);margin:0 auto 18px;max-width:15ch}
+.hero-d p{font-size:1.08rem;color:var(--ink-2);margin:0 auto;max-width:54ch}
+.hero-d .facts{display:flex;justify-content:center;gap:clamp(24px,4vw,44px);flex-wrap:wrap;
+  margin:28px auto 0;padding-top:22px;border-top:1px solid rgba(10,37,64,.16);max-width:520px}
+.hero-d .facts b{display:block;font-size:1.4rem;font-weight:800}
+.hero-d .facts span{font-size:.88rem;color:var(--muted)}
+@media(max-width:820px){
+  .hero-d{display:block;min-height:0;padding:40px 24px 0;text-align:center;
+    background:linear-gradient(180deg,#fff 0%,var(--soft) 100%)}
+  .hero-d::before{display:none}
+  .hero-d-in{max-width:none}
+  .hero-d-pic{display:block;width:calc(100% + 48px);height:auto;margin:30px -24px 0}}
+
+/* ─── липкое оглавление с кнопками ─── */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+.subnav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:13px 0;flex-wrap:wrap}
+.subnav nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.subnav nav a{font-size:.88rem}
+.subnav-act .btn{padding:10px 17px;font-size:.87rem}
+.subnav-lbl{font-size:.85rem;color:var(--muted)}
+.subnav nav a{font-size:.92rem;font-weight:600;color:var(--ink-2);text-decoration:none;
+  padding:4px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.subnav nav a:hover{color:var(--ink)}
+.subnav nav a.act{color:var(--blue);border-bottom-color:var(--blue)}
+.subnav-act{display:flex;gap:10px;flex-wrap:wrap}
+.subnav-act .btn{padding:11px 20px;font-size:.9rem}
+@media(max-width:900px){.subnav-in{gap:12px}
+  .subnav nav{overflow-x:auto;flex-wrap:nowrap;gap:18px;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;width:100%}
+  .subnav nav::-webkit-scrollbar{display:none}
+  .subnav nav a{white-space:nowrap;font-size:.86rem}
+  .subnav-lbl{display:none}
+  .subnav-act{width:100%}.subnav-act .btn{flex:1}}
+
+section{padding:78px 0}
+.soft{background:var(--soft)}
+h2{font-size:clamp(27px,3.2vw,40px)}
+.lead{font-size:1.06rem;color:var(--ink-2);max-width:66ch;margin-top:18px}
+
+/* показания — как в А */
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:22px}
+.groups--2{grid-template-columns:1fr 1fr;gap:52px}
+.group{border-top:2px solid var(--blue);padding-top:22px}
+.group .gic{width:38px;height:38px;border-radius:11px;background:var(--soft);color:var(--blue);display:grid;place-items:center;margin-bottom:13px}
+.group .gic svg{width:20px;height:20px}
+.group h3{font-size:1.18rem;margin-bottom:14px}
+.group ul{margin:0;padding-left:20px}
+.group li{font-size:1rem;color:var(--ink-2);margin-bottom:9px}
+@media(max-width:860px){.groups{grid-template-columns:1fr;gap:28px}}
+
+/* что покажет — как в Б */
+.mini{display:grid;margin:20px 0 0}
+.mini div{padding:16px 0;border-top:1px solid var(--line);font-size:1.02rem;color:var(--ink-2)}
+.mini div b{color:var(--ink)}
+.states{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 0}
+.state{padding:24px 26px;border-radius:16px}
+.state.ok{background:var(--ok-soft);border:1px solid #BFE7D3}
+.state.bad{background:var(--stop-soft);border:1px solid #F3C6C1}
+.state-t{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.04rem;margin-bottom:9px}
+.state.ok .state-t{color:var(--ok)}
+.state.bad .state-t{color:var(--stop)}
+.state-t .ar{font-size:1.3rem}
+.state p{font-size:.98rem;color:var(--ink-2)}
+@media(max-width:700px){.states{grid-template-columns:1fr}}
+
+/* шаги — как в В */
+.stepsc{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:26px}
+.sc{padding-top:18px;border-top:2px solid var(--blue)}
+.sc b{display:block;font-size:.78rem;color:var(--blue);margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+.sc h3{font-size:1rem;margin-bottom:6px}
+.sc p{font-size:.93rem;color:var(--ink-2)}
+@media(max-width:900px){.stepsc{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stepsc{grid-template-columns:1fr}}
+
+/* заключение — как в А */
+.report{margin-top:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.report-h{padding:18px 24px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
+.report-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px;
+  padding:18px 24px;border-top:1px solid var(--line-soft);align-items:baseline}
+.report-row:first-of-type{border-top:0}
+.report-row span{font-size:.98rem;color:var(--ink-2)}
+@media(max-width:640px){.report-row{grid-template-columns:1fr;gap:6px}}
+
+/* цветной блок заказа */
+.cta-d{background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  border-radius:28px;padding:54px 56px;color:#fff;display:grid;
+  grid-template-columns:1.25fr auto;gap:40px;align-items:center}
+.cta-d h2{color:#fff;font-size:clamp(26px,3vw,38px)}
+.cta-d p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.cta-d .price{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline}
+.cta-d .price b{font-size:2.1rem;font-weight:800}
+.cta-d .price span{font-size:.95rem;color:rgba(255,255,255,.82)}
+.cta-d-act{display:grid;gap:12px;min-width:260px}
+.cta-d-act .btn{justify-content:center;width:100%}
+.cta-d-act .btn-w{background:#fff;color:var(--blue)}
+.cta-d-act .btn-w:hover{background:#EAF1FF}
+.cta-d-act .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.cta-d-act .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.cta-d-note{margin-top:14px;font-size:.86rem;color:rgba(255,255,255,.75)}
+@media(max-width:860px){.cta-d{grid-template-columns:1fr;padding:38px 28px;gap:28px}.cta-d-act{min-width:0}}
+
+
+/* фото-баннер на всю ширину с подписью */
+.band{position:relative;min-height:clamp(260px,28vw,380px);display:grid;align-items:end}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,37,64,0) 38%,rgba(10,37,64,.8) 100%)}
+.band-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px 36px;width:100%}
+.band-in p{color:#fff;font-size:clamp(19px,2.1vw,27px);font-weight:700;letter-spacing:-.02em;
+  line-height:1.3;max-width:26ch;text-shadow:0 2px 20px rgba(10,37,64,.55)}
+/* текст в две колонки — чтобы не было простыни */
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:20px 52px;margin-top:20px}
+.cols2 p{font-size:1.04rem;color:var(--ink-2)}
+.cols2 p:first-child{font-size:1.12rem;color:var(--ink)}
+@media(max-width:820px){.cols2{grid-template-columns:1fr;gap:16px}}
+/* заключение: текст слева, карточка справа */
+.repgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;margin-top:34px}
+.repgrid .lead{margin-top:0}
+.repgrid .lead + .lead{margin-top:16px}
+@media(max-width:900px){.repgrid{grid-template-columns:1fr;gap:28px}}
+
+
+/* фото внутри блока, а не отдельным экраном */
+.withpic{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.withpic img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media(max-width:880px){.withpic{grid-template-columns:1fr;gap:26px}}
+/* практические вопросы — контрастная тёмная плашка */
+.practic{margin-top:42px;background:linear-gradient(135deg,#0A2540 0%,#123a63 100%);
+  border-radius:24px;padding:38px 40px;color:#fff}
+.practic-h{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:26px}
+.practic-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 44px}
+.pq{display:grid;grid-template-columns:auto 1fr;gap:0 16px;align-items:start}
+.pq-ic{grid-row:span 2;width:42px;height:42px;border-radius:12px;background:rgba(0,194,255,.16);
+  color:var(--cyan);display:grid;place-items:center}
+.pq-ic svg{width:21px;height:21px}
+.pq b{font-size:1.04rem;color:#fff;margin-bottom:5px}
+.pq p{font-size:.96rem;color:rgba(255,255,255,.75);line-height:1.55}
+@media(max-width:820px){.practic{padding:30px 24px}.practic-grid{grid-template-columns:1fr;gap:24px}}
+
+/* подсказка о версии */
+#vhint{position:fixed;left:16px;bottom:16px;z-index:300;max-width:420px;
+  background:#101A22;color:#fff;border-radius:16px;padding:18px 20px;
+  box-shadow:0 24px 50px -18px rgba(0,0,0,.55);
+  display:flex;gap:14px;align-items:flex-start;
+  opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s}
+#vhint.show{opacity:1;transform:none}
+#vhint b{display:block;font-size:.95rem;margin-bottom:6px}
+#vhint p{font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.5;margin:0}
+#vhint button{margin-left:auto;background:rgba(255,255,255,.12);border:0;color:#fff;
+  width:26px;height:26px;border-radius:50%;cursor:pointer;flex:0 0 auto;font-size:.9rem;line-height:1}
+#vhint button:hover{background:rgba(255,255,255,.22)}
+@media(max-width:560px){#vhint{left:12px;right:12px;max-width:none;bottom:12px}}
+
+
+/* ─── режим редактирования ─── */
+.ed-btn{font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;color:rgba(255,255,255,.62);
+  background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:4px 12px;margin-left:auto}
+.ed-btn:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.ed-btn.on{background:#00C2FF;border-color:#00C2FF;color:#06212E}
+body.editing [data-ed]{position:relative;outline:1.5px dashed rgba(0,87,255,.45);outline-offset:4px}
+body.editing [data-ed]:hover{outline-color:rgba(0,87,255,.9)}
+body.editing [data-ed].drag-over{outline:2px solid #00C2FF;outline-offset:6px}
+body.editing [data-ed].dragging{opacity:.4}
+.ed-tools{position:absolute;top:6px;right:6px;z-index:50;display:none;gap:5px;
+  background:#fff;border:1px solid var(--line);border-radius:10px;padding:4px;
+  box-shadow:0 8px 20px -8px rgba(10,37,64,.35)}
+body.editing [data-ed] > .ed-tools{display:flex}
+.ed-tools button{border:0;background:var(--soft);color:var(--ink);width:28px;height:28px;
+  border-radius:7px;cursor:pointer;font-size:.85rem;line-height:1;font-family:inherit}
+.ed-tools button:hover{background:var(--line)}
+.ed-tools .ed-drag{cursor:grab}
+body.editing [contenteditable="true"]:focus{outline:2px solid #0057FF;outline-offset:3px;border-radius:4px}
+#ed-bar{position:fixed;right:16px;bottom:16px;z-index:310;display:none;gap:8px;
+  background:#101A22;padding:9px;border-radius:14px;box-shadow:0 20px 40px -14px rgba(0,0,0,.5)}
+body.editing #ed-bar{display:flex;flex-wrap:wrap;max-width:calc(100vw - 32px)}
+#ed-bar button{font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;border:0;
+  padding:9px 14px;border-radius:9px;background:rgba(255,255,255,.12);color:#fff}
+#ed-bar button:hover{background:rgba(255,255,255,.22)}
+#ed-bar .prim{background:#00C2FF;color:#06212E}
+#ed-hint{position:fixed;left:16px;bottom:16px;z-index:310;display:none;max-width:330px;
+  background:#101A22;color:rgba(255,255,255,.8);font-size:.83rem;line-height:1.5;
+  padding:14px 16px;border-radius:14px}
+body.editing #ed-hint{display:block}
+@media print{.ed-tools,#ed-bar,#ed-hint,.ed-btn{display:none!important}}
+
+
+/* пункты с иконками */
+.mini--ic div{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.mini--ic .mi{width:38px;height:38px;border-radius:11px;background:#fff;border:1px solid var(--line);
+  color:var(--blue);display:grid;place-items:center;flex:0 0 auto}
+.mini--ic .mi svg{width:19px;height:19px}
+.mini--ic > div > div{padding-top:7px}
+/* градиентная шкала состояний */
+.gbar{margin-top:34px}
+.gbar-track{position:relative;height:14px;border-radius:8px;
+  background:linear-gradient(90deg,#D2453E 0%,#E0A93B 50%,#1AA06D 100%);
+  display:flex;justify-content:space-between;align-items:center}
+.gbar-lo,.gbar-hi{position:absolute;top:22px;font-size:.82rem;color:var(--muted)}
+.gbar-lo{left:0}.gbar-hi{right:0}
+.gbar-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.gb{padding-top:16px;border-top:3px solid}
+.gb.bad{border-color:#D2453E}.gb.mid{border-color:#E0A93B}.gb.ok{border-color:#1AA06D}
+.gb b{display:block;font-size:1.04rem;margin-bottom:7px}
+.gb.bad b{color:#D2453E}.gb.mid b{color:#B8821F}.gb.ok b{color:#1AA06D}
+.gb p{font-size:.96rem;color:var(--ink-2)}
+@media(max-width:800px){.gbar-cols{grid-template-columns:1fr;gap:18px}}
+
+
+/* карточка-фрагмент заключения */
+.repcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  box-shadow:0 26px 54px -34px rgba(10,37,64,.4)}
+.repcard-h{display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--line-soft)}
+.repcard-ic{width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--blue);
+  display:grid;place-items:center;flex:0 0 auto}
+.repcard-ic svg{width:20px;height:20px}
+.repcard-h b{display:block;font-size:1.02rem;line-height:1.25}
+.repcard-h small{font-size:.83rem;color:var(--muted)}
+.repcard-tag{margin-left:auto;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);background:var(--soft);padding:5px 11px;border-radius:20px}
+.repcard-b{padding:22px 24px}
+.stackbar{display:flex;height:22px;border-radius:7px;overflow:hidden;gap:2px;background:var(--line-soft)}
+.stackbar i{display:block;min-width:3px}
+.s1{background:#1AA06D}.s2{background:#4E8FD6}.s3{background:#7FA9D9}.s4{background:#A9C2DF}.s5{background:#C9D8E8}
+.leg{display:grid;gap:11px;margin-top:20px}
+.leg div{display:flex;align-items:center;gap:10px;font-size:.97rem;color:var(--ink-2)}
+.leg b{margin-left:auto;color:var(--ink);font-variant-numeric:tabular-nums}
+.dot{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+.repcard-f{padding:16px 24px;border-top:1px solid var(--line-soft);background:var(--soft);
+  display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;align-items:baseline}
+.repcard-f span{font-size:.86rem;color:var(--muted);max-width:44ch}
+.repcard-f a{font-size:.87rem;font-weight:700;color:var(--blue);text-decoration:none;white-space:nowrap}
+.repcard-f a:hover{text-decoration:underline}
+
+
+/* два блока исследования */
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
+.mod{border-radius:22px;padding:30px 30px;border:1px solid var(--line);display:flex;flex-direction:column}
+.mod--a{background:linear-gradient(160deg,#F2FAF6,#fff);border-color:#CFE8DC}
+.mod--b{background:linear-gradient(160deg,#F1F6FE,#fff);border-color:#D3E2F6}
+.mod-tag{font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+.mod--a .mod-tag{color:#1AA06D}
+.mod--b .mod-tag{color:var(--blue)}
+.mod h3{font-size:1.35rem;margin-bottom:12px}
+.mod p{font-size:1rem;color:var(--ink-2)}
+.mod ul{margin:18px 0 0;padding-left:20px}
+.mod li{font-size:.99rem;color:var(--ink-2);margin-bottom:8px}
+.mod-note{margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft);
+  font-size:.88rem;color:var(--muted)}
+@media(max-width:860px){.mods{grid-template-columns:1fr;gap:18px}.mod{padding:26px 24px}}
+
+
+.mods--3{grid-template-columns:repeat(3,1fr);align-items:stretch}
+.mods--3 .mod h3{min-height:2.6em}
+.mod--c{background:linear-gradient(160deg,#FBF6FE,#fff);border-color:#E2D6F2}
+.mod--c .mod-tag{color:#7A4FBF}
+@media(max-width:980px){.mods--3{grid-template-columns:1fr}}
+/* типы сообщества */
+.cst{margin-top:28px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+.cst-h{padding:18px 26px;background:var(--soft);font-weight:700;border-bottom:1px solid var(--line)}
+.cst-rows{display:grid}
+.cst-r{display:grid;grid-template-columns:auto 1fr;gap:0 16px;padding:22px 26px;border-top:1px solid var(--line-soft)}
+.cst-r:first-child{border-top:0}
+.cst-d{width:12px;height:12px;border-radius:4px;margin-top:7px;grid-row:span 2}
+.cst-d.ok{background:#1AA06D}.cst-d.bad{background:#D2453E}
+.cst-r b{font-size:1.04rem;margin-bottom:5px}
+.cst-r p{font-size:.97rem;color:var(--ink-2)}
+.cst-note{padding:15px 26px;border-top:1px solid var(--line-soft);background:var(--soft);
+  font-size:.89rem;color:var(--muted)}
+
+
+/* ─── инфекции и беременность ─── */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.why-s{position:relative;padding:26px 24px 24px;border-radius:18px;background:#fff;
+  border:1px solid var(--line);display:flex;flex-direction:column}
+.why-s b{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.06em;
+  color:var(--muted);margin-bottom:12px}
+.why-s h3{font-size:1.12rem;line-height:1.3;margin-bottom:9px}
+.why-s p{font-size:.97rem;color:var(--ink-2)}
+.why-s::after{content:"";position:absolute;right:-12px;top:50%;width:9px;height:9px;z-index:2;
+  border-top:2px solid var(--line);border-right:2px solid var(--line);
+  transform:translateY(-50%) rotate(45deg)}
+.why-s:last-child::after{display:none}
+.why-s:nth-child(1){background:#FDF4F3;border-color:#F3D4D1}
+.why-s:nth-child(2){background:#FDEFEE;border-color:#EFC7C3}
+.why-s:nth-child(3){background:#FCE9E7;border-color:#E9B8B3}
+.why-s:nth-child(4){background:#FBE0DD;border-color:#E2A7A1}
+.why-s:nth-child(4) h3{color:#7E241F}
+.why-s:nth-child(1) h3,.why-s:nth-child(2) h3,.why-s:nth-child(3) h3{color:#8E2C27}
+.why-out{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;
+  padding:24px 28px;border-radius:18px;background:var(--ok-soft);border:1px solid #BFE6D4}
+.why-out svg{width:30px;height:30px;color:var(--ok)}
+.why-out b{display:block;font-size:1.1rem;margin-bottom:5px;color:#12704E}
+.why-out p{font-size:1rem;color:#1D5C44}
+
+/* ─── список инфекций ─── */
+.plist{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.pg{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden;
+  display:flex;flex-direction:column}
+.pg-h{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
+.pg-h svg{width:22px;height:22px;flex:0 0 22px;margin-top:2px}
+.pg-h b{display:block;font-size:1.06rem;margin-bottom:3px}
+.pg-h span{font-size:.9rem;color:var(--ink-2);display:block;line-height:1.45}
+.pg--stop .pg-h{background:var(--stop-soft)} .pg--stop .pg-h svg{color:var(--stop)}
+.pg--warn .pg-h{background:#FFF6E8} .pg--warn .pg-h svg{color:#B8760B}
+.pg--fun .pg-h{background:#FBF6FE} .pg--fun .pg-h svg{color:#7A4FBF}
+.pg--vir .pg-h{background:#F1F6FE} .pg--vir .pg-h svg{color:var(--blue)}
+.pg ul{margin:0;padding:18px 24px 22px;list-style:none;display:grid;gap:11px}
+.pg li{font-size:.97rem;color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+.pg li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;
+  background:var(--line)}
+.pg li i{font-style:italic;color:var(--ink);font-weight:600}
+.pg-note{margin-top:auto;padding:14px 24px;border-top:1px solid var(--line-soft);
+  font-size:.88rem;color:var(--muted);background:#FCFDFF}
+.nolist{margin-top:22px;padding:22px 26px;border-radius:16px;background:var(--soft);
+  border-left:3px solid var(--muted)}
+.nolist b{display:block;margin-bottom:7px}
+.nolist p{font-size:1rem;color:var(--ink-2)}
+@media(max-width:1020px){.why{grid-template-columns:1fr 1fr}.why-s:nth-child(2)::after{display:none}}
+@media(max-width:760px){.why,.plist{grid-template-columns:1fr}.why-s::after{display:none}}
+
+
+/* ─── тёмный блок: резистентность + цифры панели ─── */
+.amr{background:#0A2540;color:#fff;padding:clamp(52px,6vw,78px) 0;margin-top:0}
+.amr-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,68px);align-items:center}
+.amr-tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
+.amr h2{color:#fff;margin-bottom:16px}
+.amr h2 em{font-style:normal;color:var(--cyan)}
+.amr p{color:rgba(255,255,255,.76);font-size:1.06rem;line-height:1.6;max-width:52ch}
+.amr-r{display:grid;gap:0}
+.amr-n{display:grid;grid-template-columns:auto 1fr;gap:0 20px;align-items:baseline;
+  padding:20px 0;border-top:1px solid rgba(255,255,255,.16)}
+.amr-n:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.amr-n b{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:clamp(26px,3vw,36px);
+  color:var(--cyan);letter-spacing:-.02em;white-space:nowrap}
+.amr-n span{color:rgba(255,255,255,.7);font-size:.97rem;line-height:1.5}
+
+/* ─── три части: линии вместо карточек ─── */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;
+  border-top:2px solid var(--ink)}
+.tri-i{padding:26px 30px 8px 0;border-right:1px solid var(--line)}
+.tri-i:last-child{border-right:0;padding-right:0}
+.tri-i:not(:first-child){padding-left:30px}
+.tri-i b{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem;
+  letter-spacing:.1em;color:var(--blue);margin-bottom:14px}
+.tri-i h3{font-size:1.28rem;line-height:1.25;margin-bottom:11px}
+.tri-i p{font-size:1rem;color:var(--ink-2)}
+.tri-i a{color:var(--blue)}
+
+/* ─── типы сообщества: сплит без обводки ─── */
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px);margin-top:46px;
+  padding-top:34px;border-top:1px solid var(--line)}
+.sp{display:grid;grid-template-columns:auto 1fr;gap:0 18px}
+.sp-bar{width:6px;border-radius:3px;grid-row:span 2}
+.sp-bar.ok{background:var(--ok)} .sp-bar.bad{background:var(--stop)}
+.sp b{font-size:1.14rem;margin-bottom:8px;display:block}
+.sp p{font-size:1rem;color:var(--ink-2)}
+.split2-note{grid-column:1/-1;font-size:.93rem;color:var(--muted);padding-top:6px}
+.sp-h{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);grid-column:1/-1;margin-bottom:-14px}
+@media(max-width:900px){.amr-in,.tri,.split2{grid-template-columns:1fr}
+  .tri{border-top:0}.tri-i{border-right:0;border-top:2px solid var(--ink);padding:22px 0 14px!important}}
+
+
+/* ═══ ВАРИАНТ Е ═══════════════════════════════════════════════ */
+
+/* акцент отдела — переопределяется на панели */
+.tp--endo{--acc:#0057FF;--acc-soft:#EAF1FF;--acc-line:#C9DCFC}
+.tp--vag {--acc:#0E8C7F;--acc-soft:#E4F5F2;--acc-line:#BFE4DE}
+.tp--inf {--acc:#7A4FBF;--acc-soft:#F3EDFC;--acc-line:#DCCCF3}
+
+/* ─── интро: что такое микробиом ─── */
+.intro2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,68px);align-items:start;margin-top:30px}
+.intro2 p{font-size:1.06rem;color:var(--ink-2);margin-bottom:16px}
+.intro2 p:first-child{font-size:1.14rem;color:var(--ink)}
+.intro2 .quotebox{padding:26px 28px;border-radius:20px;background:var(--soft);border-left:3px solid var(--blue)}
+.intro2 .quotebox p{font-size:1.04rem;margin-bottom:0}
+.intro2 .quotebox b{display:block;margin-bottom:8px;font-size:1.02rem}
+@media(max-width:900px){.intro2{grid-template-columns:1fr;gap:24px}}
+
+/* сравнение методов */
+.cmp{margin-top:44px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+.cmp-h{display:grid;grid-template-columns:1.1fr 1.5fr 1fr;gap:20px;padding:16px 26px;background:var(--soft);
+  border-bottom:1px solid var(--line);font-size:.78rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted)}
+.cmp-r{display:grid;grid-template-columns:1.1fr 1.5fr 1fr;gap:20px;padding:20px 26px;
+  border-top:1px solid var(--line-soft);align-items:baseline}
+.cmp-r:first-of-type{border-top:0}
+.cmp-r b{font-size:1.02rem}
+.cmp-r span{font-size:.98rem;color:var(--ink-2)}
+.cmp-r i{font-style:normal;font-size:.95rem;color:var(--muted)}
+.cmp-r.hi{background:#F7FAFF}
+.cmp-r.hi b{color:var(--blue)}
+@media(max-width:820px){.cmp-h{display:none}
+  .cmp-r{grid-template-columns:1fr;gap:6px;padding:20px 22px}
+  .cmp-r i::before{content:"Что видно: "}}
+
+/* ─── переключатель отделов ─── */
+.tabs{margin-top:34px}
+.tablist{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tab{position:relative;text-align:left;background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:22px 24px 20px;cursor:pointer;font-family:inherit;color:inherit;
+  transition:border-color .18s,box-shadow .18s,transform .18s}
+.tab::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:3px;border-radius:0 0 3px 3px;
+  background:var(--tc);opacity:0;transition:opacity .18s}
+.tab-n{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.tab b{display:block;font-size:1.16rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.tab span{display:block;font-size:.93rem;color:var(--muted);line-height:1.45}
+.tab:hover{border-color:var(--tc)}
+.tab[aria-selected="true"]{border-color:var(--tc);box-shadow:0 20px 44px -30px rgba(10,37,64,.6)}
+.tab[aria-selected="true"]::before{opacity:1}
+.tab[aria-selected="true"] b{color:var(--tc)}
+.tab[aria-selected="true"] .tab-n{color:var(--tc)}
+.tab:focus-visible{outline:2px solid var(--tc);outline-offset:3px}
+.tab--endo{--tc:#0057FF} .tab--vag{--tc:#0E8C7F} .tab--inf{--tc:#7A4FBF}
+@media(max-width:860px){.tablist{grid-template-columns:1fr;gap:10px}
+  .tab{padding:16px 20px}.tab-n{margin-bottom:6px}}
+
+.tpanel{display:none}
+.tpanel.on{display:block;animation:tpin .3s ease both}
+@keyframes tpin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.tpanel.on{animation:none}}
+
+/* шапка панели */
+.tp-top{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,56px);align-items:center;
+  margin-top:46px;padding-top:36px;border-top:3px solid var(--acc)}
+.tp-top img{border-radius:20px;aspect-ratio:16/11;object-fit:cover;width:100%}
+.tp-kick{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.tp-top h3{font-size:clamp(24px,2.8vw,34px);margin-bottom:16px}
+.tp-top p{font-size:1.06rem;color:var(--ink-2)}
+.tp-top p+p{margin-top:14px}
+@media(max-width:880px){.tp-top{grid-template-columns:1fr;gap:26px;margin-top:34px}}
+
+/* строка «материал · срок · что в результате» */
+.tp-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;
+  border:1px solid var(--acc-line);border-radius:18px;background:var(--acc-soft);padding:22px 26px}
+.tp-meta div b{display:block;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--acc);margin-bottom:7px}
+.tp-meta div span{font-size:.99rem;color:var(--ink-2);line-height:1.5}
+@media(max-width:760px){.tp-meta{grid-template-columns:1fr;gap:16px;padding:20px 22px}}
+
+.tpanel .group{border-top-color:var(--acc)}
+.tpanel .group .gic{background:var(--acc-soft);color:var(--acc)}
+.tpanel .sc{border-top-color:var(--acc)}
+.tpanel .sc b{color:var(--acc)}
+
+/* подзаголовок внутри панели */
+.tp-sub{margin-top:48px;font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.tp-sub+.lead{margin-top:12px}
+.tp-foot{margin-top:30px;padding:20px 24px;border-radius:16px;background:var(--soft);
+  border-left:3px solid var(--muted);font-size:.99rem;color:var(--ink-2)}
+.tp-foot b{color:var(--ink)}
+.tp-inpanels{margin-top:24px;font-size:.96rem;color:var(--muted)}
+.tp-inpanels a{color:var(--acc);font-weight:700;text-decoration:none}
+.tp-inpanels a:hover{text-decoration:underline}
+
+/* список «что покажет» внутри панели */
+.tp-list{display:grid;margin-top:22px}
+.tp-list>div{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+  padding:20px 0;border-top:1px solid var(--line)}
+.tp-list .ti{width:40px;height:40px;border-radius:12px;background:var(--acc-soft);color:var(--acc);
+  display:grid;place-items:center;flex:0 0 auto}
+.tp-list .ti svg{width:20px;height:20px}
+.tp-list p{font-size:1rem;color:var(--ink-2);margin-top:5px}
+.tp-list b{font-size:1.06rem}
+
+/* типы сообщества влагалища */
+.cstl{margin-top:26px;display:grid;gap:0;border-top:1px solid var(--line)}
+.cstl-r{display:grid;grid-template-columns:auto 1fr auto;gap:0 18px;padding:18px 0;
+  border-bottom:1px solid var(--line-soft);align-items:baseline}
+.cstl-r i{width:10px;height:10px;border-radius:3px;font-style:normal;align-self:center}
+.cstl-r b{font-size:1.04rem}
+.cstl-r b em{font-style:italic;font-weight:800}
+.cstl-r p{grid-column:2;font-size:.97rem;color:var(--ink-2);margin-top:5px}
+.cstl-r span{font-size:.86rem;font-weight:700;color:var(--muted);white-space:nowrap;align-self:center}
+.cstl-r.ok i{background:#1AA06D} .cstl-r.ok span{color:#12704E}
+.cstl-r.mid i{background:#E0A93B} .cstl-r.mid span{color:#B8821F}
+.cstl-r.bad i{background:#D2453E} .cstl-r.bad span{color:#A6332D}
+@media(max-width:640px){.cstl-r{grid-template-columns:auto 1fr;gap:0 14px}
+  .cstl-r span{grid-column:2;margin-top:6px;white-space:normal}}
+
+.mplans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.mplan{display:grid;gap:3px;align-content:start;padding:20px 22px;border:1px solid var(--line);
+  border-radius:16px;background:#fff;text-decoration:none;color:inherit;
+  transition:border-color .18s,box-shadow .18s}
+.mplan:hover{border-color:var(--acc);box-shadow:0 18px 38px -30px rgba(10,37,64,.6)}
+.mplan:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.mplan b{font-size:1.02rem;line-height:1.3}
+.mplan span{font-size:.9rem;color:var(--muted);line-height:1.45}
+.mplan strong{font-size:1.28rem;font-weight:800;letter-spacing:-.03em;margin-top:8px}
+.mplan em{font-style:normal;font-size:.86rem;font-weight:700;color:var(--acc);margin-top:6px}
+@media(max-width:760px){.mplans{grid-template-columns:1fr}}
+
+/* ─── карточки панелей с ценами ─── */
+.plan-note{font-size:.96rem;color:var(--muted);margin-top:18px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.plan{position:relative;display:flex;flex-direction:column;text-align:left;cursor:pointer;
+  background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:26px 24px 24px;
+  font-family:inherit;color:inherit;transition:border-color .18s,box-shadow .18s}
+.plan:hover{border-color:var(--blue)}
+.plan:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.plan[aria-pressed="true"]{border-color:var(--blue);box-shadow:0 24px 50px -32px rgba(0,87,255,.75)}
+.plan[aria-pressed="true"]::after{content:"";position:absolute;inset:-1.5px;border-radius:22px;
+  border:1.5px solid var(--blue);pointer-events:none}
+.plan-tag{position:absolute;top:-11px;left:24px;font-size:.72rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:#fff;background:var(--blue);padding:4px 12px;border-radius:20px}
+.plan-name{display:block;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.02em;
+  font-size:1.12rem;line-height:1.25;margin-bottom:8px;padding-right:26px}
+.plan-desc{display:block;font-size:.94rem;color:var(--muted);line-height:1.5}
+.plan-mods{display:grid;gap:9px;margin:18px 0 0;padding:18px 0 0;border-top:1px solid var(--line-soft)}
+.plan-mods>span{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;
+  font-size:.95rem;color:var(--ink-2);line-height:1.4}
+.plan-mods svg{width:17px;height:17px;margin-top:2px;flex:0 0 auto}
+.plan-mods .yes svg{color:#1AA06D}
+.plan-mods .no{color:#A2B3C6}
+.plan-mods .no svg{color:#C7D4E2}
+.plan-price{display:block;margin-top:auto;padding-top:22px}
+.plan-price b{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;display:block}
+.plan-price span{display:block;font-size:.88rem;color:var(--muted);margin-top:4px}
+.plan-save{display:inline-block;margin-top:10px;font-size:.8rem;font-weight:700;color:#12704E;
+  background:var(--ok-soft);border-radius:20px;padding:4px 11px}
+.plan-check{position:absolute;top:22px;right:22px;width:22px;height:22px;border-radius:50%;
+  border:1.5px solid var(--line);display:grid;place-items:center;color:#fff}
+.plan[aria-pressed="true"] .plan-check{background:var(--blue);border-color:var(--blue)}
+.plan-check svg{width:13px;height:13px;opacity:0}
+.plan[aria-pressed="true"] .plan-check svg{opacity:1}
+@media(max-width:980px){.plans{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.plans{grid-template-columns:1fr}}
+
+/* итоговая строка заказа */
+.sum{margin-top:26px;border-radius:24px;background:linear-gradient(135deg,#0057FF 0%,#0B8FF0 55%,#00C2FF 100%);
+  color:#fff;padding:30px 34px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.sum-l b{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(255,255,255,.75);margin-bottom:8px}
+.sum-l strong{font-size:clamp(20px,2.4vw,27px);font-weight:800;letter-spacing:-.02em;display:block;line-height:1.25}
+.sum-l p{margin-top:10px;font-size:.95rem;color:rgba(255,255,255,.85);max-width:56ch}
+.sum-r{display:grid;gap:10px;min-width:250px;justify-items:stretch}
+.sum-price{font-size:2.1rem;font-weight:800;letter-spacing:-.03em;text-align:center;margin-bottom:2px}
+.sum-r .btn{justify-content:center;width:100%}
+.sum-r .btn-w{background:#fff;color:var(--blue)}
+.sum-r .btn-w:hover{background:#EAF1FF}
+.sum-r .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.sum-r .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.sum-note{margin-top:18px;font-size:.88rem;color:var(--muted)}
+@media(max-width:900px){.sum{grid-template-columns:1fr;padding:26px 24px;gap:22px}.sum-r{min-width:0}}
+
+.amr .btn-w{background:#fff;color:var(--blue)}
+.amr .btn-w:hover{background:#EAF1FF}
+.amr .btn-o{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.amr .btn-o:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.amr-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:560px){.amr-cta .btn{width:100%;justify-content:center}}
+
+/* материал по панелям */
+.mat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:2px solid var(--ink)}
+.mat-i{padding:24px 28px 6px 0;border-right:1px solid var(--line)}
+.mat-i:last-child{border-right:0;padding-right:0}
+.mat-i:not(:first-child){padding-left:28px}
+.mat-i b{display:block;font-size:1.08rem;margin-bottom:9px}
+.mat-i p{font-size:.99rem;color:var(--ink-2)}
+@media(max-width:860px){.mat{grid-template-columns:1fr;border-top:0}
+  .mat-i{border-right:0;border-top:2px solid var(--ink);padding:20px 0 12px!important}}
+</style>
+</head>
+<body>
+<div class="vbar"><div class="vbar-in"><b>Версии для сравнения:</b><a href="index.html" class="">А — редакционный</a><a href="b.html" class="">Б — вопросы</a><a href="c.html" class="">В — наглядный</a><a href="d.html" class="">Г — сборка ★</a><a href="e.html" class="">Д — микробиота + инфекции</a><a href="f.html" class="on">Е — ГЕНОБИОМ</a><button class="ed-btn" id="ed-toggle" type="button">✎ Редактировать</button></div></div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="hdr-logo" href="https://genomed.ru/"><img src="img/logo.svg" alt="Геномед"></a>
+    <div class="hdr-c">
+      <p class="hdr-tag">Диагностика генетических заболеваний быстро и точно</p>
+      <nav class="hdr-nav">
+        <a href="https://price.genomed.ru/">Услуги и цены</a>
+        <a href="https://genomed.ru/gde-sdat-test/">Где сдать тест</a>
+        <a href="https://price.genomed.ru/doctor/index">Врачи</a>
+        <a href="https://genomed.ru/">Ещё</a>
+      </nav>
+    </div>
+    <div class="hdr-r">
+      <div class="hdr-soc">
+        <a href="https://wa.me/74956608377" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5 0-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.4c.1.2 1.6 2.5 3.9 3.4.5.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1 0-.1-.2-.2-.4-.3z"/></svg></a>
+        <a href="https://t.me/genomed_b2c_bot" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.3-.1-.5-.6-.2L6.3 12.1l-4.8-1.5c-1-.3-1-1 .2-1.5l18.8-7.2c.9-.3 1.6.2 1.4 1.4z"/></svg></a>
+      </div>
+      <a class="hdr-serv" href="https://genomed.ru/klientskij-servis-24-7/">Клиентский сервис 24/7</a>
+      <a class="hdr-phone" href="tel:84956608377">8 (495) 660-83-77</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-d" role="img" aria-label="Условная иллюстрация: слева сбалансированная микрофлора с преобладанием лактобактерий, справа дисбиоз">
+  <div class="hero-d-in">
+    <h1>ГЕНОБИОМ — микрофлора <em>и инфекции</em></h1>
+    <p>Исследование показывает, какие микроорганизмы живут во влагалище и в полости матки, в каком они соотношении и есть ли среди них возбудители инфекций. Три части: их заказывают по отдельности или вместе.</p>
+    <div class="facts">
+      <div><b>3 части</b><span>в любом сочетании</span></div>
+      <div><b>14 дней</b><span>рабочих</span></div>
+      <div><b>Мазок</b><span>или биопсия</span></div>
+    </div>
+  </div>
+  <img class="hero-d-pic" src="img/hero-norma-disbioz.jpg" alt="">
+</section>
+
+<div class="subnav">
+  <div class="wrap subnav-in">
+    <nav><span class="subnav-lbl">На этой странице:</span>
+      <a href="#chto-takoe">Что такое микробиом</a>
+      <a href="#chasti">Три части</a>
+      <a href="#metod">Как это читают</a>
+      <a href="#kak">Как проходит</a>
+      <a href="#paneli">Панели и цены</a>
+    </nav>
+    <div class="subnav-act">
+      <button class="btn btn-line" type="button" data-cons>Задать вопрос</button>
+      <a class="btn btn-primary" href="#paneli">Выбрать панель</a>
+    </div>
+  </div>
+</div>
+
+<section id="chto-takoe">
+  <div class="wrap">
+    <h2>Микробиом — это <em>не про чистоту</em></h2>
+    <div class="intro2">
+      <div>
+        <p>На слизистых оболочках человека постоянно живут микроорганизмы: бактерии, грибы, вирусы. Их сообщество называют микробиомом, или микробиотой. Это не загрязнение и не следствие недостаточной гигиены — у здоровой женщины во влагалище живут миллионы бактерий, и подавляющее большинство из них нужны организму.</p>
+        <p>Главные среди них — лактобактерии. Они перерабатывают гликоген клеток слизистой в молочную кислоту, и среда во влагалище становится кислой. В такой среде посторонним бактериям трудно закрепиться: лактобактерии занимают место и питательные вещества, выделяют вещества, сдерживающие рост конкурентов, и поддерживают слизистый барьер.</p>
+        <p>Когда доля лактобактерий снижается, освободившееся место занимают другие бактерии — в первую очередь анаэробные, которые в норме присутствуют в небольшом количестве. Такое смещение состава называют дисбиозом. У части женщин он даёт симптомы: выделения с запахом, зуд, дискомфорт. У части не даёт никаких и обнаруживается только в анализе.</p>
+        <p>Полость матки долгое время считали стерильной. Секвенирование показало, что бактерии обнаруживаются и там — сообщество намного беднее вагинального, и именно поэтому исследовать его сложнее. Микроорганизмы попадают в матку преимущественно восходящим путём, из влагалища. Поэтому два отдела разумно рассматривать вместе, а не по отдельности.</p>
+      </div>
+      <div class="quotebox">
+        <b>Если коротко</b>
+        <p>Микробиом удобно представлять как плотный газон: пока трава растёт густо, сорнякам негде пробиться. Как только газон редеет, свободное место занимают те, кто оказался рядом. Исследование показывает, что именно выросло и в какой пропорции — и не выросло ли там то, чего быть не должно.</p>
+      </div>
+    </div>
+
+    <h3 class="tp-sub">Чем это отличается от обычного мазка</h3>
+    <p class="lead">Мазок, посев и ПЦР отвечают на разные вопросы, и ни один из них не показывает сообщество целиком. Секвенирование ДНК отвечает на вопрос о пропорциях.</p>
+    <div class="cmp">
+      <div class="cmp-h"><span>Метод</span><span>На какой вопрос отвечает</span><span>Чего не видит</span></div>
+      <div class="cmp-r"><b>Микроскопия мазка</b><span>Есть ли признаки воспаления и косвенные признаки дисбиоза — по внешнему виду клеток и флоры.</span><i>Видов бактерий и их доли; результат зависит от того, кто смотрит в микроскоп.</i></div>
+      <div class="cmp-r"><b>Посев на флору</b><span>Какие бактерии удалось вырастить на питательной среде и к каким антибиотикам они чувствительны.</span><i>Анаэробных бактерий, которые в лаборатории почти не растут, — а именно они преобладают при дисбиозе.</i></div>
+      <div class="cmp-r"><b>ПЦР на отдельных возбудителей</b><span>Есть ли в образце конкретный микроорганизм из заранее заданного списка.</span><i>Всего, что в список не вошло, и соотношения микроорганизмов между собой.</i></div>
+      <div class="cmp-r hi"><b>Секвенирование ДНК</b><span>Кто присутствует в сообществе и какую долю занимает каждый — включая бактерии, которые не растут на средах.</span><i>Живые это микроорганизмы или их ДНК; метод полуколичественный и определяет бактерии в основном до рода.</i></div>
+    </div>
+    <p class="plan-note">Разница измерима: в многоцентровом сравнении на 1740 пациентках клиническая оценка вагиноза по критериям Амселя дала чувствительность 75,6 %, молекулярный тест — 92,7 % (Schwebke J.&nbsp;R. и соавт., J Clin Microbiol, 2018 — <a href="https://pubmed.ncbi.nlm.nih.gov/29643195/" target="_blank" rel="noopener">PubMed</a>).</p>
+
+    <h3 class="tp-sub">Влагалище и полость матки — не одно и то же</h3>
+    <p class="lead">Микроорганизмы попадают в матку из влагалища, но составы двух отделов совпадают далеко не всегда. В проспективном исследовании 438 пациенток результаты посева из влагалища и из полости матки совпали только в 32,6 % случаев. То есть по вагинальному материалу нельзя уверенно судить о том, что происходит в эндометрии, и наоборот. Поэтому части исследования разделены: какая нужна — зависит от вопроса, на который отвечает врач.</p>
+    <p class="plan-note">Cicinelli E. и соавт., Fertil Steril, 2008 — <a href="https://pubmed.ncbi.nlm.nih.gov/17531993/" target="_blank" rel="noopener">PubMed</a></p>
+  </div>
+</section>
+
+<section class="soft" id="chasti">
+  <div class="wrap">
+    <h2>Три части, <em>которые не стоит путать</em></h2>
+    <p class="lead">Части отличаются тем, откуда берут материал, на какой вопрос отвечают и кому их назначают. Выберите часть — ниже развернётся её описание. Заказать можно любую из них или любое сочетание.</p>
+
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Части исследования">
+        <button class="tab tab--endo" role="tab" id="t-endo" aria-controls="p-endo" aria-selected="true" type="button">
+          <span class="tab-n">часть 1</span>
+          <b>Микробиота эндометрия</b>
+          <span>Что живёт в полости матки — там, где происходит имплантация. Материал берёт гинеколог.</span>
+        </button>
+        <button class="tab tab--vag" role="tab" id="t-vag" aria-controls="p-vag" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-n">часть 2</span>
+          <b>Микробиота влагалища</b>
+          <span>Состав и тип сообщества во влагалище: баланс лактобактерий и анаэробных бактерий.</span>
+        </button>
+        <button class="tab tab--inf" role="tab" id="t-inf" aria-controls="p-inf" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-n">часть 3</span>
+          <b>Урогенитальные инфекции</b>
+          <span>Возбудители, которых в норме быть не должно: бактерии, грибы и ДНК-вирусы.</span>
+        </button>
+      </div>
+
+      <!-- ─────────── ЭНДОМЕТРИЙ ─────────── -->
+      <div class="tpanel tp--endo on" id="p-endo" role="tabpanel" aria-labelledby="t-endo" tabindex="0">
+        <div class="tp-top">
+          <div>
+            <div class="tp-kick">часть 1 · микробиота эндометрия</div>
+            <h3>Что происходит в полости матки</h3>
+            <p>Эндометрий — слизистая оболочка, выстилающая полость матки. Именно в него внедряется эмбрион при имплантации. Микробное сообщество эндометрия намного беднее вагинального — бактерий там во много раз меньше, и долгое время считалось, что их нет вовсе.</p>
+            <p>Исследование определяет, какие бактерии присутствуют в образце эндометрия и какую долю занимает каждая. Отдельно оценивают долю лактобактерий — по ней судят о том, насколько сообщество смещено.</p>
+          </div>
+          <img src="img/endometrium.jpg" alt="Условная иллюстрация: поверхность эндометрия и бактерии на слизистой">
+        </div>
+
+        <div class="tp-meta">
+          <div><b>Материал</b><span>Аспирационная пайпель-биопсия эндометрия. Выполняет гинеколог амбулаторно, занимает несколько минут.</span></div>
+          <div><b>Срок</b><span>14 рабочих дней с момента поступления образца в лабораторию.</span></div>
+          <div><b>Главный показатель</b><span>Доля лактобактерий и перечень остальных бактерий с их долями в процентах.</span></div>
+        </div>
+
+        <h3 class="tp-sub">Что показывает результат</h3>
+        <div class="tp-list">
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="5" height="11" rx="2.5"/><path d="M8.5 14c0 3-3 3-3 5.5 0 0 .5 1.5 3 1.5s3-1.5 3-1.5c0-2.5-3-2.5-3-5.5z"/><circle cx="17.5" cy="9" r="2"/></svg></span>
+            <div><b>Доля лактобактерий</b><p>Какую часть сообщества составляют бактерии рода Lactobacillus. Они вырабатывают молочную кислоту и сдерживают рост других микроорганизмов.</p></div></div>
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3.5"/><path d="M12 12l6.4 4.2"/></svg></span>
+            <div><b>Состав сообщества</b><p>Перечень выявленных бактерий и доля каждой в образце. Видно не только то, что найдено, но и в каком соотношении.</p></div></div>
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+            <div><b>Бактерии, связанные с воспалением</b><p>В том числе микроорганизмы, которые связывают с хроническим эндометритом — воспалением слизистой, которое часто протекает без выраженных симптомов.</p></div></div>
+        </div>
+
+        <div class="gbar">
+          <div class="gbar-track"><span class="gbar-lo">меньше лактобактерий</span><span class="gbar-hi">больше лактобактерий</span></div>
+          <div class="gbar-cols">
+            <div class="gb bad"><b>Дисбиоз</b><p>Заметную долю занимают другие микроорганизмы, в том числе бактерии, которые связывают с хроническим эндометритом.</p></div>
+            <div class="gb mid"><b>Пограничные изменения</b><p>Доля лактобактерий снижена, но другие бактерии не доминируют.</p></div>
+            <div class="gb ok"><b>Сбалансированная среда</b><p>Лактобактерии занимают основную долю сообщества.</p></div>
+          </div>
+        </div>
+
+        <h3 class="tp-sub">В каких случаях врач может назначить эту часть</h3>
+        <p class="lead">Исследование не входит в обязательный объём обследования: его назначают индивидуально, когда предыдущие этапы не дали объяснения.</p>
+        <div class="groups groups--2">
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div>
+            <h3>Неудачи имплантации и потери беременности</h3><ul>
+            <li>Повторные переносы эмбриона, которые не привели к беременности</li>
+            <li>В том числе переносы эмбрионов с нормальным набором хромосом по данным ПГТ-А и переносы с донорскими яйцеклетками</li>
+            <li>Привычное невынашивание — две и более потери беременности до 22 недель</li></ul></div>
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+            <h3>Воспаление и бесплодие неясного генеза</h3><ul>
+            <li>Подозрение на хронический эндометрит: исследование уточняет состав микробного сообщества при соответствующей клинической картине</li>
+            <li>Воспаление без явных симптомов, когда нужно понять, какие бактерии преобладают</li>
+            <li>Бесплодие неясного генеза: стандартное обследование не позволило установить причину</li>
+            <li>Другие случаи — по решению лечащего врача</li></ul></div>
+        </div>
+
+        <div class="tp-foot"><b>Границы этой части.</b> Исследование не устанавливает причину бесплодия само по себе, не заменяет гистологическое исследование эндометрия, не оценивает его строение и готовность к переносу и не определяет дату переноса эмбриона.</div>
+        <h3 class="tp-sub">Как заказать эту часть</h3>
+        <p class="lead">Микробиота эндометрия входит в три панели. Выберите подходящую — состав и стоимость раскроются в блоке заказа.</p>
+        <div class="mplans">
+          <a class="mplan" href="#paneli" data-pick="Микробиота эндометрия"><b>Микробиота эндометрия</b><span>Только состав сообщества полости матки</span><strong>14 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Микробиота эндометрия + инфекции"><b>Микробиота эндометрия + инфекции</b><span>Плюс возбудители — из того же образца</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
+        </div>
+      </div>
+
+      <!-- ─────────── ВЛАГАЛИЩЕ ─────────── -->
+      <div class="tpanel tp--vag" id="p-vag" role="tabpanel" aria-labelledby="t-vag" tabindex="0" hidden>
+        <div class="tp-top">
+          <div>
+            <div class="tp-kick">часть 2 · микробиота влагалища</div>
+            <h3>Самое плотное микробное сообщество</h3>
+            <p>Влагалищная микробиота — плотное и подвижное сообщество: её состав меняется в течение цикла, с возрастом, после антибиотиков, родов и на фоне гормональной терапии. У большинства женщин репродуктивного возраста в ней преобладают лактобактерии одного вида.</p>
+            <p>Исследование показывает, какие бактерии и грибы присутствуют, какую долю занимает каждый и к какому типу относится сообщество в целом. Это отвечает на вопрос, который не решает обычный мазок: не «есть ли воспаление», а «кто именно преобладает».</p>
+          </div>
+          <img src="img/microbiome.jpg" alt="Условная иллюстрация: бактерии вагинальной микробиоты">
+        </div>
+
+        <div class="tp-meta">
+          <div><b>Материал</b><span>Мазок из заднего свода влагалища. Забор занимает меньше минуты, выполняется на приёме у гинеколога.</span></div>
+          <div><b>Подготовка</b><span>Не во время менструации. За двое суток — без вагинальных препаратов и спринцеваний, за сутки — без половых контактов.</span></div>
+          <div><b>Главный показатель</b><span>Доля и вид преобладающих лактобактерий, доля условно-патогенных бактерий, тип сообщества.</span></div>
+        </div>
+
+        <h3 class="tp-sub">Что показывает результат</h3>
+        <div class="tp-list">
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="5" height="11" rx="2.5"/><path d="M8.5 14c0 3-3 3-3 5.5 0 0 .5 1.5 3 1.5s3-1.5 3-1.5c0-2.5-3-2.5-3-5.5z"/><circle cx="17.5" cy="9" r="2"/></svg></span>
+            <div><b>Какие лактобактерии преобладают</b><p>Виды рода Lactobacillus различаются по устойчивости сообщества: одни удерживают состав годами, другие легче уступают место анаэробным бактериям. В заключении указывают преобладающий вид.</p></div></div>
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L21 19.5H3z"/><path d="M12 10v4M12 16.8v.2"/></svg></span>
+            <div><b>Доля условно-патогенных бактерий</b><p>Gardnerella, Fannyhessea (Atopobium), Prevotella, Megasphaera и другие анаэробные бактерии присутствуют и в норме. Значение имеет не сам факт их выявления, а доля в сообществе.</p></div></div>
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5a7.5 7.5 0 0 1 15 0z"/><path d="M10.5 12.5v5a1.5 1.5 0 0 0 3 0v-5"/></svg></span>
+            <div><b>Грибы рода Candida — с указанием вида</b><p>Candida albicans отвечает на стандартную терапию иначе, чем C. glabrata и C. krusei, поэтому вид указывают отдельно. Это важно при повторяющемся кандидозе.</p></div></div>
+          <div><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></span>
+            <div><b>Тип сообщества</b><p>Вагинальную микробиоту принято относить к нескольким устойчивым типам. Тип — это короткий ответ на вопрос «как устроено сообщество в целом», который оценивают вместе с отдельными находками.</p></div></div>
+        </div>
+
+        <h3 class="tp-sub">Типы сообщества, если коротко</h3>
+        <div class="cstl">
+          <div class="cstl-r ok"><i></i><b>С преобладанием <em>L. crispatus</em></b><span>устойчивый</span>
+            <p>Наиболее устойчивый вариант: среда кислая, доля посторонних бактерий низкая.</p></div>
+          <div class="cstl-r ok"><i></i><b>С преобладанием <em>L. gasseri</em> или <em>L. jensenii</em></b><span>устойчивый</span>
+            <p>Тоже лактобактериальные типы, встречаются реже.</p></div>
+          <div class="cstl-r mid"><i></i><b>С преобладанием <em>L. iners</em></b><span>переходный</span>
+            <p>Лактобактерии преобладают, но этот вид чаще встречается в состояниях перехода — и при восстановлении сообщества, и перед его смещением.</p></div>
+          <div class="cstl-r bad"><i></i><b>Смешанное сообщество</b><span>смещённое</span>
+            <p>Лактобактерий мало, основную долю составляют анаэробные бактерии. Такое состояние связывают с бактериальным вагинозом — и оно часто протекает без симптомов: в популяционном исследовании в США о жалобах сообщали только 15,7 % женщин с лабораторными признаками вагиноза.</p></div>
+        </div>
+        <p class="plan-note">Тип сообщества — характеристика состава, а не диагноз: сообщество без преобладания лактобактерий встречается примерно у четверти здоровых женщин репродуктивного возраста. Результат оценивает врач вместе с клинической картиной и остальным обследованием.<br>Ravel J. и соавт., PNAS, 2011 — <a href="https://pubmed.ncbi.nlm.nih.gov/20534435/" target="_blank" rel="noopener">PubMed</a> · Koumans E.&nbsp;H. и соавт., Sex Transm Dis, 2007 — <a href="https://pubmed.ncbi.nlm.nih.gov/17621244/" target="_blank" rel="noopener">PubMed</a></p>
+
+        <h3 class="tp-sub">В каких случаях врач может назначить эту часть</h3>
+        <p class="lead">Исследование назначают индивидуально: оно не входит в обязательный объём обследования и не заменяет осмотр и обычный мазок.</p>
+        <div class="groups groups--2">
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/></svg></div>
+            <h3>Повторяющиеся состояния</h3><ul>
+            <li>Выделения, зуд или дискомфорт, которые возвращаются после лечения</li>
+            <li>Повторяющийся кандидоз — чтобы понять, какой вид гриба преобладает</li>
+            <li>Ранее назначенная терапия не дала результата или дала кратковременный</li>
+            <li>Восстановление состава после курса антибиотиков — в срок, который определяет врач</li></ul></div>
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg></div>
+            <h3>Подготовка к вмешательству или беременности</h3><ul>
+            <li>Подготовка к программе ЭКО и к переносу эмбриона</li>
+            <li>Перед внутриматочными вмешательствами: гистероскопией, введением внутриматочной спирали</li>
+            <li>Планирование беременности, если раньше были эпизоды бактериального вагиноза</li>
+            <li>Другие случаи — по решению лечащего врача</li></ul></div>
+        </div>
+
+        <div class="tp-foot"><b>Границы этой части.</b> Состав вагинальной микробиоты — не диагноз: одни и те же находки у женщины с жалобами и без жалоб оценивают по-разному. Исследование не заменяет осмотр и микроскопию мазка и не определяет лечение — терапию назначает лечащий врач.</div>
+        <h3 class="tp-sub">Как заказать эту часть</h3>
+        <p class="lead">Микробиота влагалища входит в три панели. Выберите подходящую — состав и стоимость раскроются в блоке заказа.</p>
+        <div class="mplans">
+          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища"><b>Микробиота влагалища</b><span>Только состав и тип сообщества</span><strong>14 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища + инфекции"><b>Микробиота влагалища + инфекции</b><span>Плюс возбудители — без внутриматочного вмешательства</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
+        </div>
+      </div>
+
+      <!-- ─────────── ИНФЕКЦИИ ─────────── -->
+      <div class="tpanel tp--inf" id="p-inf" role="tabpanel" aria-labelledby="t-inf" tabindex="0" hidden>
+        <div class="tp-top">
+          <div>
+            <div class="tp-kick">часть 3 · урогенитальные инфекции</div>
+            <h3>Дисбиоз и инфекция — разные вещи</h3>
+            <p>Дисбиоз — это смещение пропорций среди собственных бактерий: они и так там живут, изменилось только соотношение. Инфекция — это присутствие возбудителя, которого в норме в материале быть не должно. Лечат эти состояния по-разному, поэтому их разделяют в заключении.</p>
+            <p>Часть урогенитальных инфекций протекает без симптомов и выявляется только лабораторно. Хламидийная инфекция — классический пример: её связывают с воспалительными заболеваниями органов малого таза и трубным фактором бесплодия, и при этом она часто не даёт жалоб.</p>
+          </div>
+          <img src="img/lab.jpg" alt="Работа в лаборатории Геномед">
+        </div>
+
+        <div class="tp-meta">
+          <div><b>Материал</b><span>Тот же образец, что и для микробиоты, — мазок или биопсия эндометрия. Отдельно возможен урогенитальный мазок.</span></div>
+          <div><b>Метод</b><span>Определение ДНК возбудителей в образце. Для клинически значимых мишеней — количественная оценка.</span></div>
+          <div><b>Дополнительно</b><span>Гены устойчивости к антибиотикам — их учитывают при подборе терапии.</span></div>
+        </div>
+
+        <h3 class="tp-sub">Какие микроорганизмы входят в эту часть</h3>
+        <div class="plist">
+          <div class="pg pg--stop">
+            <div class="pg-h">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.2 8.8l-6.4 6.4M8.8 8.8l6.4 6.4"/></svg>
+              <div><b>Возбудители ИППП</b><span>В норме в исследуемом материале не обнаруживаются.</span></div>
+            </div>
+            <ul>
+              <li><i>Chlamydia trachomatis</i> — хламидийная инфекция</li>
+              <li><i>Neisseria gonorrhoeae</i> — гонококковая инфекция</li>
+              <li><i>Trichomonas vaginalis</i> — трихомониаз</li>
+              <li><i>Mycoplasma genitalium</i> — микоплазменная инфекция</li>
+              <li><i>Treponema pallidum</i> — возбудитель сифилиса</li>
+            </ul>
+            <div class="pg-note">Результат оценивает врач; при подтверждении терапию назначают обоим партнёрам.</div>
+          </div>
+
+          <div class="pg pg--warn">
+            <div class="pg-h">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5L21 19.5H3z"/><path d="M12 10v4M12 16.8v.2"/></svg>
+              <div><b>Условно-патогенные бактерии</b><span>Присутствуют и в норме. Клиническое значение имеет их доля в сообществе.</span></div>
+            </div>
+            <ul>
+              <li><i>Gardnerella vaginalis</i>, <i>Fannyhessea (Atopobium) vaginae</i> — ключевые бактерии при бактериальном вагинозе</li>
+              <li><i>Prevotella</i>, <i>Sneathia</i>, <i>Leptotrichia</i>, <i>Megasphaera</i>, <i>Mobiluncus</i>, <i>Peptostreptococcus</i> — анаэробные бактерии, которые связывают с воспалением эндометрия</li>
+              <li><i>Ureaplasma urealyticum</i> и <i>Ureaplasma parvum</i>, <i>Mycoplasma hominis</i></li>
+              <li><i>Streptococcus agalactiae</i>, <i>Enterococcus faecalis</i>, <i>Escherichia coli</i>, <i>Staphylococcus</i> и другие представители кишечной группы — их связывают с аэробным вагинитом</li>
+            </ul>
+            <div class="pg-note">Для клинически значимых бактерий указывают не только факт выявления, но и долю в сообществе.</div>
+          </div>
+
+          <div class="pg pg--fun">
+            <div class="pg-h">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5a7.5 7.5 0 0 1 15 0z"/><path d="M10.5 12.5v5a1.5 1.5 0 0 0 3 0v-5"/></svg>
+              <div><b>Дрожжеподобные грибы</b><span>Возбудители кандидоза, в том числе повторяющегося.</span></div>
+            </div>
+            <ul>
+              <li><i>Candida albicans</i> — самый частый возбудитель кандидоза</li>
+              <li><i>Candida glabrata</i>, <i>Candida krusei</i> и другие виды — хуже отвечают на стандартную терапию, поэтому вид указывают отдельно</li>
+            </ul>
+            <div class="pg-note">Выявление грибов вне клинической картины не равнозначно кандидозу; результат оценивают вместе с симптомами.</div>
+          </div>
+
+          <div class="pg pg--vir">
+            <div class="pg-h">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg>
+              <div><b>ДНК-вирусы</b><span>Выявляются по вирусной ДНК в том же образце.</span></div>
+            </div>
+            <ul>
+              <li>Вирусы простого герпеса 1 и 2 типа</li>
+              <li>Цитомегаловирус</li>
+              <li>Вирус Эпштейна — Барр</li>
+              <li>Вирус папилломы человека высокого онкогенного риска</li>
+            </ul>
+            <div class="pg-note">Выявление вирусной ДНК не равнозначно активной инфекции; результат интерпретирует врач.</div>
+          </div>
+        </div>
+
+        <h3 class="tp-sub">В каких случаях врач может назначить эту часть</h3>
+        <p class="lead">Набор мишеней и момент исследования определяет врач. Выявление условно-патогенных бактерий само по себе не равнозначно инфекции, требующей лечения.</p>
+        <div class="groups groups--2">
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M9.5 12.4l1.8 1.8 3.3-3.7"/></svg></div>
+            <h3>Есть повод проверить</h3><ul>
+            <li>Жалобы: выделения, зуд, дискомфорт, боли внизу живота</li>
+            <li>Инфекция выявлена у партнёра</li>
+            <li>Воспалительные заболевания органов малого таза в анамнезе</li>
+            <li>Контроль после лечения — в срок, который определяет врач</li></ul></div>
+          <div class="group"><div class="gic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="3"/><path d="M8 3v3M16 3v3M3.5 10h17"/></svg></div>
+            <h3>Перед следующим шагом</h3><ul>
+            <li>Подготовка к программе ЭКО и к переносу эмбриона</li>
+            <li>Перед внутриматочными вмешательствами</li>
+            <li>Планирование беременности</li>
+            <li>Потери беременности в анамнезе — по решению лечащего врача</li></ul></div>
+        </div>
+
+        <div class="nolist">
+          <b>Чего эта часть не выявляет</b>
+          <p>Анализ выполняется по ДНК, поэтому вирусы с РНК-геномом — ВИЧ, вирус гепатита C — не определяются: для них проводят отдельные исследования. Выявление ДНК возбудителя говорит о его присутствии в образце, но не о стадии и активности процесса — это оценивает врач вместе с клинической картиной.</p>
+        </div>
+        <h3 class="tp-sub">Как заказать эту часть</h3>
+        <p class="lead">Возбудителей определяют и отдельно, и вместе с любой из микробиот — материал при этом один и тот же.</p>
+        <div class="mplans">
+          <a class="mplan" href="#paneli" data-pick="Урогенитальные инфекции"><b>Урогенитальные инфекции</b><span>Только возбудители и гены устойчивости</span><strong>6 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Микробиота влагалища + инфекции"><b>Микробиота влагалища + инфекции</b><span>Плюс состав вагинального сообщества</span><strong>16 900 ₽</strong><em>Выбрать →</em></a>
+          <a class="mplan" href="#paneli" data-pick="Полная панель"><b>Полная панель</b><span>Оба отдела и возбудители</span><strong>17 900 ₽</strong><em>Выбрать →</em></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amr" id="metod">
+  <div class="wrap amr-in">
+    <div>
+      <div class="amr-tag">как это читают</div>
+      <h2>Одна пробоподготовка, <em>две линии анализа</em></h2>
+      <p>Состав сообщества и конкретные возбудители определяют разными группами мишеней. Маркерные участки 16S и ITS — это фрагменты ДНК, одинаковые по расположению у всех бактерий и грибов и разные по тексту: по ним сообщество раскладывают на составляющие и считают доли. Прицельные последовательности панели обогащения ищут конкретные микроорганизмы, в том числе те, чья доля в образце мала. Обе линии выполняются из одного образца.</p>
+    </div>
+    <div class="amr-r">
+      <div class="amr-n"><b>7000+</b><span>видов микроорганизмов в панели обогащения</span></div>
+      <div class="amr-n"><b>450+</b><span>родов бактерий, грибов, вирусов и паразитов</span></div>
+      <div class="amr-n"><b>16S + ITS</b><span>маркерные участки бактерий и грибов в том же образце</span></div>
+      <div class="amr-n"><b>AMR</b><span>гены устойчивости к антибиотикам — их учитывают при подборе терапии</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <img src="img/doctor.jpg" alt="Врач обсуждает обследование с пациенткой">
+  <div class="band-in"><p>Показания к исследованию и его результат обсуждают с лечащим врачом</p></div>
+</div>
+
+<section id="kak">
+  <div class="wrap">
+    <h2>От консультации <em>до результата</em></h2>
+    <div class="stepsc">
+      <div class="sc"><b>01</b><h3>Обсудить с врачом</h3><p>Гинеколог или репродуктолог определяет, какие части исследования показаны в конкретной ситуации.</p></div>
+      <div class="sc"><b>02</b><h3>Выбрать панель</h3><p>Панель определяет, что войдёт в заключение и какой материал понадобится. Состав можно уточнить у клиентского сервиса.</p></div>
+      <div class="sc"><b>03</b><h3>Сдать материал</h3><p>Мазок или аспирационную пайпель-биопсию эндометрия выполняет гинеколог амбулаторно. Приходить в офис лаборатории необязательно.</p></div>
+      <div class="sc"><b>04</b><h3>Передать образец</h3><p>Материал в пробирке со стабилизирующим буфером доставляют в медицинский офис или партнёру лаборатории.</p></div>
+      <div class="sc"><b>05</b><h3>Получить заключение</h3><p>Заключение направляют на электронную почту. Результат интерпретирует лечащий врач с учётом остальных обследований.</p></div>
+    </div>
+
+    <div class="mat">
+      <div class="mat-i"><b>Если выбрана микробиота эндометрия</b><p>Нужна аспирационная пайпель-биопсия — её выполняет гинеколог. Процедура занимает несколько минут; ощущения обычно сравнивают с тянущей болью при менструации. День цикла определяет лечащий врач.</p></div>
+      <div class="mat-i"><b>Если выбрана микробиота влагалища</b><p>Достаточно мазка из заднего свода влагалища. Не во время менструации; за двое суток — без вагинальных препаратов и спринцеваний, за сутки — без половых контактов.</p></div>
+      <div class="mat-i"><b>Если выбраны обе микробиоты</b><p>Берут два образца на одном приёме — мазок и биопсию. Возбудителей инфекций при этом определяют в том же материале, отдельного забора не требуется.</p></div>
+    </div>
+
+    <div class="practic">
+      <div class="practic-h">Практические вопросы</div>
+      <div class="practic-grid">
+        <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/></svg></span>
+          <b>Что входит в стоимость</b>
+          <p>Исследование выбранной панели и заключение врача-генетика. Приём гинеколога и забор материала оплачиваются отдельно.</p></div>
+        <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
+          <b>Как получить набор</b>
+          <p>Набор для взятия материала заказывают в Геномед — на сайте или через клиентский сервис — и доставляют по указанному адресу.</p></div>
+        <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg></span>
+          <b>Можно ли сдавать после антибиотиков</b>
+          <p>После курса антибиотиков состав микробиоты меняется, поэтому срок исследования определяет лечащий врач — он же решает, когда результат будет информативным.</p></div>
+        <div class="pq"><span class="pq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2z"/><path d="M8 8h7M8 12h5"/></svg></span>
+          <b>Срок исследования</b>
+          <p>14 рабочих дней с момента поступления образца в лабораторию. Дата поступления и дата выдачи указаны в заключении.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="zaklyuchenie">
+  <div class="wrap">
+    <h2>Что будет <em>в заключении</em></h2>
+    <p class="lead">Исследование выполняют в собственной лаборатории Геномед. Заключение готовит врач-генетик и направляет на электронную почту. Объём заключения зависит от выбранной панели: части, которые не заказывались, в нём не появятся.</p>
+    <div class="repgrid">
+      <div>
+        <div class="report">
+          <div class="report-h">Структура заключения</div>
+          <div class="report-row"><b>Данные пациента и образца</b><span>ФИО, дата рождения, вид биоматериала, номер образца, даты поступления и выдачи, врач, направивший на исследование</span></div>
+          <div class="report-row"><b>Метод исследования</b><span>Секвенирование ДНК: маркерные участки 16S и ITS для состава сообщества и панель обогащения для конкретных возбудителей</span></div>
+          <div class="report-row"><b>Соотношение выявленных микроорганизмов</b><span>Таблица с долей каждого в процентах — отдельно по каждому исследованному материалу, если заказаны обе микробиоты</span></div>
+          <div class="report-row"><b>Выявленные возбудители</b><span>Микроорганизмы, которых в норме быть не должно, и клинически значимые условно-патогенные бактерии — с количественной оценкой</span></div>
+          <div class="report-row"><b>Комментарий врача-генетика</b><span>Пояснение к полученному составу и к находкам, значимым для дальнейшего обследования</span></div>
+          <div class="report-row"><b>Ограничения метода</b><span>Метод полуколичественный и определяет бактерии преимущественно до рода, поэтому доли отражают относительную частоту, а не точное число клеток</span></div>
+        </div>
+      </div>
+      <div class="repcard">
+        <div class="repcard-h">
+          <span class="repcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+          <div><b>Состав сообщества</b><small>фрагмент заключения</small></div>
+          <span class="repcard-tag">пример</span>
+        </div>
+        <div class="repcard-b">
+          <div class="stackbar">
+            <i style="width:92.4%" class="s1"></i><i style="width:3.1%" class="s2"></i><i style="width:1.8%" class="s3"></i><i style="width:1.2%" class="s4"></i><i style="width:1.5%" class="s5"></i>
+          </div>
+          <div class="leg">
+            <div><span class="dot s1"></span>Lactobacillus<b>92,4 %</b></div>
+            <div><span class="dot s2"></span>Gardnerella<b>3,1 %</b></div>
+            <div><span class="dot s3"></span>Prevotella<b>1,8 %</b></div>
+            <div><span class="dot s4"></span>Streptococcus<b>1,2 %</b></div>
+            <div><span class="dot s5"></span>Прочие бактерии<b>1,5 %</b></div>
+          </div>
+        </div>
+        <div class="repcard-f">
+          <span>Условные цифры — не результат пациентки. Метод полуколичественный и определяет бактерии до рода.</span>
+          <a href="primer-zaklyucheniya.pdf" target="_blank" rel="noopener">Настоящий бланк (PDF)&nbsp;↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="paneli">
+  <div class="wrap">
+    <h2>Панели: <em>что и в каком составе</em></h2>
+    <p class="lead">Части исследования заказывают по отдельности или вместе. Что именно нужно в вашем случае, определяет лечащий врач: панель зависит от вопроса, на который он хочет получить ответ.</p>
+
+    <div class="plans" role="group" aria-label="Выбор панели">
+
+      <button class="plan" type="button" aria-pressed="true" data-plan
+        data-name="Микробиота эндометрия"
+        data-price="14 900 ₽"
+        data-mat="аспирационная пайпель-биопсия эндометрия"
+        data-url="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Микробиота эндометрия</span>
+        <span class="plan-desc">Состав микробного сообщества полости матки.</span>
+        <span class="plan-mods">
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота эндометрия</span>
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота влагалища</span>
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>14 900 ₽</b><span>14 рабочих дней · биопсия эндометрия</span></span>
+      </button>
+
+      <button class="plan" type="button" aria-pressed="false" data-plan
+        data-name="Микробиота влагалища"
+        data-price="14 900 ₽"
+        data-mat="мазок из заднего свода влагалища"
+        data-url="https://price.genomed.ru/">
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Микробиота влагалища</span>
+        <span class="plan-desc">Состав и тип вагинального сообщества.</span>
+        <span class="plan-mods">
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота эндометрия</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота влагалища</span>
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>14 900 ₽</b><span>14 рабочих дней · мазок</span></span>
+      </button>
+
+      <button class="plan" type="button" aria-pressed="false" data-plan
+        data-name="Урогенитальные инфекции"
+        data-price="6 900 ₽"
+        data-mat="мазок или биопсия эндометрия"
+        data-url="https://price.genomed.ru/">
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Урогенитальные инфекции</span>
+        <span class="plan-desc">Возбудители ИППП, грибы, ДНК-вирусы и гены устойчивости.</span>
+        <span class="plan-mods">
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота эндометрия</span>
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота влагалища</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>6 900 ₽</b><span>14 рабочих дней · мазок или биопсия</span></span>
+      </button>
+
+      <button class="plan" type="button" aria-pressed="false" data-plan
+        data-name="Микробиота эндометрия + инфекции"
+        data-price="16 900 ₽"
+        data-mat="аспирационная пайпель-биопсия эндометрия"
+        data-url="https://price.genomed.ru/">
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Микробиота эндометрия + инфекции</span>
+        <span class="plan-desc">Полость матки: и состав сообщества, и возбудители — из одного образца.</span>
+        <span class="plan-mods">
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота эндометрия</span>
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота влагалища</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>16 900 ₽</b><span>14 рабочих дней · биопсия эндометрия</span></span>
+      </button>
+
+      <button class="plan" type="button" aria-pressed="false" data-plan
+        data-name="Микробиота влагалища + инфекции"
+        data-price="16 900 ₽"
+        data-mat="мазок из заднего свода влагалища"
+        data-url="https://price.genomed.ru/">
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Микробиота влагалища + инфекции</span>
+        <span class="plan-desc">Без внутриматочного вмешательства: всё определяют в мазке.</span>
+        <span class="plan-mods">
+          <span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg>Микробиота эндометрия</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота влагалища</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>16 900 ₽</b><span>14 рабочих дней · мазок</span></span>
+      </button>
+
+      <button class="plan" type="button" aria-pressed="false" data-plan
+        data-name="Полная панель"
+        data-price="17 900 ₽"
+        data-mat="мазок и биопсия эндометрия на одном приёме"
+        data-url="https://price.genomed.ru/">
+        <span class="plan-tag">все три части</span>
+        <span class="plan-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg></span>
+        <span class="plan-name">Полная панель</span>
+        <span class="plan-desc">Оба отдела и возбудители: видно и состав сообществ, и связь между ними.</span>
+        <span class="plan-mods">
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота эндометрия</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Микробиота влагалища</span>
+          <span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5L9.5 17.5 4.5 12.5"/></svg>Возбудители инфекций</span>
+        </span>
+        <span class="plan-price"><b>17 900 ₽</b><span>14 рабочих дней · мазок и биопсия</span></span>
+      </button>
+    </div>
+
+    <p class="plan-note">Части в составе панели стоят дешевле, чем заказанные по отдельности. Полная панель — на 20 % дороже одной микробиоты.</p>
+
+    <div class="sum" id="sum">
+      <div class="sum-l">
+        <b>Выбранная панель</b>
+        <strong id="sum-name">Микробиота эндометрия</strong>
+        <p id="sum-desc">Материал: аспирационная пайпель-биопсия эндометрия. Срок — 14 рабочих дней. В стоимость входит исследование и заключение врача-генетика; приём гинеколога и забор материала оплачиваются отдельно.</p>
+      </div>
+      <div class="sum-r">
+        <div class="sum-price" id="sum-price">14 900 ₽</div>
+        <a class="btn btn-w" id="sum-order" href="https://price.genomed.ru/basket/add?id=1696&amp;oneClick=1">Заказать исследование</a>
+        <button class="btn btn-o" type="button" data-cons>Задать вопрос</button>
+      </div>
+    </div>
+    <p class="sum-note">Исследование назначается индивидуально; результат интерпретирует лечащий врач с учётом других обследований. Стоимость указана справочно и не является публичной офертой — актуальные цены в каталоге <a href="https://price.genomed.ru/">price.genomed.ru</a>.</p>
+  </div>
+</section>
+
+<section class="amr">
+  <div class="wrap amr-in">
+    <div>
+      <div class="amr-tag">консультация</div>
+      <h2>Не уверены, <em>какая панель нужна</em>?</h2>
+      <p>Врач-генетик поможет понять, есть ли показания к исследованию в вашей ситуации, подскажет, какие части имеет смысл заказать, и разберёт готовый результат. Консультация доступна очно и онлайн и не обязывает заказывать исследование.</p>
+      <div class="amr-cta">
+        <a class="btn btn-w" href="tel:84956608377">8 (495) 660-83-77</a>
+        <button class="btn btn-o" type="button" data-cons>Написать в мессенджер</button>
+      </div>
+    </div>
+    <div class="amr-r">
+      <div class="amr-n"><b>15+</b><span>лет собственной лаборатории молекулярной диагностики</span></div>
+      <div class="amr-n"><b>100+</b><span>городов, где можно сдать материал</span></div>
+      <div class="amr-n"><b>24/7</b><span>клиентский сервис: поможет с оформлением и записью</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <img src="img/logo.svg" alt="Геномед">
+        <p>Медико-генетический центр «Геномед» — собственная лаборатория молекулярной диагностики.</p>
+      </div>
+      <div class="ftr-col"><b>О нас</b>
+        <a href="https://genomed.ru/laboratory/">Лаборатория</a>
+        <a href="https://genomed.ru/partnery-i-sotrudnichestvo/">Партнёры</a>
+        <a href="https://genomed.ru/nasha-komanda/">Наша команда</a></div>
+      <div class="ftr-col"><b>Пациентам</b>
+        <a href="https://genomed.ru/dogovor-na-okazanie-uslug/">Договор на оказание услуг</a>
+        <a href="https://genomed.ru/wp-content/uploads/postanovlenie-736.pdf">Правила оказания платных услуг</a>
+        <a href="https://genomed.ru/voprosyi-otvetyi/">Вопросы и ответы</a></div>
+      <div class="ftr-col"><b>Врачам и партнёрам</b>
+        <a href="https://genomed.ru/vracham/">Врачам</a>
+        <a href="https://genomed.ru/partners/">Партнёрам</a>
+        <a href="https://genomed.ru/napravleniya-na-issledovaniya/">Направления на исследования</a></div>
+      <div class="ftr-col"><b>Правовая информация</b>
+        <a href="https://genomed.ru/yuridicheskij-adres-i-rekvizity/">Юр. адрес и реквизиты</a>
+        <a href="https://genomed.ru/license/">Лицензии и сертификаты</a>
+        <a href="https://price.genomed.ru/">Услуги и цены</a></div>
+    </div>
+    <div class="ftr-warn">Имеются противопоказания. Необходима консультация специалиста.</div>
+    <p class="ftr-bottom">8 (495) 660-83-77 · Клиентский сервис 24/7. Информация на странице носит справочный характер и не заменяет консультацию врача. Не является публичной офертой; актуальную стоимость уточняйте в каталоге <a href="https://price.genomed.ru/">price.genomed.ru</a>.</p>
+  </div>
+</footer>
+
+<dialog id="cons-dlg" aria-labelledby="cons-dlg-t">
+  <div class="cd-h">
+    <div><b id="cons-dlg-t">Как с нами связаться</b>
+      <span>Клиентский сервис работает круглосуточно: поможет с оформлением заказа и записью на консультацию к врачу-генетику.</span></div>
+    <button class="cd-x" type="button" data-cons-close aria-label="Закрыть">✕</button>
+  </div>
+  <div class="cd-b">
+    <a class="cd-wa" href="https://wa.me/74956608377" target="_blank" rel="noopener">
+      <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.1-.3.2-.5 0-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.4c.1.2 1.6 2.5 3.9 3.4.5.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1 0-.1-.2-.2-.4-.3z"/></svg></i>
+      <span>WhatsApp<small>Написать в мессенджер</small></span></a>
+    <a class="cd-tg" href="https://t.me/genomed_b2c_bot" target="_blank" rel="noopener">
+      <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.3-.1-.5-.6-.2L6.3 12.1l-4.8-1.5c-1-.3-1-1 .2-1.5l18.8-7.2c.9-.3 1.6.2 1.4 1.4z"/></svg></i>
+      <span>Telegram<small>Написать в мессенджер</small></span></a>
+    <a class="cd-mx" href="https://max.ru/id7701759381_bot" target="_blank" rel="noopener">
+      <i>MAX</i><span>MAX<small>Написать в мессенджер</small></span></a>
+  </div>
+  <div class="cd-f">Или позвоните: <a href="tel:84956608377">8 (495) 660-83-77</a> — клиентский сервис 24/7</div>
+</dialog>
+
+<script>
+/* переключатель трёх частей */
+(function(){
+  var list=document.querySelector('.tablist');
+  if(!list) return;
+  var tabs=[].slice.call(list.querySelectorAll('[role="tab"]'));
+  var map={'t-endo':'endometriy','t-vag':'vlagalishche','t-inf':'infekcii'};
+  function select(tab,focus,setHash){
+    tabs.forEach(function(t){
+      var on=(t===tab);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      var panel=document.getElementById(t.getAttribute('aria-controls'));
+      if(!panel) return;
+      panel.classList.toggle('on',on);
+      if(on) panel.removeAttribute('hidden'); else panel.setAttribute('hidden','');
+    });
+    if(focus) tab.focus();
+    if(setHash && history.replaceState){ try{history.replaceState(null,'','#'+map[tab.id])}catch(err){} }
+  }
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){select(tab,false,true)});
+    tab.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(tab),n=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown') n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp') n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home') n=tabs[0];
+      else if(e.key==='End') n=tabs[tabs.length-1];
+      if(n){e.preventDefault(); select(n,true,true)}
+    });
+  });
+  var h=(location.hash||'').replace('#','');
+  for(var id in map){ if(map[id]===h){ select(document.getElementById(id),false,false); break } }
+})();
+
+/* выбор панели → итоговая строка заказа */
+(function(){
+  var plans=[].slice.call(document.querySelectorAll('[data-plan]'));
+  var name=document.getElementById('sum-name'),
+      price=document.getElementById('sum-price'),
+      desc=document.getElementById('sum-desc'),
+      order=document.getElementById('sum-order'),
+      sum=document.getElementById('sum');
+  if(!plans.length||!sum) return;
+  function pick(btn){
+    plans.forEach(function(p){p.setAttribute('aria-pressed',p===btn?'true':'false')});
+    name.textContent=btn.getAttribute('data-name');
+    price.textContent=btn.getAttribute('data-price');
+    desc.textContent='Материал: '+btn.getAttribute('data-mat')+'. Срок — 14 рабочих дней. '+
+      'В стоимость входит исследование и заключение врача-генетика; приём гинеколога и забор материала оплачиваются отдельно.';
+    order.setAttribute('href',btn.getAttribute('data-url'));
+  }
+  plans.forEach(function(btn){ btn.addEventListener('click',function(){pick(btn)}) });
+  document.querySelectorAll('[data-pick]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var want=a.getAttribute('data-pick');
+      for(var i=0;i<plans.length;i++){ if(plans[i].getAttribute('data-name')===want){ pick(plans[i]); break } }
+    });
+  });
+})();
+
+/* подсветка активного пункта оглавления */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.subnav nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  if(!('IntersectionObserver' in window)||!secs.length) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(l){l.classList.remove('act')});
+      var i=secs.indexOf(e.target);
+      if(i>-1) links[i].classList.add('act');
+    });
+  },{rootMargin:"-15% 0px -70% 0px"});
+  secs.forEach(function(x){io.observe(x)});
+})();
+
+/* модалка выбора способа связи */
+(function(){
+  var d=document.getElementById('cons-dlg');
+  if(!d) return;
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-cons]');
+    if(t){e.preventDefault(); d.showModal(); return;}
+    if(e.target.closest('[data-cons-close]')){d.close(); return;}
+    if(e.target===d) d.close();
+  });
+})();
+</script>
+
+<div id="vhint" role="status">
+  <div><b>Е — три части и выбор панели</b><p>Микробиота эндометрия, микробиота влагалища и урогенитальные инфекции разведены по отдельным вкладкам, чтобы не сливались в одно. Внизу — карточки панелей: любая часть по отдельности, пара с инфекциями или всё вместе.</p></div>
+  <button type="button" aria-label="Закрыть подсказку">✕</button>
+</div>
+<script>
+(function(){
+  var h=document.getElementById('vhint');
+  if(!h) return;
+  var t1=setTimeout(function(){h.classList.add('show')},400);
+  var t2=setTimeout(function(){h.classList.remove('show')},10400);
+  h.querySelector('button').addEventListener('click',function(){
+    clearTimeout(t1);clearTimeout(t2);h.classList.remove('show');
+  });
+})();
+</script>
+
+<div id="ed-hint">Перетащите блок за <b>⠿</b>, чтобы поменять порядок. Кликните в текст, чтобы его исправить. Изменения сохраняются в этом браузере.</div>
+<div id="ed-bar">
+  <button type="button" id="ed-save" class="prim">Сохранить</button>
+  <button type="button" id="ed-export">Скачать HTML</button>
+  <button type="button" id="ed-reset">Сбросить</button>
+</div>
+<script>
+(function(){
+  var KEY='mema-edit-'+location.pathname.split('/').pop();
+  var body=document.body;
+
+  function blocks(){
+    return [].slice.call(document.querySelectorAll('body > section, body > div.band, body > header, body > footer, body > div.layout, body > figure, body > div.subnav'));
+  }
+  function mark(){
+    blocks().forEach(function(el,i){
+      el.setAttribute('data-ed', el.getAttribute('data-ed') || 'b'+i);
+      if(!el.querySelector(':scope > .ed-tools')){
+        var t=document.createElement('div');
+        t.className='ed-tools';
+        t.innerHTML='<button type="button" class="ed-drag" title="Перетащить">⠿</button>'+
+                    '<button type="button" class="ed-up" title="Выше">↑</button>'+
+                    '<button type="button" class="ed-down" title="Ниже">↓</button>'+
+                    '<button type="button" class="ed-del" title="Скрыть блок">✕</button>';
+        el.appendChild(t);
+      }
+    });
+  }
+  function editable(on){
+    document.querySelectorAll('h1,h2,h3,h4,p,li,span,b,td,th,summary').forEach(function(el){
+      if(el.closest('.ed-tools')||el.closest('#ed-bar')||el.closest('#ed-hint')||el.closest('.vbar')||el.closest('#vhint')) return;
+      if(on) el.setAttribute('contenteditable','true'); else el.removeAttribute('contenteditable');
+    });
+  }
+
+  // перетаскивание
+  var dragged=null;
+  document.addEventListener('mousedown',function(e){
+    var h=e.target.closest('.ed-drag');
+    if(h){ var b=h.closest('[data-ed]'); b.setAttribute('draggable','true'); }
+  });
+  document.addEventListener('dragstart',function(e){
+    var b=e.target.closest('[data-ed]');
+    if(!b||!body.classList.contains('editing')) return;
+    dragged=b; b.classList.add('dragging');
+    e.dataTransfer.effectAllowed='move';
+    try{e.dataTransfer.setData('text/plain','x')}catch(x){}
+  });
+  document.addEventListener('dragover',function(e){
+    if(!dragged) return;
+    e.preventDefault();
+    var over=e.target.closest('[data-ed]');
+    document.querySelectorAll('.drag-over').forEach(function(x){x.classList.remove('drag-over')});
+    if(over&&over!==dragged) over.classList.add('drag-over');
+  });
+  document.addEventListener('drop',function(e){
+    if(!dragged) return;
+    e.preventDefault();
+    var over=e.target.closest('[data-ed]');
+    if(over&&over!==dragged){
+      var all=blocks(), a=all.indexOf(dragged), b=all.indexOf(over);
+      if(a<b) over.after(dragged); else over.before(dragged);
+    }
+    cleanup();
+  });
+  document.addEventListener('dragend',cleanup);
+  function cleanup(){
+    if(dragged){dragged.classList.remove('dragging');dragged.removeAttribute('draggable');}
+    document.querySelectorAll('.drag-over').forEach(function(x){x.classList.remove('drag-over')});
+    dragged=null;
+  }
+
+  // кнопки на блоке
+  document.addEventListener('click',function(e){
+    if(!body.classList.contains('editing')) return;
+    var b=e.target.closest('[data-ed]');
+    if(!b) return;
+    if(e.target.closest('.ed-up')){ var pv=b.previousElementSibling; if(pv&&pv.hasAttribute('data-ed')) pv.before(b); }
+    if(e.target.closest('.ed-down')){ var nx=b.nextElementSibling; if(nx&&nx.hasAttribute('data-ed')) nx.after(b); }
+    if(e.target.closest('.ed-del')){ if(confirm('Скрыть этот блок?')) b.style.display='none'; }
+  });
+
+  function snapshot(){
+    var tools=document.querySelectorAll('.ed-tools');
+    tools.forEach(function(t){t.setAttribute('data-tmp','1')});
+    var clone=document.body.cloneNode(true);
+    clone.querySelectorAll('.ed-tools,#ed-bar,#ed-hint,.vbar,#vhint').forEach(function(x){x.remove()});
+    clone.querySelectorAll('[contenteditable]').forEach(function(x){x.removeAttribute('contenteditable')});
+    clone.querySelectorAll('[data-ed]').forEach(function(x){x.removeAttribute('data-ed');x.removeAttribute('draggable')});
+    clone.querySelectorAll('script').forEach(function(x){x.remove()});
+    return clone.innerHTML;
+  }
+
+  document.getElementById('ed-save').addEventListener('click',function(){
+    try{ localStorage.setItem(KEY, snapshot()); alert('Сохранено в этом браузере.'); }
+    catch(x){ alert('Не удалось сохранить: '+x.message); }
+  });
+  document.getElementById('ed-reset').addEventListener('click',function(){
+    if(!confirm('Вернуть исходную версию страницы?')) return;
+    try{localStorage.removeItem(KEY)}catch(x){}
+    location.reload();
+  });
+  document.getElementById('ed-export').addEventListener('click',function(){
+    var head=document.head.innerHTML;
+    var LT='<', GT='>';
+    var html='<!doctype html'+GT+'\n'+LT+'html lang="ru"'+GT+'\n'+LT+'head'+GT+head+LT+'/head'+GT+
+             '\n'+LT+'body'+GT+'\n'+snapshot()+'\n'+LT+'/body'+GT+'\n'+LT+'/html'+GT;
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download=location.pathname.split('/').pop().replace('.html','')+'-правки.html';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  // восстановить сохранённое
+  try{
+    var saved=localStorage.getItem(KEY);
+    if(saved){
+      var keep=document.querySelector('.vbar'), hint=document.getElementById('vhint');
+      var tmp=document.createElement('div'); tmp.innerHTML=saved;
+      var marker=document.createElement('div');
+      document.body.insertBefore(marker, keep?keep.nextSibling:document.body.firstChild);
+      blocks().forEach(function(x){x.remove()});
+      while(tmp.firstChild) marker.parentNode.insertBefore(tmp.firstChild, marker);
+      marker.remove();
+    }
+  }catch(x){}
+
+  // тумблер
+  var btn=document.getElementById('ed-toggle');
+  if(!btn) return;
+  btn.addEventListener('click',function(){
+    var on=body.classList.toggle('editing');
+    btn.classList.toggle('on',on);
+    btn.textContent= on ? '✓ Редактирование' : '✎ Редактировать';
+    if(on){ mark(); editable(true); } else { editable(false); }
+  });
+})();
+</script>
+</body>
+</html>
